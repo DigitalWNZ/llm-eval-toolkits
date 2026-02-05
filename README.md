@@ -7,13 +7,15 @@ A web-based application for comprehensive testing and evaluation of Google Gemin
 **v1.1.0** (Latest)
 - ✅ Updated all benchmark request files with accurate token counts (1K, 2K, 5K, 10K, 50K, 100K)
 - ✅ Fixed thinking parameter support for Gemini 2.5 and 3.0 models
+- ✅ Added plain text input support for online evaluation (auto-wrapped in Gemini format)
+- ✅ Added editable request preview with "Show Request" feature
 - ✅ Added token count columns (input, cached, output) to performance results
 - ✅ Changed default API location from us-central1 to global for broader model access
 - ✅ Added TTFT (Time To First Token) measurement across all evaluation modes
 
 ## Features
 
-- **Online Evaluation**: Interactive single-request testing with multimodal support and TTFT metrics
+- **Online Evaluation**: Interactive testing with plain text or JSON input, multimodal support, editable request preview, and TTFT metrics
 - **Batch Evaluation**: Process multiple requests with expected output comparison using Gemini-powered similarity evaluation
 - **Performance Evaluation**: Benchmark model performance with detailed TTFT statistics and token usage metrics
 
@@ -119,15 +121,26 @@ The frontend application will be available at `http://localhost:3000`
 ### Online Evaluation
 
 1. Navigate to the "Online Evaluation" tab
-2. Upload a Gemini request JSON file or paste JSON directly
+2. Enter your request in one of three ways:
+   - Upload a Gemini request JSON file
+   - Paste Gemini request JSON directly
+   - Enter plain text (automatically wrapped in proper Gemini format)
 3. (Optional) Upload multimodal files (images, audio, video, PDFs)
-4. Edit system instruction if needed
+4. Edit system instruction and generation config if needed
 5. Configure model, project ID, and iterations
-6. Click "Submit" to generate responses
-7. View results in JSON format
-8. Click "Save" to export responses
+6. Click "Show Request" to preview the formatted request (editable)
+7. Click "Submit" to generate responses
+8. View results with TTFT metrics and response details
+9. Click "Save" to export responses
+
+**Input Formats**:
+- **Plain Text**: Simple text input, automatically formatted as Gemini user message
+- **JSON**: Complete Gemini API request format with `contents`, `systemInstruction`, and `generationConfig`
+- **Auto-population**: System instruction and config fields auto-populate from uploaded JSON
 
 **Supported Multimodal Formats**: JPG, PNG, GIF, WEBP, MP4, MOV, MP3, WAV, PDF (max 20MB per file, max 10 files)
+
+**TTFT Metrics**: Displays P50, P90, P95, P99 statistics when running multiple iterations
 
 ### Batch Evaluation
 
