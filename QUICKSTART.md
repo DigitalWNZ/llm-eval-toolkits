@@ -1,5 +1,12 @@
 # Quick Start Guide
 
+## Recent Updates (v1.1.0)
+
+- ✅ All benchmark request files updated with accurate token counts
+- ✅ Fixed thinking parameter support for Gemini 2.5 vs 3.0 models
+- ✅ Added comprehensive TTFT measurement and statistics
+- ✅ Enhanced performance evaluation with token usage metrics
+
 ## Current Status
 
 ✅ **Application code is complete** - Backend and frontend are fully implemented
@@ -85,11 +92,14 @@ Open your browser to: **http://localhost:3000**
 - View success/failure summary
 
 ### Performance Evaluation Tab
-- Benchmark multiple models
-- Test different request sizes
-- Configure thinking parameters
-- Run performance tests with statistics
-- Export results to CSV
+- Benchmark multiple Gemini models
+- Test different request sizes (1K-100K tokens with accurate counts)
+- Configure thinking parameters:
+  - Gemini 2.5: `thinking_budget` only
+  - Gemini 3.0: `thinking_level` OR `thinking_budget` (mutually exclusive)
+- Run performance tests with TTFT statistics (median, P90, P99)
+- View token usage metrics (input, cached, output tokens)
+- Export results to CSV (raw metrics and analysis)
 
 ## Network Issue Notes
 

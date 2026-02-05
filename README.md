@@ -2,11 +2,20 @@
 
 A web-based application for comprehensive testing and evaluation of Google Gemini models, featuring online evaluation, batch processing, and performance benchmarking.
 
+## Recent Updates
+
+**v1.1.0** (Latest)
+- ✅ Updated all benchmark request files with accurate token counts (1K, 2K, 5K, 10K, 50K, 100K)
+- ✅ Fixed thinking parameter support for Gemini 2.5 and 3.0 models
+- ✅ Added token count columns (input, cached, output) to performance results
+- ✅ Changed default API location from us-central1 to global for broader model access
+- ✅ Added TTFT (Time To First Token) measurement across all evaluation modes
+
 ## Features
 
-- **Online Evaluation**: Interactive single-request testing with multimodal support
-- **Batch Evaluation**: Process multiple requests with expected output comparison
-- **Performance Evaluation**: Benchmark model performance with detailed metrics
+- **Online Evaluation**: Interactive single-request testing with multimodal support and TTFT metrics
+- **Batch Evaluation**: Process multiple requests with expected output comparison using Gemini-powered similarity evaluation
+- **Performance Evaluation**: Benchmark model performance with detailed TTFT statistics and token usage metrics
 
 ## Prerequisites
 
@@ -140,14 +149,22 @@ The frontend application will be available at `http://localhost:3000`
 1. Navigate to the "Performance Evaluation" tab
 2. Select models to benchmark (multi-select)
 3. Choose request sizes (1K, 2K, 5K, 10K, 50K, 100K tokens)
+   - **Note**: All request files have been updated with accurate token counts matching their labels
 4. Configure thinking parameters:
-   - **Gemini 2.5**: Can use both levels and budgets
-   - **Gemini 3.0**: Use either levels OR budgets (mutually exclusive)
+   - **Gemini 2.5 models**: Support `thinking_budget` only (thinking levels are ignored)
+   - **Gemini 3.0 models**: Support both `thinking_level` and `thinking_budget` (mutually exclusive - use either one, not both)
 5. Set iterations and cache settings
 6. Enter GCP project ID
 7. Click "Run Benchmark"
-8. View statistics table with median, P90, P99 TTFT metrics
+8. View statistics table with median, P90, P99 TTFT metrics and token counts (input, cached, output)
 9. Download raw CSV or analysis CSV
+
+**Thinking Budget Ranges**:
+- `gemini-2.5-flash-lite` / `gemini-3.0-flash-lite`: 512-24,576 tokens
+- `gemini-2.5-flash` / `gemini-3.0-flash`: 1-24,576 tokens
+- `gemini-2.5-pro` / `gemini-3.0-pro`: 128-32,768 tokens
+
+**Thinking Levels** (Gemini 3.0 only): `minimum`, `low`, `medium`, `high`
 
 ## API Endpoints
 
