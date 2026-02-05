@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {
   Box,
   Paper,
@@ -16,8 +16,11 @@ import {
   CardContent,
   IconButton,
   Chip,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
 } from '@mui/material'
-import { Delete as DeleteIcon, CloudUpload as UploadIcon, Save as SaveIcon } from '@mui/icons-material'
+import { Delete as DeleteIcon, CloudUpload as UploadIcon, Save as SaveIcon, ExpandMore as ExpandMoreIcon, Visibility as VisibilityIcon } from '@mui/icons-material'
 import ReactJson from '@microlink/react-json-view'
 import { onlineEvaluation } from '../services/api'
 
@@ -25,8 +28,8 @@ const GEMINI_MODELS = [
   'gemini-2.5-pro',
   'gemini-2.5-flash',
   'gemini-2.5-flash-lite',
-  'gemini-3.0-pro',
-  'gemini-3.0-flash',
+  'gemini-3-pro-preview',
+  'gemini-3-flash-preview',
   'gemini-3.0-flash-lite',
 ]
 
@@ -44,6 +47,47 @@ function OnlineEvaluation() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const [success, setSuccess] = useState(null)
+  const [showRequestPreview, setShowRequestPreview] = useState(false)
+  const [previewRequest, setPreviewRequest] = useState('')
+  const [useEditedRequest, setUseEditedRequest] = useState(false)
+
+  // Auto-populate system instruction and config when request changes
+  useEffect(() => {
+    if (geminiRequest.trim()) {
+      try {
+        const parsed = JSON.parse(geminiRequest)
+
+        // Handle systemInstruction with nested structure: systemInstruction.parts[0].text
+        if (parsed.systemInstruction) {
+          let instructionText = null
+
+          // Check if it's a string (simple format)
+          if (typeof parsed.systemInstruction === 'string') {
+            instructionText = parsed.systemInstruction
+          }
+          // Check if it has parts array (nested format)
+          else if (parsed.systemInstruction.parts &&
+                   Array.isArray(parsed.systemInstruction.parts) &&
+                   parsed.systemInstruction.parts.length > 0 &&
+                   parsed.systemInstruction.parts[0].text) {
+            instructionText = parsed.systemInstruction.parts[0].text
+          }
+
+          if (instructionText) {
+            // Replace \n escape sequences with actual newlines
+            setSystemInstruction(instructionText.replace(/\\n/g, '\n'))
+          }
+        }
+
+        // Handle generationConfig
+        if (parsed.generationConfig && typeof parsed.generationConfig === 'object') {
+          setGeminiConfig(JSON.stringify(parsed.generationConfig, null, 2))
+        }
+      } catch (err) {
+        // Not valid JSON, ignore
+      }
+    }
+  }, [geminiRequest])
 
   const handleFileUpload = (event) => {
     const file = event.target.files[0]
@@ -54,11 +98,7 @@ function OnlineEvaluation() {
           // Try to parse as JSON first
           const content = JSON.parse(e.target.result)
           setGeminiRequest(JSON.stringify(content, null, 2))
-
-          // Extract system instruction if present
-          if (content.system_instruction) {
-            setSystemInstruction(content.system_instruction.replace(/\\n/g, '\n'))
-          }
+          // System instruction will be auto-populated by useEffect
         } catch (err) {
           // Not valid JSON, treat as plain text
           setGeminiRequest(e.target.result)
@@ -94,34 +134,182 @@ function OnlineEvaluation() {
     setUploadedFileData(uploadedFileData.filter((_, i) => i !== index))
   }
 
+  const buildRequestPreview = () => {
+    try {
+      // Parse and validate inputs
+      let parsedRequest = {}
+      if (geminiRequest.trim()) {
+        try {
+          parsedRequest = JSON.parse(geminiRequest)
+          // Remove systemInstruction from the request if it exists
+          // We'll use the value from the System Instruction field instead
+          if (parsedRequest.systemInstruction) {
+            delete parsedRequest.systemInstruction
+          }
+          // Remove generationConfig if it exists - we'll use the config field instead
+          if (parsedRequest.generationConfig) {
+            delete parsedRequest.generationConfig
+          }
+        } catch (jsonError) {
+          // Not valid JSON, treat as plain text and wrap in Gemini request format
+          parsedRequest = {
+            contents: [
+              {
+                role: "user",
+                parts: [
+                  {
+                    text: geminiRequest.trim()
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+
+      // Add system instruction in the proper nested structure
+      if (systemInstruction && systemInstruction.trim()) {
+        if (typeof parsedRequest === 'object' && !Array.isArray(parsedRequest)) {
+          parsedRequest.systemInstruction = {
+            parts: [
+              {
+                text: systemInstruction
+              }
+            ]
+          }
+        }
+      }
+
+      // Add generation config in the proper Gemini format (camelCase)
+      if (geminiConfig.trim()) {
+        try {
+          const parsedConfig = JSON.parse(geminiConfig)
+          if (typeof parsedRequest === 'object' && !Array.isArray(parsedRequest)) {
+            // Convert snake_case to camelCase for Gemini API
+            const geminiFormattedConfig = {}
+            for (const [key, value] of Object.entries(parsedConfig)) {
+              // Convert common snake_case keys to camelCase
+              const camelKey = key
+                .replace(/_([a-z])/g, (_, letter) => letter.toUpperCase())
+              geminiFormattedConfig[camelKey] = value
+            }
+            parsedRequest.generationConfig = geminiFormattedConfig
+          }
+        } catch (configError) {
+          // Invalid JSON in config, ignore
+        }
+      }
+
+      // Show only the raw Gemini request format (not the wrapper)
+      setPreviewRequest(JSON.stringify(parsedRequest, null, 2))
+      setShowRequestPreview(true)
+      setUseEditedRequest(false)
+    } catch (err) {
+      setError('Error building request preview: ' + err.message)
+    }
+  }
+
   const handleSubmit = async () => {
     setError(null)
     setSuccess(null)
     setLoading(true)
 
     try {
-      // Parse and validate inputs
       let parsedRequest = {}
-      if (geminiRequest.trim()) {
-        // Try to parse as JSON first, if it fails treat as plain string
-        try {
-          parsedRequest = JSON.parse(geminiRequest)
-        } catch (jsonError) {
-          // Not valid JSON, treat as plain text string
-          parsedRequest = geminiRequest.trim()
+
+      // If user has edited the preview request, use that as the gemini_request
+      if (useEditedRequest && previewRequest.trim()) {
+        parsedRequest = JSON.parse(previewRequest)
+      } else {
+        // Parse and validate inputs
+        if (geminiRequest.trim()) {
+          // Try to parse as JSON first, if it fails treat as plain string
+          try {
+            parsedRequest = JSON.parse(geminiRequest)
+            // Remove systemInstruction from the request if it exists
+            // We'll use the value from the System Instruction field instead
+            if (parsedRequest.systemInstruction) {
+              delete parsedRequest.systemInstruction
+            }
+            // Remove generationConfig if it exists - we'll use the config field instead
+            if (parsedRequest.generationConfig) {
+              delete parsedRequest.generationConfig
+            }
+          } catch (jsonError) {
+            // Not valid JSON, treat as plain text and wrap in Gemini request format
+            parsedRequest = {
+              contents: [
+                {
+                  role: "user",
+                  parts: [
+                    {
+                      text: geminiRequest.trim()
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+
+        // Add system instruction in the proper nested structure
+        if (systemInstruction && systemInstruction.trim()) {
+          if (typeof parsedRequest === 'object' && !Array.isArray(parsedRequest)) {
+            parsedRequest.systemInstruction = {
+              parts: [
+                {
+                  text: systemInstruction
+                }
+              ]
+            }
+          }
+        }
+
+        // Add generation config in the proper Gemini format (camelCase)
+        if (geminiConfig.trim()) {
+          try {
+            const parsedConfig = JSON.parse(geminiConfig)
+            if (typeof parsedRequest === 'object' && !Array.isArray(parsedRequest)) {
+              // Convert snake_case to camelCase for Gemini API
+              const geminiFormattedConfig = {}
+              for (const [key, value] of Object.entries(parsedConfig)) {
+                // Convert common snake_case keys to camelCase
+                const camelKey = key
+                  .replace(/_([a-z])/g, (_, letter) => letter.toUpperCase())
+                geminiFormattedConfig[camelKey] = value
+              }
+              parsedRequest.generationConfig = geminiFormattedConfig
+            }
+          } catch (configError) {
+            // Invalid JSON in config, ignore
+          }
         }
       }
 
+      // Extract system instruction for the backend's separate field
+      let systemInst = null
+      if (parsedRequest.systemInstruction?.parts?.[0]?.text) {
+        systemInst = parsedRequest.systemInstruction.parts[0].text
+      } else if (typeof parsedRequest.systemInstruction === 'string') {
+        systemInst = parsedRequest.systemInstruction
+      }
+
+      // Extract generation config for the backend's separate field
       let parsedConfig = null
-      if (geminiConfig.trim()) {
-        parsedConfig = JSON.parse(geminiConfig)
+      if (parsedRequest.generationConfig) {
+        // Convert camelCase back to snake_case for backend
+        parsedConfig = {}
+        for (const [key, value] of Object.entries(parsedRequest.generationConfig)) {
+          const snakeKey = key.replace(/[A-Z]/g, letter => `_${letter.toLowerCase()}`)
+          parsedConfig[snakeKey] = value
+        }
       }
 
       const finalModel = model === 'custom' ? customModel : model
 
       const data = {
         gemini_request: parsedRequest,
-        system_instruction: systemInstruction || null,
+        system_instruction: systemInst,
         gemini_config: parsedConfig,
         model: finalModel,
         project: project,
@@ -156,6 +344,28 @@ function OnlineEvaluation() {
     a.click()
   }
 
+  const calculateTtftStatistics = () => {
+    const ttfts = responses
+      .map((r) => r.ttft_ms)
+      .filter((t) => t !== undefined && t !== null)
+      .sort((a, b) => a - b)
+
+    if (ttfts.length === 0) return null
+
+    const getPercentile = (arr, percentile) => {
+      const index = Math.ceil((percentile / 100) * arr.length) - 1
+      return arr[Math.max(0, index)]
+    }
+
+    return {
+      p50: getPercentile(ttfts, 50),
+      p90: getPercentile(ttfts, 90),
+      p95: getPercentile(ttfts, 95),
+      p99: getPercentile(ttfts, 99),
+      count: ttfts.length,
+    }
+  }
+
   return (
     <Box>
       <Typography variant="h4" gutterBottom>
@@ -184,14 +394,14 @@ function OnlineEvaluation() {
 
             {/* Gemini Request */}
             <TextField
-              label="Gemini Request (JSON)"
+              label="Gemini Request (JSON or Text)"
               multiline
               rows={8}
               fullWidth
               value={geminiRequest}
               onChange={(e) => setGeminiRequest(e.target.value)}
               sx={{ mb: 2 }}
-              helperText="Paste or upload your Gemini API request JSON"
+              helperText="Enter plain text or paste Gemini API request JSON"
             />
 
             {/* Multimodal Files Upload */}
@@ -250,7 +460,7 @@ function OnlineEvaluation() {
               value={geminiConfig}
               onChange={(e) => setGeminiConfig(e.target.value)}
               sx={{ mb: 2 }}
-              helperText='e.g., {"temperature": 0.7, "top_k": 40}'
+              helperText='e.g., {"temperature": 0.7, "topK": 40} or {"temperature": 0.7, "top_k": 40}'
             />
 
             {/* Model Selection */}
@@ -312,9 +522,59 @@ function OnlineEvaluation() {
               size="large"
               onClick={handleSubmit}
               disabled={loading || !project}
+              sx={{ mb: 2 }}
             >
               {loading ? <CircularProgress size={24} /> : 'Submit'}
             </Button>
+
+            {/* Show Request Button */}
+            <Button
+              variant="outlined"
+              fullWidth
+              size="large"
+              onClick={buildRequestPreview}
+              startIcon={<VisibilityIcon />}
+            >
+              Show Request
+            </Button>
+
+            {/* Request Preview Accordion */}
+            {showRequestPreview && (
+              <Accordion expanded={showRequestPreview} sx={{ mt: 2 }}>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  onClick={() => setShowRequestPreview(!showRequestPreview)}
+                >
+                  <Typography variant="subtitle1">Request Preview (Editable)</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Box>
+                    <Typography variant="caption" color="text.secondary" sx={{ mb: 1, display: 'block' }}>
+                      Raw Gemini API request format (matching your input). Click on values to edit.
+                    </Typography>
+                    <ReactJson
+                      src={JSON.parse(previewRequest)}
+                      name={null}
+                      collapsed={2}
+                      enableClipboard={true}
+                      displayDataTypes={false}
+                      onEdit={(edit) => {
+                        setPreviewRequest(JSON.stringify(edit.updated_src, null, 2))
+                        setUseEditedRequest(true)
+                      }}
+                      onAdd={(add) => {
+                        setPreviewRequest(JSON.stringify(add.updated_src, null, 2))
+                        setUseEditedRequest(true)
+                      }}
+                      onDelete={(del) => {
+                        setPreviewRequest(JSON.stringify(del.updated_src, null, 2))
+                        setUseEditedRequest(true)
+                      }}
+                    />
+                  </Box>
+                </AccordionDetails>
+              </Accordion>
+            )}
           </Paper>
         </Grid>
 
@@ -342,24 +602,87 @@ function OnlineEvaluation() {
               </Alert>
             )}
 
+            {/* TTFT Statistics */}
+            {(() => {
+              const stats = calculateTtftStatistics()
+              return stats && stats.count >= 2 ? (
+                <Card sx={{ mb: 3, bgcolor: 'primary.light', color: 'primary.contrastText' }}>
+                  <CardContent>
+                    <Typography variant="subtitle1" gutterBottom sx={{ fontWeight: 'bold' }}>
+                      TTFT Statistics ({stats.count} iterations)
+                    </Typography>
+                    <Grid container spacing={2}>
+                      <Grid item xs={6} sm={3}>
+                        <Box>
+                          <Typography variant="caption" sx={{ opacity: 0.8 }}>
+                            P50 (Median)
+                          </Typography>
+                          <Typography variant="h6">{stats.p50.toFixed(2)} ms</Typography>
+                        </Box>
+                      </Grid>
+                      <Grid item xs={6} sm={3}>
+                        <Box>
+                          <Typography variant="caption" sx={{ opacity: 0.8 }}>
+                            P90
+                          </Typography>
+                          <Typography variant="h6">{stats.p90.toFixed(2)} ms</Typography>
+                        </Box>
+                      </Grid>
+                      <Grid item xs={6} sm={3}>
+                        <Box>
+                          <Typography variant="caption" sx={{ opacity: 0.8 }}>
+                            P95
+                          </Typography>
+                          <Typography variant="h6">{stats.p95.toFixed(2)} ms</Typography>
+                        </Box>
+                      </Grid>
+                      <Grid item xs={6} sm={3}>
+                        <Box>
+                          <Typography variant="caption" sx={{ opacity: 0.8 }}>
+                            P99
+                          </Typography>
+                          <Typography variant="h6">{stats.p99.toFixed(2)} ms</Typography>
+                        </Box>
+                      </Grid>
+                    </Grid>
+                  </CardContent>
+                </Card>
+              ) : null
+            })()}
+
             {responses.length > 0 ? (
               <Box>
-                {responses.map((response, index) => (
-                  <Card key={index} sx={{ mb: 2 }}>
-                    <CardContent>
-                      <Typography variant="subtitle2" gutterBottom>
-                        Response {index + 1}
-                      </Typography>
-                      <ReactJson
-                        src={response}
-                        name={null}
-                        collapsed={1}
-                        enableClipboard={true}
-                        displayDataTypes={false}
-                      />
-                    </CardContent>
-                  </Card>
-                ))}
+                {responses.map((response, index) => {
+                  // Extract TTFT and create response copy without it
+                  const ttft = response.ttft_ms
+                  const { ttft_ms, ...responseWithoutTtft } = response
+
+                  return (
+                    <Card key={index} sx={{ mb: 2 }}>
+                      <CardContent>
+                        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+                          <Typography variant="subtitle2">
+                            Response {index + 1}
+                          </Typography>
+                          {ttft !== undefined && (
+                            <Chip
+                              label={`TTFT: ${ttft.toFixed(2)} ms`}
+                              color="primary"
+                              size="small"
+                            />
+                          )}
+                        </Box>
+                        <ReactJson
+                          src={responseWithoutTtft}
+                          name={null}
+                          collapsed={1}
+                          enableClipboard={true}
+                          displayDataTypes={false}
+                        />
+                      </CardContent>
+                    </Card>
+                  )
+                })}
               </Box>
             ) : (
               <Typography color="text.secondary">No responses yet. Submit a request to see results.</Typography>

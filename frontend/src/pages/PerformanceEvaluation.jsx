@@ -22,7 +22,6 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  Link,
 } from '@mui/material'
 import { Download as DownloadIcon } from '@mui/icons-material'
 import { performanceEvaluation } from '../services/api'
@@ -31,8 +30,8 @@ const GEMINI_MODELS = [
   'gemini-2.5-pro',
   'gemini-2.5-flash',
   'gemini-2.5-flash-lite',
-  'gemini-3.0-pro',
-  'gemini-3.0-flash',
+  'gemini-3-pro-preview',
+  'gemini-3-flash-preview',
   'gemini-3.0-flash-lite',
 ]
 
@@ -94,14 +93,9 @@ function PerformanceEvaluation() {
   }
 
   const handleDownloadCSV = (filePath, fileType) => {
-    // Extract filename from path (e.g., "performance_results/raw_metrics_20260105_100415.csv" -> "raw_metrics_20260105_100415.csv")
     const filename = filePath.split('/').pop()
-
-    // Construct download URL
     const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
     const downloadUrl = `${baseUrl}/api/performance/download/${fileType}/${filename}`
-
-    // Trigger download
     window.location.href = downloadUrl
   }
 
@@ -112,169 +106,186 @@ function PerformanceEvaluation() {
       </Typography>
 
       <Grid container spacing={3}>
-        {/* Left Panel - Configuration */}
-        <Grid item xs={12} md={6}>
+        {/* Configuration Panel - Full Width */}
+        <Grid item xs={12}>
           <Paper sx={{ p: 3 }}>
             <Typography variant="h6" gutterBottom>
               Benchmark Configuration
             </Typography>
 
-            {/* Model Selection */}
-            <FormControl fullWidth sx={{ mb: 2 }}>
-              <InputLabel>Models</InputLabel>
-              <Select
-                multiple
-                value={selectedModels}
-                onChange={(e) => setSelectedModels(e.target.value)}
-                input={<OutlinedInput label="Models" />}
-                renderValue={(selected) => (
-                  <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                    {selected.map((value) => (
-                      <Chip key={value} label={value} size="small" />
+            <Grid container spacing={2}>
+              {/* Model Selection */}
+              <Grid item xs={12} sm={6} md={3}>
+                <FormControl fullWidth>
+                  <InputLabel>Models</InputLabel>
+                  <Select
+                    multiple
+                    value={selectedModels}
+                    onChange={(e) => setSelectedModels(e.target.value)}
+                    input={<OutlinedInput label="Models" />}
+                    renderValue={(selected) => (
+                      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                        {selected.map((value) => (
+                          <Chip key={value} label={value} size="small" />
+                        ))}
+                      </Box>
+                    )}
+                  >
+                    {GEMINI_MODELS.map((model) => (
+                      <MenuItem key={model} value={model}>
+                        <Checkbox checked={selectedModels.indexOf(model) > -1} />
+                        {model}
+                      </MenuItem>
                     ))}
-                  </Box>
-                )}
-              >
-                {GEMINI_MODELS.map((model) => (
-                  <MenuItem key={model} value={model}>
-                    <Checkbox checked={selectedModels.indexOf(model) > -1} />
-                    {model}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
+                  </Select>
+                </FormControl>
+              </Grid>
 
-            {/* Request Sizes */}
-            <FormControl fullWidth sx={{ mb: 2 }}>
-              <InputLabel>Request Sizes (tokens)</InputLabel>
-              <Select
-                multiple
-                value={selectedSizes}
-                onChange={(e) => setSelectedSizes(e.target.value)}
-                input={<OutlinedInput label="Request Sizes (tokens)" />}
-                renderValue={(selected) => (
-                  <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                    {selected.map((value) => (
-                      <Chip key={value} label={`${value / 1000}K`} size="small" />
+              {/* Request Sizes */}
+              <Grid item xs={12} sm={6} md={3}>
+                <FormControl fullWidth>
+                  <InputLabel>Request Sizes (tokens)</InputLabel>
+                  <Select
+                    multiple
+                    value={selectedSizes}
+                    onChange={(e) => setSelectedSizes(e.target.value)}
+                    input={<OutlinedInput label="Request Sizes (tokens)" />}
+                    renderValue={(selected) => (
+                      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                        {selected.map((value) => (
+                          <Chip key={value} label={`${value / 1000}K`} size="small" />
+                        ))}
+                      </Box>
+                    )}
+                  >
+                    {REQUEST_SIZES.map((size) => (
+                      <MenuItem key={size} value={size}>
+                        <Checkbox checked={selectedSizes.indexOf(size) > -1} />
+                        {size / 1000}K tokens
+                      </MenuItem>
                     ))}
-                  </Box>
-                )}
-              >
-                {REQUEST_SIZES.map((size) => (
-                  <MenuItem key={size} value={size}>
-                    <Checkbox checked={selectedSizes.indexOf(size) > -1} />
-                    {size / 1000}K tokens
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
+                  </Select>
+                </FormControl>
+              </Grid>
 
-            {/* Thinking Levels */}
-            <FormControl fullWidth sx={{ mb: 2 }}>
-              <InputLabel>Thinking Levels</InputLabel>
-              <Select
-                multiple
-                value={selectedLevels}
-                onChange={(e) => setSelectedLevels(e.target.value)}
-                input={<OutlinedInput label="Thinking Levels" />}
-                disabled={hasGemini3 && thinkingBudgets.trim()}
-                renderValue={(selected) => (
-                  <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                    {selected.map((value) => (
-                      <Chip key={value} label={value} size="small" />
+              {/* Thinking Levels */}
+              <Grid item xs={12} sm={6} md={3}>
+                <FormControl fullWidth>
+                  <InputLabel>Thinking Levels</InputLabel>
+                  <Select
+                    multiple
+                    value={selectedLevels}
+                    onChange={(e) => setSelectedLevels(e.target.value)}
+                    input={<OutlinedInput label="Thinking Levels" />}
+                    disabled={hasGemini3 && thinkingBudgets.trim()}
+                    renderValue={(selected) => (
+                      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                        {selected.map((value) => (
+                          <Chip key={value} label={value} size="small" />
+                        ))}
+                      </Box>
+                    )}
+                  >
+                    {THINKING_LEVELS.map((level) => (
+                      <MenuItem key={level} value={level}>
+                        <Checkbox checked={selectedLevels.indexOf(level) > -1} />
+                        {level}
+                      </MenuItem>
                     ))}
-                  </Box>
-                )}
-              >
-                {THINKING_LEVELS.map((level) => (
-                  <MenuItem key={level} value={level}>
-                    <Checkbox checked={selectedLevels.indexOf(level) > -1} />
-                    {level}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
+                  </Select>
+                </FormControl>
+              </Grid>
 
-            {/* Thinking Budgets */}
-            <TextField
-              label="Thinking Budgets (comma-separated)"
-              fullWidth
-              value={thinkingBudgets}
-              onChange={(e) => setThinkingBudgets(e.target.value)}
-              disabled={hasGemini3 && selectedLevels.length > 0}
-              helperText="Range varies by model: flash(1-24576), pro(128-32768), lite(512-24576). e.g., 512, 1000, 5000"
-              sx={{ mb: 2 }}
-            />
+              {/* Thinking Budgets */}
+              <Grid item xs={12} sm={6} md={3}>
+                <TextField
+                  label="Thinking Budgets"
+                  fullWidth
+                  value={thinkingBudgets}
+                  onChange={(e) => setThinkingBudgets(e.target.value)}
+                  disabled={hasGemini3 && selectedLevels.length > 0}
+                  helperText="e.g., 512, 1000, 5000"
+                />
+              </Grid>
 
-            {hasGemini3 && (
-              <Alert severity="warning" sx={{ mb: 2 }}>
-                Gemini 3.0 models: thinking levels and budgets are mutually exclusive
-              </Alert>
-            )}
+              {/* Iterations */}
+              <Grid item xs={12} sm={6} md={2}>
+                <TextField
+                  label="Iterations"
+                  type="number"
+                  fullWidth
+                  value={iterations}
+                  onChange={(e) => {
+                    const val = e.target.value
+                    setIterations(val === '' ? '' : parseInt(val) || 1)
+                  }}
+                  onBlur={(e) => {
+                    if (e.target.value === '' || parseInt(e.target.value) < 1) {
+                      setIterations(1)
+                    }
+                  }}
+                  InputProps={{ inputProps: { min: 1 } }}
+                />
+              </Grid>
 
-            {/* Iterations */}
-            <TextField
-              label="Iterations per Configuration"
-              type="number"
-              fullWidth
-              value={iterations}
-              onChange={(e) => {
-                const val = e.target.value
-                setIterations(val === '' ? '' : parseInt(val) || 1)
-              }}
-              onBlur={(e) => {
-                if (e.target.value === '' || parseInt(e.target.value) < 1) {
-                  setIterations(1)
-                }
-              }}
-              InputProps={{ inputProps: { min: 1 } }}
-              sx={{ mb: 2 }}
-            />
+              {/* Project */}
+              <Grid item xs={12} sm={6} md={3}>
+                <TextField
+                  label="GCP Project ID"
+                  fullWidth
+                  required
+                  value={project}
+                  onChange={(e) => setProject(e.target.value)}
+                />
+              </Grid>
 
-            {/* Cache */}
-            <FormControlLabel
-              control={<Checkbox checked={cacheEnabled} onChange={(e) => setCacheEnabled(e.target.checked)} />}
-              label="Enable Caching"
-              sx={{ mb: 2 }}
-            />
+              {/* Cache */}
+              <Grid item xs={12} sm={6} md={2}>
+                <FormControlLabel
+                  control={<Checkbox checked={cacheEnabled} onChange={(e) => setCacheEnabled(e.target.checked)} />}
+                  label="Enable Caching"
+                  sx={{ mt: 1 }}
+                />
+              </Grid>
 
-            {/* Project */}
-            <TextField
-              label="GCP Project ID"
-              fullWidth
-              required
-              value={project}
-              onChange={(e) => setProject(e.target.value)}
-              sx={{ mb: 2 }}
-            />
+              {/* Submit Button */}
+              <Grid item xs={12} md={5}>
+                <Button
+                  variant="contained"
+                  fullWidth
+                  size="large"
+                  onClick={handleSubmit}
+                  disabled={loading || !project || selectedModels.length === 0 || selectedSizes.length === 0}
+                >
+                  {loading ? <CircularProgress size={24} /> : 'Run Benchmark'}
+                </Button>
+              </Grid>
 
-            {/* Submit Button */}
-            <Button
-              variant="contained"
-              fullWidth
-              size="large"
-              onClick={handleSubmit}
-              disabled={loading || !project || selectedModels.length === 0 || selectedSizes.length === 0}
-            >
-              {loading ? <CircularProgress size={24} /> : 'Run Benchmark'}
-            </Button>
+              {hasGemini3 && (
+                <Grid item xs={12}>
+                  <Alert severity="warning">
+                    Gemini 3.0 models: thinking levels and budgets are mutually exclusive
+                  </Alert>
+                </Grid>
+              )}
 
-            {error && (
-              <Alert severity="error" sx={{ mt: 2 }}>
-                {error}
-              </Alert>
-            )}
+              {error && (
+                <Grid item xs={12}>
+                  <Alert severity="error">{error}</Alert>
+                </Grid>
+              )}
 
-            {success && (
-              <Alert severity="success" sx={{ mt: 2 }}>
-                {success}
-              </Alert>
-            )}
+              {success && (
+                <Grid item xs={12}>
+                  <Alert severity="success">{success}</Alert>
+                </Grid>
+              )}
+            </Grid>
           </Paper>
         </Grid>
 
-        {/* Right Panel - Results */}
-        <Grid item xs={12} md={6}>
+        {/* Results Panel - Full Width */}
+        <Grid item xs={12}>
           <Paper sx={{ p: 3 }}>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
               <Typography variant="h6">Results</Typography>
@@ -300,23 +311,26 @@ function PerformanceEvaluation() {
             </Box>
 
             {results ? (
-              <TableContainer>
-                <Table size="small">
+              <TableContainer sx={{ maxHeight: '600px', overflowX: 'auto' }}>
+                <Table size="small" stickyHeader>
                   <TableHead>
                     <TableRow>
-                      <TableCell>Model</TableCell>
-                      <TableCell>Size</TableCell>
-                      <TableCell>Level</TableCell>
-                      <TableCell>Budget</TableCell>
-                      <TableCell>Cache</TableCell>
-                      <TableCell>Median (ms)</TableCell>
-                      <TableCell>P90 (ms)</TableCell>
-                      <TableCell>P99 (ms)</TableCell>
+                      <TableCell sx={{ minWidth: 150 }}>Model</TableCell>
+                      <TableCell sx={{ minWidth: 80 }}>Size</TableCell>
+                      <TableCell sx={{ minWidth: 80 }}>Level</TableCell>
+                      <TableCell sx={{ minWidth: 80 }}>Budget</TableCell>
+                      <TableCell sx={{ minWidth: 70 }}>Cache</TableCell>
+                      <TableCell sx={{ minWidth: 100 }}>Median (ms)</TableCell>
+                      <TableCell sx={{ minWidth: 100 }}>P90 (ms)</TableCell>
+                      <TableCell sx={{ minWidth: 100 }}>P99 (ms)</TableCell>
+                      <TableCell sx={{ minWidth: 110 }}>Input Tokens</TableCell>
+                      <TableCell sx={{ minWidth: 120 }}>Cached Tokens</TableCell>
+                      <TableCell sx={{ minWidth: 120 }}>Output Tokens</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
                     {results.statistics.map((stat, index) => (
-                      <TableRow key={index}>
+                      <TableRow key={index} hover>
                         <TableCell>{stat.model}</TableCell>
                         <TableCell>{stat.request_size / 1000}K</TableCell>
                         <TableCell>{stat.thinking_level || '-'}</TableCell>
@@ -325,6 +339,9 @@ function PerformanceEvaluation() {
                         <TableCell>{stat.median_ttft_ms.toFixed(2)}</TableCell>
                         <TableCell>{stat.p90_ttft_ms.toFixed(2)}</TableCell>
                         <TableCell>{stat.p99_ttft_ms.toFixed(2)}</TableCell>
+                        <TableCell>{Math.round(stat.avg_input_tokens).toLocaleString()}</TableCell>
+                        <TableCell>{Math.round(stat.avg_cached_tokens).toLocaleString()}</TableCell>
+                        <TableCell>{Math.round(stat.avg_output_tokens).toLocaleString()}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>

@@ -25,7 +25,7 @@ class GeminiService:
             client = genai.Client(
                 vertexai=True,
                 project=project,
-                location=os.getenv("GOOGLE_CLOUD_LOCATION", "us-central1")
+                location=os.getenv("GOOGLE_CLOUD_LOCATION", "global")
             )
             return client
         except Exception as e:
@@ -97,7 +97,7 @@ class GeminiService:
         config_override: Optional[Dict[str, Any]] = None,
         multimodal_files: Optional[List[Dict[str, Any]]] = None
     ) -> Dict[str, Any]:
-        """Generate content using Gemini API"""
+        """Generate content using Gemini API with TTFT measurement"""
         try:
             client = self._get_client(project)
 
@@ -120,18 +120,41 @@ class GeminiService:
                 systemInstruction=system_inst
             )
 
-            # Generate content
-            response = await client.aio.models.generate_content(
+            # Measure TTFT using streaming mode
+            start_time = time.time()
+            first_token_time = None
+            usage_metadata = None
+            full_text = ""
+            all_candidates = []
+
+            # Use streaming to get accurate TTFT
+            stream = await client.aio.models.generate_content_stream(
                 model=model_name,
                 contents=contents,
                 config=config
             )
 
-            # Convert response to dict with proper None handling
-            usage_metadata = getattr(response, "usage_metadata", None)
+            async for chunk in stream:
+                # Capture time of first token
+                if first_token_time is None:
+                    first_token_time = time.time()
 
+                # Accumulate text
+                if hasattr(chunk, "text") and chunk.text:
+                    full_text += chunk.text
+
+                # Get usage metadata and candidates from the last chunk
+                if hasattr(chunk, "usage_metadata") and chunk.usage_metadata:
+                    usage_metadata = chunk.usage_metadata
+                if hasattr(chunk, "candidates") and chunk.candidates:
+                    all_candidates = chunk.candidates
+
+            # Calculate TTFT in milliseconds
+            ttft = (first_token_time - start_time) * 1000 if first_token_time else 0
+
+            # Convert response to dict with proper None handling
             result = {
-                "text": response.text if hasattr(response, "text") else "",
+                "text": full_text,
                 "candidates": [
                     {
                         "content": {
@@ -147,13 +170,14 @@ class GeminiService:
                             for rating in candidate.safety_ratings
                         ] if hasattr(candidate, "safety_ratings") and candidate.safety_ratings else []
                     }
-                    for candidate in response.candidates
-                ] if hasattr(response, "candidates") and response.candidates else [],
+                    for candidate in all_candidates
+                ] if all_candidates else [],
                 "usage_metadata": {
                     "prompt_token_count": getattr(usage_metadata, "prompt_token_count", 0) or 0,
                     "candidates_token_count": getattr(usage_metadata, "candidates_token_count", 0) or 0,
                     "total_token_count": getattr(usage_metadata, "total_token_count", 0) or 0,
-                }
+                },
+                "ttft_ms": ttft
             }
 
             return result
@@ -187,12 +211,16 @@ class GeminiService:
             system_instruction = request_data.get("system_instruction")
 
             # Build thinking config if needed
+            # Gemini 2.5: supports thinking_budget only
+            # Gemini 3.0: supports both thinking_level and thinking_budget (mutually exclusive)
             thinking_config = None
+            is_gemini_3 = "3.0" in model_name or "3-0" in model_name or "gemini-3" in model_name
+
             if thinking_level or thinking_budget:
                 thinking_config_params = {}
 
-                # Convert thinking level string to enum
-                if thinking_level:
+                # thinking_level is only supported by Gemini 3.0 models
+                if thinking_level and is_gemini_3:
                     level_map = {
                         "minimal": types.ThinkingLevel.MINIMAL,
                         "low": types.ThinkingLevel.LOW,
@@ -204,10 +232,12 @@ class GeminiService:
                         types.ThinkingLevel.MEDIUM
                     )
 
+                # thinking_budget is supported by both Gemini 2.5 and 3.0
                 if thinking_budget:
                     thinking_config_params["thinkingBudget"] = thinking_budget
 
-                thinking_config = types.ThinkingConfig(**thinking_config_params)
+                if thinking_config_params:
+                    thinking_config = types.ThinkingConfig(**thinking_config_params)
 
             # Build generation config with camelCase parameters
             config = types.GenerateContentConfig(
