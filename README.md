@@ -150,10 +150,12 @@ The frontend application will be available at `http://localhost:3000`
    - Expected output folder (folder_B)
    - Output folder (optional, defaults to `{folder_A}_output_{timestamp}`)
 3. Configure model, project ID, and iterations
-4. Click "Process Request" to see file mappings
+4. Click "Submit Batch" to view file mappings
 5. Review the mapping table (red "no mapping" indicates missing expected outputs)
-6. Click "Submit Batch" to process all files
-7. View results summary with success/failure counts
+6. Click "Start Evaluation" to process all files
+7. View results summary with similarity scores and pass/fail status
+8. Click "Save Result" to export evaluation results
+9. (Optional) Use "Load Result" to review previously saved evaluation results
 
 **Note**: Maximum 10 files per batch. Errors are saved to respective output files.
 
