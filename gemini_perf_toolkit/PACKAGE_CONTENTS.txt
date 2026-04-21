@@ -1,0 +1,81 @@
+================================================================================
+GEMINI PERFORMANCE TESTING TOOLKIT - COMPLETE PACKAGE
+================================================================================
+
+📁 gemini_perf_toolkit/
+
+CORE PROGRAMS (5 files)
+-----------------------
+✓ gemini_perf_test.py           - Single performance test
+✓ gemini_perf_controller.py     - Batch test controller  
+✓ setup.sh                       - Automated environment setup
+✓ run_comprehensive_test.sh     - Run full test suite (direct execution)
+✓ run_in_screen.sh              - Run tests in screen session (background)
+
+DOCUMENTATION (8 files)
+-----------------------
+✓ README.md                      - Toolkit overview (START HERE)
+✓ RUN_TESTS.md                   - How to run tests (QUICK START)
+✓ VM_DEPLOYMENT_README.md        - Complete deployment guide with examples
+✓ QUICKSTART_VM.md               - 5-minute quick start for Debian 12
+✓ SETUP_GUIDE.md                 - Detailed step-by-step instructions
+✓ DEPLOYMENT_CHECKLIST.md        - Verification checklist
+✓ DEPLOYMENT_PACKAGE_SUMMARY.txt - Quick reference
+✓ PACKAGE_CONTENTS.txt           - This file
+
+BENCHMARK DATA (6 files)
+------------------------
+✓ benchmark/request_1k.json      - ~1,000 token request
+✓ benchmark/request_2k.json      - ~2,000 token request
+✓ benchmark/request_5k.json      - ~5,000 token request
+✓ benchmark/request_10k.json     - ~10,000 token request
+✓ benchmark/request_50k.json     - ~50,000 token request
+✓ benchmark/request_100k.json    - ~100,000 token request
+
+SAMPLE RESULTS (4 files)
+------------------------
+✓ test_results_20260401_145808/
+  - perf_results_20260401_145808.csv                           (CSV output)
+  - gemini-3-flash-preview_request_1k_level_minimal_*.json     (JSON result)
+  - gemini-3-flash-preview_request_1k_*.json                   (JSON result)
+  - perf_test_20260401_145808.log                              (Execution log)
+
+================================================================================
+TOTAL: 23 FILES
+================================================================================
+
+FEATURES
+--------
+✓ P50/P90/P95/P99 percentile metrics
+✓ Traffic Type tracking (ON_DEMAND vs PROVISIONED_THROUGHPUT)
+✓ Thinking config support (levels for Gemini 3.x, budgets for Gemini 2.x)
+✓ CSV and JSON output formats
+✓ Comprehensive logging
+✓ Automated setup script for Debian 12
+✓ Pre-configured comprehensive test script
+✓ Screen session support for background execution
+
+READY TO USE
+------------
+This is a complete, self-contained toolkit. Everything needed to run
+performance tests on Gemini models is included.
+
+QUICK START
+-----------
+1. Read: README.md
+2. Setup: bash setup.sh (on Debian 12 VM)
+3. Run tests: ./run_in_screen.sh (recommended)
+   OR: ./run_comprehensive_test.sh (foreground)
+   OR: See RUN_TESTS.md for custom tests
+
+COMPREHENSIVE TEST
+------------------
+The included run_comprehensive_test.sh script runs:
+- 2 models (gemini-3-flash-preview, gemini-2.5-flash)
+- 4 request sizes (1k, 2k, 5k, 10k tokens)
+- 12 thinking configs (4 levels + 8 budgets)
+- 10 iterations per test
+- ~96 total test combinations
+- Estimated 2-4 hours
+
+================================================================================
