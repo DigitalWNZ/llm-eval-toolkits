@@ -1,0 +1,96 @@
+{
+  "model": "claude-opus-4-6",
+  "effort": "low",
+  "request_file": "/home/wangez/slow_request_60s_claude.json",
+  "project": "cloud-llm-preview1",
+  "region": "global",
+  "iterations": 10,
+  "all_metrics": [
+    {
+      "response_time_ms": 4059.0,
+      "input_tokens": 57242,
+      "output_tokens": 214,
+      "stop_reason": "tool_use"
+    },
+    {
+      "response_time_ms": 4356.11,
+      "input_tokens": 57242,
+      "output_tokens": 160,
+      "stop_reason": "tool_use"
+    },
+    {
+      "response_time_ms": 8400.12,
+      "input_tokens": 57242,
+      "output_tokens": 152,
+      "stop_reason": "tool_use"
+    },
+    {
+      "response_time_ms": 2306.06,
+      "input_tokens": 57242,
+      "output_tokens": 92,
+      "stop_reason": "tool_use"
+    },
+    {
+      "response_time_ms": 3326.11,
+      "input_tokens": 57242,
+      "output_tokens": 134,
+      "stop_reason": "tool_use"
+    },
+    {
+      "response_time_ms": 5595.92,
+      "input_tokens": 57242,
+      "output_tokens": 213,
+      "stop_reason": "tool_use"
+    },
+    {
+      "response_time_ms": 4123.77,
+      "input_tokens": 57242,
+      "output_tokens": 211,
+      "stop_reason": "tool_use"
+    },
+    {
+      "response_time_ms": 2820.34,
+      "input_tokens": 57242,
+      "output_tokens": 92,
+      "stop_reason": "tool_use"
+    },
+    {
+      "response_time_ms": 3154.25,
+      "input_tokens": 57242,
+      "output_tokens": 149,
+      "stop_reason": "tool_use"
+    },
+    {
+      "response_time_ms": 5054.36,
+      "input_tokens": 57242,
+      "output_tokens": 149,
+      "stop_reason": "tool_use"
+    }
+  ],
+  "statistics": {
+    "response_time_ms": {
+      "min": 2306.06,
+      "max": 8400.12,
+      "p50": 4091.385,
+      "p90": 5876.339999999999,
+      "p95": 7138.229999999998,
+      "p99": 8147.742000000001
+    },
+    "input_tokens": {
+      "min": 57242,
+      "max": 57242,
+      "p50": 57242.0,
+      "p90": 57242.0,
+      "p95": 57242.0,
+      "p99": 57242.0
+    },
+    "output_tokens": {
+      "min": 92,
+      "max": 214,
+      "p50": 150.5,
+      "p90": 213.1,
+      "p95": 213.55,
+      "p99": 213.91
+    }
+  }
+}

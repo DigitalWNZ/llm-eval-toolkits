@@ -1,0 +1,96 @@
+{
+  "model": "claude-sonnet-4-6",
+  "effort": "medium",
+  "request_file": "/home/wangez/slow_request_60s_claude.json",
+  "project": "cloud-llm-preview1",
+  "region": "global",
+  "iterations": 10,
+  "all_metrics": [
+    {
+      "response_time_ms": 2038.8,
+      "input_tokens": 45065,
+      "output_tokens": 92,
+      "stop_reason": "tool_use"
+    },
+    {
+      "response_time_ms": 4425.1,
+      "input_tokens": 45065,
+      "output_tokens": 227,
+      "stop_reason": "tool_use"
+    },
+    {
+      "response_time_ms": 6383.51,
+      "input_tokens": 45065,
+      "output_tokens": 202,
+      "stop_reason": "tool_use"
+    },
+    {
+      "response_time_ms": 1865.14,
+      "input_tokens": 45065,
+      "output_tokens": 55,
+      "stop_reason": "tool_use"
+    },
+    {
+      "response_time_ms": 2246.27,
+      "input_tokens": 45065,
+      "output_tokens": 72,
+      "stop_reason": "tool_use"
+    },
+    {
+      "response_time_ms": 2037.82,
+      "input_tokens": 45065,
+      "output_tokens": 92,
+      "stop_reason": "tool_use"
+    },
+    {
+      "response_time_ms": 7969.88,
+      "input_tokens": 45065,
+      "output_tokens": 264,
+      "stop_reason": "tool_use"
+    },
+    {
+      "response_time_ms": 1816.53,
+      "input_tokens": 45065,
+      "output_tokens": 92,
+      "stop_reason": "tool_use"
+    },
+    {
+      "response_time_ms": 2526.57,
+      "input_tokens": 45065,
+      "output_tokens": 92,
+      "stop_reason": "tool_use"
+    },
+    {
+      "response_time_ms": 2019.04,
+      "input_tokens": 45065,
+      "output_tokens": 92,
+      "stop_reason": "tool_use"
+    }
+  ],
+  "statistics": {
+    "response_time_ms": {
+      "min": 1816.53,
+      "max": 7969.88,
+      "p50": 2142.535,
+      "p90": 6542.147,
+      "p95": 7256.013499999999,
+      "p99": 7827.1067
+    },
+    "input_tokens": {
+      "min": 45065,
+      "max": 45065,
+      "p50": 45065.0,
+      "p90": 45065.0,
+      "p95": 45065.0,
+      "p99": 45065.0
+    },
+    "output_tokens": {
+      "min": 55,
+      "max": 264,
+      "p50": 92.0,
+      "p90": 230.7,
+      "p95": 247.34999999999997,
+      "p99": 260.67
+    }
+  }
+}

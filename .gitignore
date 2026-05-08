@@ -40,6 +40,9 @@ dist/
 # Logs
 *.log
 logs/
+!gemini_perf_toolkit/logs/
+!gemini_perf_toolkit/logs/*.log
+!claude_perf_toolkit/
 
 # Test and Coverage
 .coverage
@@ -60,6 +63,8 @@ backend/data/output/
 
 # CSV files (performance results)
 *.csv
+!gemini_perf_toolkit/perf_results_*.csv
+!claude_perf_toolkit/**/*.csv
 
 # Batch evaluation test data (optional - comment out if you want to include test data)
 batch_eval_test/

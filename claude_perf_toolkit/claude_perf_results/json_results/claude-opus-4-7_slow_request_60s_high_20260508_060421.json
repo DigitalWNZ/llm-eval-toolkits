@@ -1,0 +1,42 @@
+{
+  "model": "claude-opus-4-7",
+  "effort": "high",
+  "request_file": "/home/wangez/slow_request_60s_claude.json",
+  "project": "cloud-llm-preview1",
+  "region": "global",
+  "iterations": 1,
+  "all_metrics": [
+    {
+      "response_time_ms": 2490.06,
+      "input_tokens": 60554,
+      "output_tokens": 79,
+      "stop_reason": "tool_use"
+    }
+  ],
+  "statistics": {
+    "response_time_ms": {
+      "min": 2490.06,
+      "max": 2490.06,
+      "p50": 2490.06,
+      "p90": 2490.06,
+      "p95": 2490.06,
+      "p99": 2490.06
+    },
+    "input_tokens": {
+      "min": 60554,
+      "max": 60554,
+      "p50": 60554.0,
+      "p90": 60554.0,
+      "p95": 60554.0,
+      "p99": 60554.0
+    },
+    "output_tokens": {
+      "min": 79,
+      "max": 79,
+      "p50": 79.0,
+      "p90": 79.0,
+      "p95": 79.0,
+      "p99": 79.0
+    }
+  }
+}

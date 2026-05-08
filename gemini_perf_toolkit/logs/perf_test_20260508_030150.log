@@ -1,0 +1,442 @@
+2026-05-08 03:01:50 - INFO - ====================================================================================================
+2026-05-08 03:01:50 - INFO - GEMINI PERFORMANCE TEST CONTROLLER
+2026-05-08 03:01:50 - INFO - ====================================================================================================
+2026-05-08 03:01:50 - INFO - Run ID: 20260508_030150
+2026-05-08 03:01:50 - INFO - Models: gemini-3.1-pro-preview, gemini-3-flash-preview, gemini-3.1-flash-lite
+2026-05-08 03:01:50 - INFO - Request Files: /home/wangez/slow_request_40s.json, /home/wangez/slow_request_60s.json
+2026-05-08 03:01:50 - INFO - Project: cloud-llm-preview1
+2026-05-08 03:01:50 - INFO - Location: global
+2026-05-08 03:01:50 - INFO - Iterations: 1
+2026-05-08 03:01:50 - INFO - Thinking Levels (Gemini 3.x): minimal, low, medium, high
+2026-05-08 03:01:50 - INFO - ====================================================================================================
+2026-05-08 03:01:50 - INFO - 
+Total test combinations: 30
+
+2026-05-08 03:01:50 - INFO - ====================================================================================================
+2026-05-08 03:01:50 - INFO - Test 1/30
+2026-05-08 03:01:50 - INFO -   Model: gemini-3.1-pro-preview
+2026-05-08 03:01:50 - INFO -   Request File: /home/wangez/slow_request_40s.json
+2026-05-08 03:01:50 - INFO -   Thinking Level: minimal
+2026-05-08 03:01:50 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:01:50 - INFO - Running 1 iterations...
+2026-05-08 03:01:50 - INFO -   Iteration 1/1...
+2026-05-08 03:01:51 - ERROR -     ✗ Error: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Unable to submit request because thinking_level MINIMAL is not supported by this model. Learn more: https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/gemini', 'status': 'INVALID_ARGUMENT'}}
+2026-05-08 03:01:51 - ERROR - ✗ Test 1 failed: All iterations failed
+2026-05-08 03:01:51 - ERROR - Traceback (most recent call last):
+  File "/home/wangez/gemini-perf-test/gemini_perf_controller.py", line 533, in main
+    result = await run_performance_test(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wangez/gemini-perf-test/gemini_perf_controller.py", line 212, in run_performance_test
+    raise RuntimeError("All iterations failed")
+RuntimeError: All iterations failed
+
+2026-05-08 03:01:51 - INFO - 
+2026-05-08 03:01:51 - INFO - ====================================================================================================
+2026-05-08 03:01:51 - INFO - Test 2/30
+2026-05-08 03:01:51 - INFO -   Model: gemini-3.1-pro-preview
+2026-05-08 03:01:51 - INFO -   Request File: /home/wangez/slow_request_40s.json
+2026-05-08 03:01:51 - INFO -   Thinking Level: low
+2026-05-08 03:01:51 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:01:51 - INFO - Running 1 iterations...
+2026-05-08 03:01:51 - INFO -   Iteration 1/1...
+2026-05-08 03:02:41 - INFO -     ✓ TTFT: 49955.79ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:02:41 - INFO - ✓ Test 2 completed successfully
+2026-05-08 03:02:41 - INFO -   TTFT P50: 49955.79ms
+2026-05-08 03:02:41 - INFO -   Output Tokens P50: 320
+2026-05-08 03:02:41 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:02:41 - INFO - 
+2026-05-08 03:02:41 - INFO - ====================================================================================================
+2026-05-08 03:02:41 - INFO - Test 3/30
+2026-05-08 03:02:41 - INFO -   Model: gemini-3.1-pro-preview
+2026-05-08 03:02:41 - INFO -   Request File: /home/wangez/slow_request_40s.json
+2026-05-08 03:02:41 - INFO -   Thinking Level: medium
+2026-05-08 03:02:41 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:02:41 - INFO - Running 1 iterations...
+2026-05-08 03:02:41 - INFO -   Iteration 1/1...
+2026-05-08 03:03:03 - INFO -     ✓ TTFT: 21908.77ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:03:03 - INFO - ✓ Test 3 completed successfully
+2026-05-08 03:03:03 - INFO -   TTFT P50: 21908.77ms
+2026-05-08 03:03:03 - INFO -   Output Tokens P50: 28
+2026-05-08 03:03:03 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:03:03 - INFO - 
+2026-05-08 03:03:03 - INFO - ====================================================================================================
+2026-05-08 03:03:03 - INFO - Test 4/30
+2026-05-08 03:03:03 - INFO -   Model: gemini-3.1-pro-preview
+2026-05-08 03:03:03 - INFO -   Request File: /home/wangez/slow_request_40s.json
+2026-05-08 03:03:03 - INFO -   Thinking Level: high
+2026-05-08 03:03:03 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:03:03 - INFO - Running 1 iterations...
+2026-05-08 03:03:03 - INFO -   Iteration 1/1...
+2026-05-08 03:04:14 - INFO -     ✓ TTFT: 70369.72ms, Traffic Type: TrafficType.ON_DEMAND
+2026-05-08 03:04:14 - INFO - ✓ Test 4 completed successfully
+2026-05-08 03:04:14 - INFO -   TTFT P50: 70369.72ms
+2026-05-08 03:04:14 - INFO -   Output Tokens P50: 16
+2026-05-08 03:04:14 - INFO -   Traffic Type: TrafficType.ON_DEMAND
+2026-05-08 03:04:14 - INFO - 
+2026-05-08 03:04:14 - INFO - ====================================================================================================
+2026-05-08 03:04:14 - INFO - Test 5/30
+2026-05-08 03:04:14 - INFO -   Model: gemini-3.1-pro-preview
+2026-05-08 03:04:14 - INFO -   Request File: /home/wangez/slow_request_40s.json
+2026-05-08 03:04:14 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:04:14 - INFO - Running 1 iterations...
+2026-05-08 03:04:14 - INFO -   Iteration 1/1...
+2026-05-08 03:05:01 - INFO -     ✓ TTFT: 47082.98ms, Traffic Type: TrafficType.ON_DEMAND
+2026-05-08 03:05:01 - INFO - ✓ Test 5 completed successfully
+2026-05-08 03:05:01 - INFO -   TTFT P50: 47082.98ms
+2026-05-08 03:05:01 - INFO -   Output Tokens P50: 117
+2026-05-08 03:05:01 - INFO -   Traffic Type: TrafficType.ON_DEMAND
+2026-05-08 03:05:01 - INFO - 
+2026-05-08 03:05:01 - INFO - ====================================================================================================
+2026-05-08 03:05:01 - INFO - Test 6/30
+2026-05-08 03:05:01 - INFO -   Model: gemini-3.1-pro-preview
+2026-05-08 03:05:01 - INFO -   Request File: /home/wangez/slow_request_60s.json
+2026-05-08 03:05:01 - INFO -   Thinking Level: minimal
+2026-05-08 03:05:01 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:05:01 - INFO - Running 1 iterations...
+2026-05-08 03:05:01 - INFO -   Iteration 1/1...
+2026-05-08 03:05:02 - ERROR -     ✗ Error: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Unable to submit request because thinking_level MINIMAL is not supported by this model. Learn more: https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/gemini', 'status': 'INVALID_ARGUMENT'}}
+2026-05-08 03:05:02 - ERROR - ✗ Test 6 failed: All iterations failed
+2026-05-08 03:05:02 - ERROR - Traceback (most recent call last):
+  File "/home/wangez/gemini-perf-test/gemini_perf_controller.py", line 533, in main
+    result = await run_performance_test(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wangez/gemini-perf-test/gemini_perf_controller.py", line 212, in run_performance_test
+    raise RuntimeError("All iterations failed")
+RuntimeError: All iterations failed
+
+2026-05-08 03:05:02 - INFO - 
+2026-05-08 03:05:02 - INFO - ====================================================================================================
+2026-05-08 03:05:02 - INFO - Test 7/30
+2026-05-08 03:05:02 - INFO -   Model: gemini-3.1-pro-preview
+2026-05-08 03:05:02 - INFO -   Request File: /home/wangez/slow_request_60s.json
+2026-05-08 03:05:02 - INFO -   Thinking Level: low
+2026-05-08 03:05:02 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:05:02 - INFO - Running 1 iterations...
+2026-05-08 03:05:02 - INFO -   Iteration 1/1...
+2026-05-08 03:05:07 - INFO -     ✓ TTFT: 4495.33ms, Traffic Type: TrafficType.ON_DEMAND
+2026-05-08 03:05:07 - INFO - ✓ Test 7 completed successfully
+2026-05-08 03:05:07 - INFO -   TTFT P50: 4495.33ms
+2026-05-08 03:05:07 - INFO -   Output Tokens P50: 161
+2026-05-08 03:05:07 - INFO -   Traffic Type: TrafficType.ON_DEMAND
+2026-05-08 03:05:07 - INFO - 
+2026-05-08 03:05:07 - INFO - ====================================================================================================
+2026-05-08 03:05:07 - INFO - Test 8/30
+2026-05-08 03:05:07 - INFO -   Model: gemini-3.1-pro-preview
+2026-05-08 03:05:07 - INFO -   Request File: /home/wangez/slow_request_60s.json
+2026-05-08 03:05:07 - INFO -   Thinking Level: medium
+2026-05-08 03:05:07 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:05:07 - INFO - Running 1 iterations...
+2026-05-08 03:05:07 - INFO -   Iteration 1/1...
+2026-05-08 03:05:21 - INFO -     ✓ TTFT: 13992.34ms, Traffic Type: TrafficType.ON_DEMAND
+2026-05-08 03:05:21 - INFO - ✓ Test 8 completed successfully
+2026-05-08 03:05:21 - INFO -   TTFT P50: 13992.34ms
+2026-05-08 03:05:21 - INFO -   Output Tokens P50: 1803
+2026-05-08 03:05:21 - INFO -   Traffic Type: TrafficType.ON_DEMAND
+2026-05-08 03:05:21 - INFO - 
+2026-05-08 03:05:21 - INFO - ====================================================================================================
+2026-05-08 03:05:21 - INFO - Test 9/30
+2026-05-08 03:05:21 - INFO -   Model: gemini-3.1-pro-preview
+2026-05-08 03:05:21 - INFO -   Request File: /home/wangez/slow_request_60s.json
+2026-05-08 03:05:21 - INFO -   Thinking Level: high
+2026-05-08 03:05:21 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:05:21 - INFO - Running 1 iterations...
+2026-05-08 03:05:21 - INFO -   Iteration 1/1...
+2026-05-08 03:05:36 - INFO -     ✓ TTFT: 14665.88ms, Traffic Type: TrafficType.ON_DEMAND
+2026-05-08 03:05:36 - INFO - ✓ Test 9 completed successfully
+2026-05-08 03:05:36 - INFO -   TTFT P50: 14665.88ms
+2026-05-08 03:05:36 - INFO -   Output Tokens P50: 1600
+2026-05-08 03:05:36 - INFO -   Traffic Type: TrafficType.ON_DEMAND
+2026-05-08 03:05:36 - INFO - 
+2026-05-08 03:05:36 - INFO - ====================================================================================================
+2026-05-08 03:05:36 - INFO - Test 10/30
+2026-05-08 03:05:36 - INFO -   Model: gemini-3.1-pro-preview
+2026-05-08 03:05:36 - INFO -   Request File: /home/wangez/slow_request_60s.json
+2026-05-08 03:05:36 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:05:36 - INFO - Running 1 iterations...
+2026-05-08 03:05:36 - INFO -   Iteration 1/1...
+2026-05-08 03:05:50 - INFO -     ✓ TTFT: 12901.60ms, Traffic Type: TrafficType.ON_DEMAND
+2026-05-08 03:05:50 - INFO - ✓ Test 10 completed successfully
+2026-05-08 03:05:50 - INFO -   TTFT P50: 12901.60ms
+2026-05-08 03:05:50 - INFO -   Output Tokens P50: 1580
+2026-05-08 03:05:50 - INFO -   Traffic Type: TrafficType.ON_DEMAND
+2026-05-08 03:05:50 - INFO - 
+2026-05-08 03:05:50 - INFO - ====================================================================================================
+2026-05-08 03:05:50 - INFO - Test 11/30
+2026-05-08 03:05:50 - INFO -   Model: gemini-3-flash-preview
+2026-05-08 03:05:50 - INFO -   Request File: /home/wangez/slow_request_40s.json
+2026-05-08 03:05:50 - INFO -   Thinking Level: minimal
+2026-05-08 03:05:50 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:05:50 - INFO - Running 1 iterations...
+2026-05-08 03:05:50 - INFO -   Iteration 1/1...
+2026-05-08 03:06:28 - INFO -     ✓ TTFT: 37795.94ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:06:28 - INFO - ✓ Test 11 completed successfully
+2026-05-08 03:06:28 - INFO -   TTFT P50: 37795.94ms
+2026-05-08 03:06:28 - INFO -   Output Tokens P50: 31
+2026-05-08 03:06:28 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:06:28 - INFO - 
+2026-05-08 03:06:28 - INFO - ====================================================================================================
+2026-05-08 03:06:28 - INFO - Test 12/30
+2026-05-08 03:06:28 - INFO -   Model: gemini-3-flash-preview
+2026-05-08 03:06:28 - INFO -   Request File: /home/wangez/slow_request_40s.json
+2026-05-08 03:06:28 - INFO -   Thinking Level: low
+2026-05-08 03:06:28 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:06:28 - INFO - Running 1 iterations...
+2026-05-08 03:06:28 - INFO -   Iteration 1/1...
+2026-05-08 03:06:38 - INFO -     ✓ TTFT: 3060.45ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:06:38 - INFO - ✓ Test 12 completed successfully
+2026-05-08 03:06:38 - INFO -   TTFT P50: 3060.45ms
+2026-05-08 03:06:38 - INFO -   Output Tokens P50: 1360
+2026-05-08 03:06:38 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:06:38 - INFO - 
+2026-05-08 03:06:38 - INFO - ====================================================================================================
+2026-05-08 03:06:38 - INFO - Test 13/30
+2026-05-08 03:06:38 - INFO -   Model: gemini-3-flash-preview
+2026-05-08 03:06:38 - INFO -   Request File: /home/wangez/slow_request_40s.json
+2026-05-08 03:06:38 - INFO -   Thinking Level: medium
+2026-05-08 03:06:38 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:06:38 - INFO - Running 1 iterations...
+2026-05-08 03:06:38 - INFO -   Iteration 1/1...
+2026-05-08 03:07:22 - INFO -     ✓ TTFT: 37967.41ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:07:22 - INFO - ✓ Test 13 completed successfully
+2026-05-08 03:07:22 - INFO -   TTFT P50: 37967.41ms
+2026-05-08 03:07:22 - INFO -   Output Tokens P50: 1021
+2026-05-08 03:07:22 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:07:22 - INFO - 
+2026-05-08 03:07:22 - INFO - ====================================================================================================
+2026-05-08 03:07:22 - INFO - Test 14/30
+2026-05-08 03:07:22 - INFO -   Model: gemini-3-flash-preview
+2026-05-08 03:07:22 - INFO -   Request File: /home/wangez/slow_request_40s.json
+2026-05-08 03:07:22 - INFO -   Thinking Level: high
+2026-05-08 03:07:22 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:07:22 - INFO - Running 1 iterations...
+2026-05-08 03:07:22 - INFO -   Iteration 1/1...
+2026-05-08 03:07:55 - INFO -     ✓ TTFT: 32473.34ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:07:55 - INFO - ✓ Test 14 completed successfully
+2026-05-08 03:07:55 - INFO -   TTFT P50: 32473.34ms
+2026-05-08 03:07:55 - INFO -   Output Tokens P50: 27
+2026-05-08 03:07:55 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:07:55 - INFO - 
+2026-05-08 03:07:55 - INFO - ====================================================================================================
+2026-05-08 03:07:55 - INFO - Test 15/30
+2026-05-08 03:07:55 - INFO -   Model: gemini-3-flash-preview
+2026-05-08 03:07:55 - INFO -   Request File: /home/wangez/slow_request_40s.json
+2026-05-08 03:07:55 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:07:55 - INFO - Running 1 iterations...
+2026-05-08 03:07:55 - INFO -   Iteration 1/1...
+2026-05-08 03:08:32 - INFO -     ✓ TTFT: 37259.80ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:08:32 - INFO - ✓ Test 15 completed successfully
+2026-05-08 03:08:32 - INFO -   TTFT P50: 37259.80ms
+2026-05-08 03:08:32 - INFO -   Output Tokens P50: 31
+2026-05-08 03:08:32 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:08:32 - INFO - 
+2026-05-08 03:08:32 - INFO - ====================================================================================================
+2026-05-08 03:08:32 - INFO - Test 16/30
+2026-05-08 03:08:32 - INFO -   Model: gemini-3-flash-preview
+2026-05-08 03:08:32 - INFO -   Request File: /home/wangez/slow_request_60s.json
+2026-05-08 03:08:32 - INFO -   Thinking Level: minimal
+2026-05-08 03:08:32 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:08:32 - INFO - Running 1 iterations...
+2026-05-08 03:08:32 - INFO -   Iteration 1/1...
+2026-05-08 03:08:43 - INFO -     ✓ TTFT: 11160.45ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:08:43 - INFO - ✓ Test 16 completed successfully
+2026-05-08 03:08:43 - INFO -   TTFT P50: 11160.45ms
+2026-05-08 03:08:43 - INFO -   Output Tokens P50: 1980
+2026-05-08 03:08:43 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:08:44 - INFO - 
+2026-05-08 03:08:44 - INFO - ====================================================================================================
+2026-05-08 03:08:44 - INFO - Test 17/30
+2026-05-08 03:08:44 - INFO -   Model: gemini-3-flash-preview
+2026-05-08 03:08:44 - INFO -   Request File: /home/wangez/slow_request_60s.json
+2026-05-08 03:08:44 - INFO -   Thinking Level: low
+2026-05-08 03:08:44 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:08:44 - INFO - Running 1 iterations...
+2026-05-08 03:08:44 - INFO -   Iteration 1/1...
+2026-05-08 03:08:58 - INFO -     ✓ TTFT: 14654.73ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:08:58 - INFO - ✓ Test 17 completed successfully
+2026-05-08 03:08:58 - INFO -   TTFT P50: 14654.73ms
+2026-05-08 03:08:58 - INFO -   Output Tokens P50: 2120
+2026-05-08 03:08:58 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:08:58 - INFO - 
+2026-05-08 03:08:58 - INFO - ====================================================================================================
+2026-05-08 03:08:58 - INFO - Test 18/30
+2026-05-08 03:08:58 - INFO -   Model: gemini-3-flash-preview
+2026-05-08 03:08:58 - INFO -   Request File: /home/wangez/slow_request_60s.json
+2026-05-08 03:08:58 - INFO -   Thinking Level: medium
+2026-05-08 03:08:58 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:08:59 - INFO - Running 1 iterations...
+2026-05-08 03:08:59 - INFO -   Iteration 1/1...
+2026-05-08 03:09:09 - INFO -     ✓ TTFT: 10580.69ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:09:09 - INFO - ✓ Test 18 completed successfully
+2026-05-08 03:09:09 - INFO -   TTFT P50: 10580.69ms
+2026-05-08 03:09:09 - INFO -   Output Tokens P50: 988
+2026-05-08 03:09:09 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:09:09 - INFO - 
+2026-05-08 03:09:09 - INFO - ====================================================================================================
+2026-05-08 03:09:09 - INFO - Test 19/30
+2026-05-08 03:09:09 - INFO -   Model: gemini-3-flash-preview
+2026-05-08 03:09:09 - INFO -   Request File: /home/wangez/slow_request_60s.json
+2026-05-08 03:09:09 - INFO -   Thinking Level: high
+2026-05-08 03:09:09 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:09:09 - INFO - Running 1 iterations...
+2026-05-08 03:09:09 - INFO -   Iteration 1/1...
+2026-05-08 03:09:24 - INFO -     ✓ TTFT: 14166.35ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:09:24 - INFO - ✓ Test 19 completed successfully
+2026-05-08 03:09:24 - INFO -   TTFT P50: 14166.35ms
+2026-05-08 03:09:24 - INFO -   Output Tokens P50: 1865
+2026-05-08 03:09:24 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:09:24 - INFO - 
+2026-05-08 03:09:24 - INFO - ====================================================================================================
+2026-05-08 03:09:24 - INFO - Test 20/30
+2026-05-08 03:09:24 - INFO -   Model: gemini-3-flash-preview
+2026-05-08 03:09:24 - INFO -   Request File: /home/wangez/slow_request_60s.json
+2026-05-08 03:09:24 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:09:24 - INFO - Running 1 iterations...
+2026-05-08 03:09:24 - INFO -   Iteration 1/1...
+2026-05-08 03:09:35 - INFO -     ✓ TTFT: 10523.42ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:09:35 - INFO - ✓ Test 20 completed successfully
+2026-05-08 03:09:35 - INFO -   TTFT P50: 10523.42ms
+2026-05-08 03:09:35 - INFO -   Output Tokens P50: 1045
+2026-05-08 03:09:35 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:09:35 - INFO - 
+2026-05-08 03:09:35 - INFO - ====================================================================================================
+2026-05-08 03:09:35 - INFO - Test 21/30
+2026-05-08 03:09:35 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-08 03:09:35 - INFO -   Request File: /home/wangez/slow_request_40s.json
+2026-05-08 03:09:35 - INFO -   Thinking Level: minimal
+2026-05-08 03:09:35 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:09:35 - INFO - Running 1 iterations...
+2026-05-08 03:09:35 - INFO -   Iteration 1/1...
+2026-05-08 03:10:15 - INFO -     ✓ TTFT: 37456.44ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:10:15 - INFO - ✓ Test 21 completed successfully
+2026-05-08 03:10:15 - INFO -   TTFT P50: 37456.44ms
+2026-05-08 03:10:15 - INFO -   Output Tokens P50: 835
+2026-05-08 03:10:15 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:10:15 - INFO - 
+2026-05-08 03:10:15 - INFO - ====================================================================================================
+2026-05-08 03:10:15 - INFO - Test 22/30
+2026-05-08 03:10:15 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-08 03:10:15 - INFO -   Request File: /home/wangez/slow_request_40s.json
+2026-05-08 03:10:15 - INFO -   Thinking Level: low
+2026-05-08 03:10:15 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:10:15 - INFO - Running 1 iterations...
+2026-05-08 03:10:15 - INFO -   Iteration 1/1...
+2026-05-08 03:10:39 - INFO -     ✓ TTFT: 20168.30ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:10:39 - INFO - ✓ Test 22 completed successfully
+2026-05-08 03:10:39 - INFO -   TTFT P50: 20168.30ms
+2026-05-08 03:10:39 - INFO -   Output Tokens P50: 1245
+2026-05-08 03:10:39 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:10:39 - INFO - 
+2026-05-08 03:10:39 - INFO - ====================================================================================================
+2026-05-08 03:10:39 - INFO - Test 23/30
+2026-05-08 03:10:39 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-08 03:10:39 - INFO -   Request File: /home/wangez/slow_request_40s.json
+2026-05-08 03:10:39 - INFO -   Thinking Level: medium
+2026-05-08 03:10:39 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:10:39 - INFO - Running 1 iterations...
+2026-05-08 03:10:39 - INFO -   Iteration 1/1...
+2026-05-08 03:10:44 - INFO -     ✓ TTFT: 2031.91ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:10:44 - INFO - ✓ Test 23 completed successfully
+2026-05-08 03:10:44 - INFO -   TTFT P50: 2031.91ms
+2026-05-08 03:10:44 - INFO -   Output Tokens P50: 829
+2026-05-08 03:10:44 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:10:44 - INFO - 
+2026-05-08 03:10:44 - INFO - ====================================================================================================
+2026-05-08 03:10:44 - INFO - Test 24/30
+2026-05-08 03:10:44 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-08 03:10:44 - INFO -   Request File: /home/wangez/slow_request_40s.json
+2026-05-08 03:10:44 - INFO -   Thinking Level: high
+2026-05-08 03:10:44 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:10:44 - INFO - Running 1 iterations...
+2026-05-08 03:10:44 - INFO -   Iteration 1/1...
+2026-05-08 03:11:35 - INFO -     ✓ TTFT: 48193.30ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:11:35 - INFO - ✓ Test 24 completed successfully
+2026-05-08 03:11:35 - INFO -   TTFT P50: 48193.30ms
+2026-05-08 03:11:35 - INFO -   Output Tokens P50: 771
+2026-05-08 03:11:35 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:11:35 - INFO - 
+2026-05-08 03:11:35 - INFO - ====================================================================================================
+2026-05-08 03:11:35 - INFO - Test 25/30
+2026-05-08 03:11:35 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-08 03:11:35 - INFO -   Request File: /home/wangez/slow_request_40s.json
+2026-05-08 03:11:35 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:11:35 - INFO - Running 1 iterations...
+2026-05-08 03:11:35 - INFO -   Iteration 1/1...
+2026-05-08 03:12:12 - INFO -     ✓ TTFT: 34668.84ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:12:12 - INFO - ✓ Test 25 completed successfully
+2026-05-08 03:12:12 - INFO -   TTFT P50: 34668.84ms
+2026-05-08 03:12:12 - INFO -   Output Tokens P50: 828
+2026-05-08 03:12:12 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:12:12 - INFO - 
+2026-05-08 03:12:12 - INFO - ====================================================================================================
+2026-05-08 03:12:12 - INFO - Test 26/30
+2026-05-08 03:12:12 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-08 03:12:12 - INFO -   Request File: /home/wangez/slow_request_60s.json
+2026-05-08 03:12:12 - INFO -   Thinking Level: minimal
+2026-05-08 03:12:12 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:12:13 - INFO - Running 1 iterations...
+2026-05-08 03:12:13 - INFO -   Iteration 1/1...
+2026-05-08 03:12:19 - INFO -     ✓ TTFT: 2209.33ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:12:19 - INFO - ✓ Test 26 completed successfully
+2026-05-08 03:12:19 - INFO -   TTFT P50: 2209.33ms
+2026-05-08 03:12:19 - INFO -   Output Tokens P50: 1093
+2026-05-08 03:12:19 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:12:19 - INFO - 
+2026-05-08 03:12:19 - INFO - ====================================================================================================
+2026-05-08 03:12:19 - INFO - Test 27/30
+2026-05-08 03:12:19 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-08 03:12:19 - INFO -   Request File: /home/wangez/slow_request_60s.json
+2026-05-08 03:12:19 - INFO -   Thinking Level: low
+2026-05-08 03:12:19 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:12:19 - INFO - Running 1 iterations...
+2026-05-08 03:12:19 - INFO -   Iteration 1/1...
+2026-05-08 03:12:29 - INFO -     ✓ TTFT: 4827.08ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:12:29 - INFO - ✓ Test 27 completed successfully
+2026-05-08 03:12:29 - INFO -   TTFT P50: 4827.08ms
+2026-05-08 03:12:29 - INFO -   Output Tokens P50: 1294
+2026-05-08 03:12:29 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:12:29 - INFO - 
+2026-05-08 03:12:29 - INFO - ====================================================================================================
+2026-05-08 03:12:29 - INFO - Test 28/30
+2026-05-08 03:12:29 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-08 03:12:29 - INFO -   Request File: /home/wangez/slow_request_60s.json
+2026-05-08 03:12:29 - INFO -   Thinking Level: medium
+2026-05-08 03:12:29 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:12:29 - INFO - Running 1 iterations...
+2026-05-08 03:12:29 - INFO -   Iteration 1/1...
+2026-05-08 03:12:35 - INFO -     ✓ TTFT: 2250.39ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:12:35 - INFO - ✓ Test 28 completed successfully
+2026-05-08 03:12:35 - INFO -   TTFT P50: 2250.39ms
+2026-05-08 03:12:35 - INFO -   Output Tokens P50: 965
+2026-05-08 03:12:35 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:12:35 - INFO - 
+2026-05-08 03:12:35 - INFO - ====================================================================================================
+2026-05-08 03:12:35 - INFO - Test 29/30
+2026-05-08 03:12:35 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-08 03:12:35 - INFO -   Request File: /home/wangez/slow_request_60s.json
+2026-05-08 03:12:35 - INFO -   Thinking Level: high
+2026-05-08 03:12:35 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:12:35 - INFO - Running 1 iterations...
+2026-05-08 03:12:35 - INFO -   Iteration 1/1...
+2026-05-08 03:12:46 - INFO -     ✓ TTFT: 6517.59ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:12:46 - INFO - ✓ Test 29 completed successfully
+2026-05-08 03:12:46 - INFO -   TTFT P50: 6517.59ms
+2026-05-08 03:12:46 - INFO -   Output Tokens P50: 1244
+2026-05-08 03:12:46 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:12:46 - INFO - 
+2026-05-08 03:12:46 - INFO - ====================================================================================================
+2026-05-08 03:12:46 - INFO - Test 30/30
+2026-05-08 03:12:46 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-08 03:12:46 - INFO -   Request File: /home/wangez/slow_request_60s.json
+2026-05-08 03:12:46 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-08 03:12:46 - INFO - Running 1 iterations...
+2026-05-08 03:12:46 - INFO -   Iteration 1/1...
+2026-05-08 03:12:52 - INFO -     ✓ TTFT: 1675.71ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:12:52 - INFO - ✓ Test 30 completed successfully
+2026-05-08 03:12:52 - INFO -   TTFT P50: 1675.71ms
+2026-05-08 03:12:52 - INFO -   Output Tokens P50: 1019
+2026-05-08 03:12:52 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-08 03:12:52 - INFO - 
+2026-05-08 03:12:52 - INFO - ====================================================================================================
+2026-05-08 03:12:52 - INFO - CSV results saved to: perf_results_20260508_030150.csv
+2026-05-08 03:12:52 - INFO - Total successful tests: 28/30
+2026-05-08 03:12:52 - INFO - ====================================================================================================

@@ -1,0 +1,96 @@
+{
+  "model": "claude-opus-4-6",
+  "effort": "high",
+  "request_file": "/home/wangez/slow_request_40s_claude.json",
+  "project": "cloud-llm-preview1",
+  "region": "global",
+  "iterations": 10,
+  "all_metrics": [
+    {
+      "response_time_ms": 2010.04,
+      "input_tokens": 28801,
+      "output_tokens": 67,
+      "stop_reason": "tool_use"
+    },
+    {
+      "response_time_ms": 2988.72,
+      "input_tokens": 28801,
+      "output_tokens": 140,
+      "stop_reason": "tool_use"
+    },
+    {
+      "response_time_ms": 3638.63,
+      "input_tokens": 28801,
+      "output_tokens": 146,
+      "stop_reason": "tool_use"
+    },
+    {
+      "response_time_ms": 2760.05,
+      "input_tokens": 28801,
+      "output_tokens": 147,
+      "stop_reason": "tool_use"
+    },
+    {
+      "response_time_ms": 5908.98,
+      "input_tokens": 28801,
+      "output_tokens": 226,
+      "stop_reason": "tool_use"
+    },
+    {
+      "response_time_ms": 3140.3,
+      "input_tokens": 28801,
+      "output_tokens": 148,
+      "stop_reason": "tool_use"
+    },
+    {
+      "response_time_ms": 2744.01,
+      "input_tokens": 28801,
+      "output_tokens": 150,
+      "stop_reason": "tool_use"
+    },
+    {
+      "response_time_ms": 6106.37,
+      "input_tokens": 28801,
+      "output_tokens": 180,
+      "stop_reason": "tool_use"
+    },
+    {
+      "response_time_ms": 3303.01,
+      "input_tokens": 28801,
+      "output_tokens": 140,
+      "stop_reason": "tool_use"
+    },
+    {
+      "response_time_ms": 2733.02,
+      "input_tokens": 28801,
+      "output_tokens": 135,
+      "stop_reason": "tool_use"
+    }
+  ],
+  "statistics": {
+    "response_time_ms": {
+      "min": 2010.04,
+      "max": 6106.37,
+      "p50": 3064.51,
+      "p90": 5928.719,
+      "p95": 6017.5445,
+      "p99": 6088.6049
+    },
+    "input_tokens": {
+      "min": 28801,
+      "max": 28801,
+      "p50": 28801.0,
+      "p90": 28801.0,
+      "p95": 28801.0,
+      "p99": 28801.0
+    },
+    "output_tokens": {
+      "min": 67,
+      "max": 226,
+      "p50": 146.5,
+      "p90": 184.59999999999997,
+      "p95": 205.29999999999995,
+      "p99": 221.86
+    }
+  }
+}

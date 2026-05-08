@@ -1,0 +1,56 @@
+[
+  {
+    "model": "claude-opus-4-7",
+    "request": "slow_request_40s",
+    "status": "success",
+    "elapsed_s": 4.8,
+    "input_tokens": 27121,
+    "output_tokens": 127,
+    "stop_reason": "tool_use"
+  },
+  {
+    "model": "claude-opus-4-7",
+    "request": "slow_request_60s",
+    "status": "success",
+    "elapsed_s": 2.24,
+    "input_tokens": 60554,
+    "output_tokens": 89,
+    "stop_reason": "tool_use"
+  },
+  {
+    "model": "claude-opus-4-6",
+    "request": "slow_request_40s",
+    "status": "success",
+    "elapsed_s": 2.62,
+    "input_tokens": 28801,
+    "output_tokens": 140,
+    "stop_reason": "tool_use"
+  },
+  {
+    "model": "claude-opus-4-6",
+    "request": "slow_request_60s",
+    "status": "success",
+    "elapsed_s": 5.33,
+    "input_tokens": 57242,
+    "output_tokens": 248,
+    "stop_reason": "tool_use"
+  },
+  {
+    "model": "claude-sonnet-4-6",
+    "request": "slow_request_40s",
+    "status": "success",
+    "elapsed_s": 2.45,
+    "input_tokens": 21231,
+    "output_tokens": 106,
+    "stop_reason": "tool_use"
+  },
+  {
+    "model": "claude-sonnet-4-6",
+    "request": "slow_request_60s",
+    "status": "success",
+    "elapsed_s": 4.02,
+    "input_tokens": 45065,
+    "output_tokens": 228,
+    "stop_reason": "tool_use"
+  }
+]

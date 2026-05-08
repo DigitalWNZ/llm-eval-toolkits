@@ -1,0 +1,42 @@
+{
+  "model": "claude-sonnet-4-6",
+  "effort": "medium",
+  "request_file": "/home/wangez/slow_request_40s_claude.json",
+  "project": "cloud-llm-preview1",
+  "region": "global",
+  "iterations": 1,
+  "all_metrics": [
+    {
+      "response_time_ms": 4006.0,
+      "input_tokens": 21231,
+      "output_tokens": 208,
+      "stop_reason": "tool_use"
+    }
+  ],
+  "statistics": {
+    "response_time_ms": {
+      "min": 4006.0,
+      "max": 4006.0,
+      "p50": 4006.0,
+      "p90": 4006.0,
+      "p95": 4006.0,
+      "p99": 4006.0
+    },
+    "input_tokens": {
+      "min": 21231,
+      "max": 21231,
+      "p50": 21231.0,
+      "p90": 21231.0,
+      "p95": 21231.0,
+      "p99": 21231.0
+    },
+    "output_tokens": {
+      "min": 208,
+      "max": 208,
+      "p50": 208.0,
+      "p90": 208.0,
+      "p95": 208.0,
+      "p99": 208.0
+    }
+  }
+}
