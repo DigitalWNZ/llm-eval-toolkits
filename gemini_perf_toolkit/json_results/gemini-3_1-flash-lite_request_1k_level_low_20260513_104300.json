@@ -1,0 +1,101 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "project": "cloud-llm-preview1",
+  "location": "eu",
+  "iterations": 5,
+  "thinking_level": "low",
+  "thinking_budget": null,
+  "traffic_type": "TrafficType.ON_DEMAND",
+  "final_request": {
+    "model": "gemini-3.1-flash-lite",
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "Please analyze and summarize the following comprehensive document about artificial intelligence and machine learning technologies.\n\nArtificial Intelligence: A Comprehensive Overview\n\nIntroduction to Artificial Intelligence\nArtificial intelligence (AI) represents one of the most transformative technologies of the modern era. It encompasses a broad range of computational techniques designed to enable machines to perform tasks that typically require human intelligence. These tasks include visual perception, speech recognition, decision-making, language translation, and complex problem-solving. The field of AI has evolved significantly since its inception in the 1950s, progressing from simple rule-based systems to sophisticated neural networks capable of learning from vast amounts of data.\n\nMachine Learning Fundamentals\nMachine learning, a subset of artificial intelligence, focuses on developing algorithms that can learn patterns from data without being explicitly programmed. There are three primary categories of machine learning: supervised learning, unsupervised learning, and reinforcement learning. Supervised learning involves training models on labeled datasets where the correct outputs are known. Common applications include image classification, spam detection, and predictive analytics. Unsupervised learning works with unlabeled data to discover hidden patterns and structures, such as customer segmentation and anomaly detection. Reinforcement learning trains agents to make sequential decisions by rewarding desired behaviors and penalizing undesired ones.\n\nDeep Learning and Neural Networks\nDeep learning represents a powerful subset of machine learning based on artificial neural networks with multiple layers. These networks, inspired by the structure of the human brain, consist of interconnected nodes organized in layers. Each layer extracts increasingly abstract features from the input data. Convolutional neural networks (CNNs) excel at processing grid-like data such as images, while recurrent neural networks (RNNs) and long short-term memory (LSTM) networks handle sequential data like text and time series. Transformer architectures have revolutionized natural language processing by enabling parallel processing of sequential data.\n\nNatural Language Processing Applications\nNatural language processing (NLP) enables computers to understand, interpret, and generate human language. Modern NLP systems power virtual assistants like Siri and Alexa, machine translation services, sentiment analysis tools, and chatbots. Large language models trained on massive text corpora can perform various language tasks including question answering, summarization, and content generation. These models use attention mechanisms to focus on relevant parts of the input when generating outputs.\n\nComputer Vision Technologies\nComputer vision allows machines to derive meaningful information from digital images and videos. Applications range from facial recognition and object detection to autonomous vehicles and medical image analysis. Modern computer vision systems use deep convolutional neural networks trained on millions of annotated images. These systems can identify objects, segment images, estimate depth, and track motion with remarkable accuracy.\n\nAI in Healthcare and Medicine\nArtificial intelligence is transforming healthcare through improved diagnostics, personalized treatment plans, and drug discovery. Machine learning models can analyze medical images to detect diseases like cancer at early stages. AI-powered systems assist doctors in interpreting X-rays, MRIs, and CT scans with high accuracy. Predictive models help identify patients at risk of developing certain conditions, enabling preventive interventions. Natural language processing extracts valuable insights from electronic health records to support clinical decision-making.\n\nFinancial Services and AI\nThe financial industry leverages AI for fraud detection, algorithmic trading, risk assessment, and customer service. Machine learning models analyze transaction patterns to identify suspicious activities in real-time. Robo-advisors use AI to provide personalized investment recommendations based on individual financial goals and risk tolerance. Credit scoring systems incorporate alternative data sources and machine learning to assess creditworthiness more accurately.\n\nAutonomous Systems and Robotics\nSelf-driving cars represent one of the most ambitious applications of AI, combining computer vision, sensor fusion, and decision-making algorithms. These systems must perceive their environment, predict the behavior of other road users, and plan safe trajectories. Robotics in manufacturing uses AI for quality control, predictive maintenance, and collaborative robots that work alongside humans. Drones employ AI for autonomous navigation and delivery services.\n\nEthical Considerations and Challenges\nThe rapid advancement of AI raises important ethical questions about privacy, bias, accountability, and transparency. Machine learning models can perpetuate and amplify biases present in training data, leading to discriminatory outcomes in hiring, lending, and criminal justice. The black-box nature of deep learning makes it challenging to understand and explain model decisions. Researchers are developing techniques for explainable AI and fairness-aware machine learning to address these concerns. Data privacy remains a critical issue as AI systems require vast amounts of personal information for training and operation.\n\nFuture Directions and Emerging Trends\nThe future of AI includes developments in few-shot learning, transfer learning, and meta-learning to reduce data requirements. Quantum computing promises to accelerate certain AI algorithms exponentially. Edge AI brings machine learning capabilities to devices without requiring cloud connectivity. Federated learning enables collaborative model training while preserving data privacy. The integration of symbolic AI with neural networks aims to combine logical reasoning with pattern recognition. As AI capabilities continue to advance, ensuring alignment with human values and societal benefit becomes increasingly important for responsible development and deployment of these powerful technologies."
+          }
+        ]
+      }
+    ],
+    "config": {
+      "systemInstruction": null,
+      "thinkingConfig": {
+        "thinkingLevel": "low",
+        "thinkingBudget": null
+      }
+    }
+  },
+  "all_metrics": [
+    {
+      "ttft_ms": 2402.1804332733154,
+      "input_tokens": 996,
+      "output_tokens": 607,
+      "cached_tokens": 0,
+      "traffic_type": "TrafficType.ON_DEMAND"
+    },
+    {
+      "ttft_ms": 1415.5137538909912,
+      "input_tokens": 996,
+      "output_tokens": 621,
+      "cached_tokens": 0,
+      "traffic_type": "TrafficType.ON_DEMAND"
+    },
+    {
+      "ttft_ms": 1250.3306865692139,
+      "input_tokens": 996,
+      "output_tokens": 670,
+      "cached_tokens": 0,
+      "traffic_type": "TrafficType.ON_DEMAND"
+    },
+    {
+      "ttft_ms": 1551.0978698730469,
+      "input_tokens": 996,
+      "output_tokens": 690,
+      "cached_tokens": 0,
+      "traffic_type": "TrafficType.ON_DEMAND"
+    },
+    {
+      "ttft_ms": 1403.2642841339111,
+      "input_tokens": 996,
+      "output_tokens": 655,
+      "cached_tokens": 0,
+      "traffic_type": "TrafficType.ON_DEMAND"
+    }
+  ],
+  "statistics": {
+    "ttft_ms": {
+      "min": 1250.3306865692139,
+      "max": 2402.1804332733154,
+      "p50": 1415.5137538909912,
+      "p90": 2061.747407913208,
+      "p95": 2231.9639205932617,
+      "p99": 2368.1371307373047
+    },
+    "input_tokens": {
+      "min": 996,
+      "max": 996,
+      "p50": 996.0,
+      "p90": 996.0,
+      "p95": 996.0,
+      "p99": 996.0
+    },
+    "output_tokens": {
+      "min": 607,
+      "max": 690,
+      "p50": 655.0,
+      "p90": 682.0,
+      "p95": 686.0,
+      "p99": 689.2
+    },
+    "cached_tokens": {
+      "min": 0,
+      "max": 0,
+      "p50": 0.0,
+      "p90": 0.0,
+      "p95": 0.0,
+      "p99": 0.0
+    }
+  },
+  "request_file": "benchmark/request_1k.json"
+}

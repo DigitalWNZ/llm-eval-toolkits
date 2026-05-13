@@ -1,0 +1,672 @@
+2026-05-13 10:28:04 - INFO - ====================================================================================================
+2026-05-13 10:28:04 - INFO - GEMINI PERFORMANCE TEST CONTROLLER
+2026-05-13 10:28:04 - INFO - ====================================================================================================
+2026-05-13 10:28:04 - INFO - Run ID: 20260513_102804
+2026-05-13 10:28:04 - INFO - Models: gemini-3.1-flash-lite
+2026-05-13 10:28:04 - INFO - Request Files: benchmark/request_1k.json, benchmark/request_2k.json, benchmark/request_5k.json, benchmark/request_10k.json, benchmark/request_50k.json, benchmark/request_100k.json
+2026-05-13 10:28:04 - INFO - Project: cloud-llm-preview1
+2026-05-13 10:28:04 - INFO - Location: global
+2026-05-13 10:28:04 - INFO - Iterations: 5
+2026-05-13 10:28:04 - INFO - Thinking Levels (Gemini 3.x): minimal, low, medium, high
+2026-05-13 10:28:04 - INFO - ====================================================================================================
+2026-05-13 10:28:04 - INFO - 
+Total test combinations: 30
+
+2026-05-13 10:28:04 - INFO - ====================================================================================================
+2026-05-13 10:28:04 - INFO - Test 1/30
+2026-05-13 10:28:04 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:28:04 - INFO -   Request File: benchmark/request_1k.json
+2026-05-13 10:28:04 - INFO -   Thinking Level: minimal
+2026-05-13 10:28:04 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:28:04 - INFO - Running 5 iterations...
+2026-05-13 10:28:04 - INFO -   Iteration 1/5...
+2026-05-13 10:28:07 - INFO -     ✓ TTFT: 1609.46ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:28:07 - INFO -   Iteration 2/5...
+2026-05-13 10:28:10 - INFO -     ✓ TTFT: 697.16ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:28:10 - INFO -   Iteration 3/5...
+2026-05-13 10:28:15 - INFO -     ✓ TTFT: 2252.73ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:28:15 - INFO -   Iteration 4/5...
+2026-05-13 10:28:19 - INFO -     ✓ TTFT: 2328.30ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:28:19 - INFO -   Iteration 5/5...
+2026-05-13 10:28:22 - INFO -     ✓ TTFT: 1115.88ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:28:22 - INFO - ✓ Test 1 completed successfully
+2026-05-13 10:28:22 - INFO -   TTFT P50: 1609.46ms
+2026-05-13 10:28:22 - INFO -   Output Tokens P50: 574
+2026-05-13 10:28:22 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:28:22 - INFO - 
+2026-05-13 10:28:22 - INFO - ====================================================================================================
+2026-05-13 10:28:22 - INFO - Test 2/30
+2026-05-13 10:28:22 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:28:22 - INFO -   Request File: benchmark/request_1k.json
+2026-05-13 10:28:22 - INFO -   Thinking Level: low
+2026-05-13 10:28:22 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:28:22 - INFO - Running 5 iterations...
+2026-05-13 10:28:22 - INFO -   Iteration 1/5...
+2026-05-13 10:28:31 - INFO -     ✓ TTFT: 8251.70ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:28:31 - INFO -   Iteration 2/5...
+2026-05-13 10:28:35 - INFO -     ✓ TTFT: 1178.60ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:28:35 - INFO -   Iteration 3/5...
+2026-05-13 10:28:42 - INFO -     ✓ TTFT: 5219.31ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:28:42 - INFO -   Iteration 4/5...
+2026-05-13 10:28:45 - INFO -     ✓ TTFT: 1030.76ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:28:45 - INFO -   Iteration 5/5...
+2026-05-13 10:28:49 - INFO -     ✓ TTFT: 910.91ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:28:49 - INFO - ✓ Test 2 completed successfully
+2026-05-13 10:28:49 - INFO -   TTFT P50: 1178.60ms
+2026-05-13 10:28:49 - INFO -   Output Tokens P50: 670
+2026-05-13 10:28:49 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:28:49 - INFO - 
+2026-05-13 10:28:49 - INFO - ====================================================================================================
+2026-05-13 10:28:49 - INFO - Test 3/30
+2026-05-13 10:28:49 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:28:49 - INFO -   Request File: benchmark/request_1k.json
+2026-05-13 10:28:49 - INFO -   Thinking Level: medium
+2026-05-13 10:28:49 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:28:49 - INFO - Running 5 iterations...
+2026-05-13 10:28:49 - INFO -   Iteration 1/5...
+2026-05-13 10:28:54 - INFO -     ✓ TTFT: 3030.37ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:28:54 - INFO -   Iteration 2/5...
+2026-05-13 10:28:59 - INFO -     ✓ TTFT: 2193.54ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:28:59 - INFO -   Iteration 3/5...
+2026-05-13 10:29:04 - INFO -     ✓ TTFT: 2400.35ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:29:04 - INFO -   Iteration 4/5...
+2026-05-13 10:29:08 - INFO -     ✓ TTFT: 1861.46ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:29:08 - INFO -   Iteration 5/5...
+2026-05-13 10:29:13 - INFO -     ✓ TTFT: 2440.03ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:29:13 - INFO - ✓ Test 3 completed successfully
+2026-05-13 10:29:13 - INFO -   TTFT P50: 2400.35ms
+2026-05-13 10:29:13 - INFO -   Output Tokens P50: 689
+2026-05-13 10:29:13 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:29:13 - INFO - 
+2026-05-13 10:29:13 - INFO - ====================================================================================================
+2026-05-13 10:29:13 - INFO - Test 4/30
+2026-05-13 10:29:13 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:29:13 - INFO -   Request File: benchmark/request_1k.json
+2026-05-13 10:29:13 - INFO -   Thinking Level: high
+2026-05-13 10:29:13 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:29:13 - INFO - Running 5 iterations...
+2026-05-13 10:29:13 - INFO -   Iteration 1/5...
+2026-05-13 10:29:20 - INFO -     ✓ TTFT: 4840.88ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:29:20 - INFO -   Iteration 2/5...
+2026-05-13 10:29:26 - INFO -     ✓ TTFT: 3728.99ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:29:26 - INFO -   Iteration 3/5...
+2026-05-13 10:29:33 - INFO -     ✓ TTFT: 4016.69ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:29:33 - INFO -   Iteration 4/5...
+2026-05-13 10:29:39 - INFO -     ✓ TTFT: 4366.52ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:29:39 - INFO -   Iteration 5/5...
+2026-05-13 10:29:46 - INFO -     ✓ TTFT: 4121.69ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:29:46 - INFO - ✓ Test 4 completed successfully
+2026-05-13 10:29:46 - INFO -   TTFT P50: 4121.69ms
+2026-05-13 10:29:46 - INFO -   Output Tokens P50: 639
+2026-05-13 10:29:46 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:29:46 - INFO - 
+2026-05-13 10:29:46 - INFO - ====================================================================================================
+2026-05-13 10:29:46 - INFO - Test 5/30
+2026-05-13 10:29:46 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:29:46 - INFO -   Request File: benchmark/request_1k.json
+2026-05-13 10:29:46 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:29:46 - INFO - Running 5 iterations...
+2026-05-13 10:29:46 - INFO -   Iteration 1/5...
+2026-05-13 10:29:49 - INFO -     ✓ TTFT: 1158.24ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:29:49 - INFO -   Iteration 2/5...
+2026-05-13 10:29:52 - INFO -     ✓ TTFT: 704.93ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:29:52 - INFO -   Iteration 3/5...
+2026-05-13 10:29:55 - INFO -     ✓ TTFT: 623.50ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:29:55 - INFO -   Iteration 4/5...
+2026-05-13 10:29:58 - INFO -     ✓ TTFT: 632.57ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:29:58 - INFO -   Iteration 5/5...
+2026-05-13 10:30:01 - INFO -     ✓ TTFT: 530.16ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:30:01 - INFO - ✓ Test 5 completed successfully
+2026-05-13 10:30:01 - INFO -   TTFT P50: 632.57ms
+2026-05-13 10:30:01 - INFO -   Output Tokens P50: 572
+2026-05-13 10:30:01 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:30:01 - INFO - 
+2026-05-13 10:30:01 - INFO - ====================================================================================================
+2026-05-13 10:30:01 - INFO - Test 6/30
+2026-05-13 10:30:01 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:30:01 - INFO -   Request File: benchmark/request_2k.json
+2026-05-13 10:30:01 - INFO -   Thinking Level: minimal
+2026-05-13 10:30:01 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:30:01 - INFO - Running 5 iterations...
+2026-05-13 10:30:01 - INFO -   Iteration 1/5...
+2026-05-13 10:30:04 - INFO -     ✓ TTFT: 1273.09ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:30:04 - INFO -   Iteration 2/5...
+2026-05-13 10:30:07 - INFO -     ✓ TTFT: 516.47ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:30:07 - INFO -   Iteration 3/5...
+2026-05-13 10:30:10 - INFO -     ✓ TTFT: 675.81ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:30:10 - INFO -   Iteration 4/5...
+2026-05-13 10:30:13 - INFO -     ✓ TTFT: 1531.04ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:30:13 - INFO -   Iteration 5/5...
+2026-05-13 10:30:16 - INFO -     ✓ TTFT: 660.07ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:30:16 - INFO - ✓ Test 6 completed successfully
+2026-05-13 10:30:16 - INFO -   TTFT P50: 675.81ms
+2026-05-13 10:30:16 - INFO -   Output Tokens P50: 547
+2026-05-13 10:30:16 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:30:16 - INFO - 
+2026-05-13 10:30:16 - INFO - ====================================================================================================
+2026-05-13 10:30:16 - INFO - Test 7/30
+2026-05-13 10:30:16 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:30:16 - INFO -   Request File: benchmark/request_2k.json
+2026-05-13 10:30:16 - INFO -   Thinking Level: low
+2026-05-13 10:30:16 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:30:16 - INFO - Running 5 iterations...
+2026-05-13 10:30:16 - INFO -   Iteration 1/5...
+2026-05-13 10:30:21 - INFO -     ✓ TTFT: 1796.96ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:30:21 - INFO -   Iteration 2/5...
+2026-05-13 10:30:28 - INFO -     ✓ TTFT: 3185.01ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:30:28 - INFO -   Iteration 3/5...
+2026-05-13 10:30:32 - INFO -     ✓ TTFT: 2074.83ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:30:32 - INFO -   Iteration 4/5...
+2026-05-13 10:30:36 - INFO -     ✓ TTFT: 1039.47ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:30:36 - INFO -   Iteration 5/5...
+2026-05-13 10:30:40 - INFO -     ✓ TTFT: 1746.40ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:30:40 - INFO - ✓ Test 7 completed successfully
+2026-05-13 10:30:40 - INFO -   TTFT P50: 1796.96ms
+2026-05-13 10:30:40 - INFO -   Output Tokens P50: 679
+2026-05-13 10:30:40 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:30:40 - INFO - 
+2026-05-13 10:30:40 - INFO - ====================================================================================================
+2026-05-13 10:30:40 - INFO - Test 8/30
+2026-05-13 10:30:40 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:30:40 - INFO -   Request File: benchmark/request_2k.json
+2026-05-13 10:30:40 - INFO -   Thinking Level: medium
+2026-05-13 10:30:40 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:30:40 - INFO - Running 5 iterations...
+2026-05-13 10:30:40 - INFO -   Iteration 1/5...
+2026-05-13 10:30:46 - INFO -     ✓ TTFT: 3485.82ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:30:46 - INFO -   Iteration 2/5...
+2026-05-13 10:30:52 - INFO -     ✓ TTFT: 5049.83ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:30:52 - INFO -   Iteration 3/5...
+2026-05-13 10:30:57 - INFO -     ✓ TTFT: 2663.45ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:30:57 - INFO -   Iteration 4/5...
+2026-05-13 10:31:02 - INFO -     ✓ TTFT: 2323.72ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:31:02 - INFO -   Iteration 5/5...
+2026-05-13 10:31:07 - INFO -     ✓ TTFT: 2415.09ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:31:07 - INFO - ✓ Test 8 completed successfully
+2026-05-13 10:31:07 - INFO -   TTFT P50: 2663.45ms
+2026-05-13 10:31:07 - INFO -   Output Tokens P50: 665
+2026-05-13 10:31:07 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:31:07 - INFO - 
+2026-05-13 10:31:07 - INFO - ====================================================================================================
+2026-05-13 10:31:07 - INFO - Test 9/30
+2026-05-13 10:31:07 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:31:07 - INFO -   Request File: benchmark/request_2k.json
+2026-05-13 10:31:07 - INFO -   Thinking Level: high
+2026-05-13 10:31:07 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:31:07 - INFO - Running 5 iterations...
+2026-05-13 10:31:07 - INFO -   Iteration 1/5...
+2026-05-13 10:31:14 - INFO -     ✓ TTFT: 4618.80ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:31:14 - INFO -   Iteration 2/5...
+2026-05-13 10:31:21 - INFO -     ✓ TTFT: 4029.32ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:31:21 - INFO -   Iteration 3/5...
+2026-05-13 10:31:27 - INFO -     ✓ TTFT: 4015.19ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:31:27 - INFO -   Iteration 4/5...
+2026-05-13 10:31:34 - INFO -     ✓ TTFT: 4341.43ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:31:34 - INFO -   Iteration 5/5...
+2026-05-13 10:31:42 - INFO -     ✓ TTFT: 4692.36ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:31:42 - INFO - ✓ Test 9 completed successfully
+2026-05-13 10:31:42 - INFO -   TTFT P50: 4341.43ms
+2026-05-13 10:31:42 - INFO -   Output Tokens P50: 732
+2026-05-13 10:31:42 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:31:42 - INFO - 
+2026-05-13 10:31:42 - INFO - ====================================================================================================
+2026-05-13 10:31:42 - INFO - Test 10/30
+2026-05-13 10:31:42 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:31:42 - INFO -   Request File: benchmark/request_2k.json
+2026-05-13 10:31:42 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:31:42 - INFO - Running 5 iterations...
+2026-05-13 10:31:42 - INFO -   Iteration 1/5...
+2026-05-13 10:31:46 - INFO -     ✓ TTFT: 1257.70ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:31:46 - INFO -   Iteration 2/5...
+2026-05-13 10:31:49 - INFO -     ✓ TTFT: 613.60ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:31:49 - INFO -   Iteration 3/5...
+2026-05-13 10:31:51 - INFO -     ✓ TTFT: 561.55ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:31:51 - INFO -   Iteration 4/5...
+2026-05-13 10:31:54 - INFO -     ✓ TTFT: 808.95ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:31:54 - INFO -   Iteration 5/5...
+2026-05-13 10:31:57 - INFO -     ✓ TTFT: 722.71ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:31:57 - INFO - ✓ Test 10 completed successfully
+2026-05-13 10:31:57 - INFO -   TTFT P50: 722.71ms
+2026-05-13 10:31:57 - INFO -   Output Tokens P50: 586
+2026-05-13 10:31:57 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:31:57 - INFO - 
+2026-05-13 10:31:57 - INFO - ====================================================================================================
+2026-05-13 10:31:57 - INFO - Test 11/30
+2026-05-13 10:31:57 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:31:57 - INFO -   Request File: benchmark/request_5k.json
+2026-05-13 10:31:57 - INFO -   Thinking Level: minimal
+2026-05-13 10:31:57 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:31:57 - INFO - Running 5 iterations...
+2026-05-13 10:31:57 - INFO -   Iteration 1/5...
+2026-05-13 10:32:01 - INFO -     ✓ TTFT: 1292.01ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:32:01 - INFO -   Iteration 2/5...
+2026-05-13 10:32:05 - INFO -     ✓ TTFT: 789.40ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:32:05 - INFO -   Iteration 3/5...
+2026-05-13 10:32:09 - INFO -     ✓ TTFT: 954.68ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:32:09 - INFO -   Iteration 4/5...
+2026-05-13 10:32:12 - INFO -     ✓ TTFT: 810.95ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:32:12 - INFO -   Iteration 5/5...
+2026-05-13 10:32:16 - INFO -     ✓ TTFT: 793.90ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:32:16 - INFO - ✓ Test 11 completed successfully
+2026-05-13 10:32:16 - INFO -   TTFT P50: 810.95ms
+2026-05-13 10:32:16 - INFO -   Output Tokens P50: 705
+2026-05-13 10:32:16 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:32:16 - INFO - 
+2026-05-13 10:32:16 - INFO - ====================================================================================================
+2026-05-13 10:32:16 - INFO - Test 12/30
+2026-05-13 10:32:16 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:32:16 - INFO -   Request File: benchmark/request_5k.json
+2026-05-13 10:32:16 - INFO -   Thinking Level: low
+2026-05-13 10:32:16 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:32:16 - INFO - Running 5 iterations...
+2026-05-13 10:32:16 - INFO -   Iteration 1/5...
+2026-05-13 10:32:21 - INFO -     ✓ TTFT: 1638.67ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:32:21 - INFO -   Iteration 2/5...
+2026-05-13 10:32:25 - INFO -     ✓ TTFT: 1026.35ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:32:25 - INFO -   Iteration 3/5...
+2026-05-13 10:32:30 - INFO -     ✓ TTFT: 1315.39ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:32:30 - INFO -   Iteration 4/5...
+2026-05-13 10:32:34 - INFO -     ✓ TTFT: 974.73ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:32:34 - INFO -   Iteration 5/5...
+2026-05-13 10:32:38 - INFO -     ✓ TTFT: 973.76ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:32:38 - INFO - ✓ Test 12 completed successfully
+2026-05-13 10:32:38 - INFO -   TTFT P50: 1026.35ms
+2026-05-13 10:32:38 - INFO -   Output Tokens P50: 813
+2026-05-13 10:32:38 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:32:38 - INFO - 
+2026-05-13 10:32:38 - INFO - ====================================================================================================
+2026-05-13 10:32:38 - INFO - Test 13/30
+2026-05-13 10:32:38 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:32:38 - INFO -   Request File: benchmark/request_5k.json
+2026-05-13 10:32:38 - INFO -   Thinking Level: medium
+2026-05-13 10:32:38 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:32:38 - INFO - Running 5 iterations...
+2026-05-13 10:32:38 - INFO -   Iteration 1/5...
+2026-05-13 10:32:45 - INFO -     ✓ TTFT: 3109.71ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:32:45 - INFO -   Iteration 2/5...
+2026-05-13 10:32:50 - INFO -     ✓ TTFT: 2528.78ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:32:50 - INFO -   Iteration 3/5...
+2026-05-13 10:32:56 - INFO -     ✓ TTFT: 2365.64ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:32:56 - INFO -   Iteration 4/5...
+2026-05-13 10:33:05 - INFO -     ✓ TTFT: 6262.96ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:33:05 - INFO -   Iteration 5/5...
+2026-05-13 10:33:12 - INFO -     ✓ TTFT: 3066.37ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:33:12 - INFO - ✓ Test 13 completed successfully
+2026-05-13 10:33:12 - INFO -   TTFT P50: 3066.37ms
+2026-05-13 10:33:12 - INFO -   Output Tokens P50: 771
+2026-05-13 10:33:12 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:33:12 - INFO - 
+2026-05-13 10:33:12 - INFO - ====================================================================================================
+2026-05-13 10:33:12 - INFO - Test 14/30
+2026-05-13 10:33:12 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:33:12 - INFO -   Request File: benchmark/request_5k.json
+2026-05-13 10:33:12 - INFO -   Thinking Level: high
+2026-05-13 10:33:12 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:33:12 - INFO - Running 5 iterations...
+2026-05-13 10:33:12 - INFO -   Iteration 1/5...
+2026-05-13 10:33:20 - INFO -     ✓ TTFT: 4867.86ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:33:20 - INFO -   Iteration 2/5...
+2026-05-13 10:33:27 - INFO -     ✓ TTFT: 4135.31ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:33:27 - INFO -   Iteration 3/5...
+2026-05-13 10:33:36 - INFO -     ✓ TTFT: 5484.49ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:33:36 - INFO -   Iteration 4/5...
+2026-05-13 10:33:44 - INFO -     ✓ TTFT: 4608.29ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:33:44 - INFO -   Iteration 5/5...
+2026-05-13 10:33:51 - INFO -     ✓ TTFT: 4460.33ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:33:51 - INFO - ✓ Test 14 completed successfully
+2026-05-13 10:33:51 - INFO -   TTFT P50: 4608.29ms
+2026-05-13 10:33:51 - INFO -   Output Tokens P50: 805
+2026-05-13 10:33:51 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:33:51 - INFO - 
+2026-05-13 10:33:51 - INFO - ====================================================================================================
+2026-05-13 10:33:51 - INFO - Test 15/30
+2026-05-13 10:33:51 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:33:51 - INFO -   Request File: benchmark/request_5k.json
+2026-05-13 10:33:51 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:33:51 - INFO - Running 5 iterations...
+2026-05-13 10:33:51 - INFO -   Iteration 1/5...
+2026-05-13 10:33:56 - INFO -     ✓ TTFT: 1388.29ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:33:56 - INFO -   Iteration 2/5...
+2026-05-13 10:34:02 - INFO -     ✓ TTFT: 989.89ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:34:02 - INFO -   Iteration 3/5...
+2026-05-13 10:34:06 - INFO -     ✓ TTFT: 1407.64ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:34:06 - INFO -   Iteration 4/5...
+2026-05-13 10:34:09 - INFO -     ✓ TTFT: 778.09ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:34:09 - INFO -   Iteration 5/5...
+2026-05-13 10:34:13 - INFO -     ✓ TTFT: 783.21ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:34:13 - INFO - ✓ Test 15 completed successfully
+2026-05-13 10:34:13 - INFO -   TTFT P50: 989.89ms
+2026-05-13 10:34:13 - INFO -   Output Tokens P50: 709
+2026-05-13 10:34:13 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:34:13 - INFO - 
+2026-05-13 10:34:13 - INFO - ====================================================================================================
+2026-05-13 10:34:13 - INFO - Test 16/30
+2026-05-13 10:34:13 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:34:13 - INFO -   Request File: benchmark/request_10k.json
+2026-05-13 10:34:13 - INFO -   Thinking Level: minimal
+2026-05-13 10:34:13 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:34:13 - INFO - Running 5 iterations...
+2026-05-13 10:34:13 - INFO -   Iteration 1/5...
+2026-05-13 10:34:18 - INFO -     ✓ TTFT: 1448.83ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:34:18 - INFO -   Iteration 2/5...
+2026-05-13 10:34:22 - INFO -     ✓ TTFT: 1959.95ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:34:22 - INFO -   Iteration 3/5...
+2026-05-13 10:34:26 - INFO -     ✓ TTFT: 1020.27ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:34:26 - INFO -   Iteration 4/5...
+2026-05-13 10:34:30 - INFO -     ✓ TTFT: 691.65ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:34:30 - INFO -   Iteration 5/5...
+2026-05-13 10:34:33 - INFO -     ✓ TTFT: 561.97ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:34:33 - INFO - ✓ Test 16 completed successfully
+2026-05-13 10:34:33 - INFO -   TTFT P50: 1020.27ms
+2026-05-13 10:34:33 - INFO -   Output Tokens P50: 725
+2026-05-13 10:34:33 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:34:33 - INFO - 
+2026-05-13 10:34:33 - INFO - ====================================================================================================
+2026-05-13 10:34:33 - INFO - Test 17/30
+2026-05-13 10:34:33 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:34:33 - INFO -   Request File: benchmark/request_10k.json
+2026-05-13 10:34:33 - INFO -   Thinking Level: low
+2026-05-13 10:34:33 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:34:33 - INFO - Running 5 iterations...
+2026-05-13 10:34:33 - INFO -   Iteration 1/5...
+2026-05-13 10:34:38 - INFO -     ✓ TTFT: 1906.71ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:34:38 - INFO -   Iteration 2/5...
+2026-05-13 10:34:44 - INFO -     ✓ TTFT: 3255.54ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:34:44 - INFO -   Iteration 3/5...
+2026-05-13 10:34:58 - INFO -     ✓ TTFT: 4523.13ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:34:58 - INFO -   Iteration 4/5...
+2026-05-13 10:35:03 - INFO -     ✓ TTFT: 1264.11ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:35:03 - INFO -   Iteration 5/5...
+2026-05-13 10:35:08 - INFO -     ✓ TTFT: 1186.16ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:35:08 - INFO - ✓ Test 17 completed successfully
+2026-05-13 10:35:08 - INFO -   TTFT P50: 1906.71ms
+2026-05-13 10:35:08 - INFO -   Output Tokens P50: 768
+2026-05-13 10:35:08 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:35:08 - INFO - 
+2026-05-13 10:35:08 - INFO - ====================================================================================================
+2026-05-13 10:35:08 - INFO - Test 18/30
+2026-05-13 10:35:08 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:35:08 - INFO -   Request File: benchmark/request_10k.json
+2026-05-13 10:35:08 - INFO -   Thinking Level: medium
+2026-05-13 10:35:08 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:35:08 - INFO - Running 5 iterations...
+2026-05-13 10:35:08 - INFO -   Iteration 1/5...
+2026-05-13 10:35:15 - INFO -     ✓ TTFT: 3777.74ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:35:15 - INFO -   Iteration 2/5...
+2026-05-13 10:35:20 - INFO -     ✓ TTFT: 2088.41ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:35:20 - INFO -   Iteration 3/5...
+2026-05-13 10:35:26 - INFO -     ✓ TTFT: 2307.71ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:35:26 - INFO -   Iteration 4/5...
+2026-05-13 10:35:31 - INFO -     ✓ TTFT: 2553.28ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:35:31 - INFO -   Iteration 5/5...
+2026-05-13 10:35:37 - INFO -     ✓ TTFT: 2263.73ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:35:37 - INFO - ✓ Test 18 completed successfully
+2026-05-13 10:35:37 - INFO -   TTFT P50: 2307.71ms
+2026-05-13 10:35:37 - INFO -   Output Tokens P50: 783
+2026-05-13 10:35:37 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:35:37 - INFO - 
+2026-05-13 10:35:37 - INFO - ====================================================================================================
+2026-05-13 10:35:37 - INFO - Test 19/30
+2026-05-13 10:35:37 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:35:37 - INFO -   Request File: benchmark/request_10k.json
+2026-05-13 10:35:37 - INFO -   Thinking Level: high
+2026-05-13 10:35:37 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:35:37 - INFO - Running 5 iterations...
+2026-05-13 10:35:37 - INFO -   Iteration 1/5...
+2026-05-13 10:35:46 - INFO -     ✓ TTFT: 5324.56ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:35:46 - INFO -   Iteration 2/5...
+2026-05-13 10:35:55 - INFO -     ✓ TTFT: 5492.33ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:35:55 - INFO -   Iteration 3/5...
+2026-05-13 10:36:02 - INFO -     ✓ TTFT: 4457.56ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:36:02 - INFO -   Iteration 4/5...
+2026-05-13 10:36:10 - INFO -     ✓ TTFT: 4579.80ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:36:10 - INFO -   Iteration 5/5...
+2026-05-13 10:36:18 - INFO -     ✓ TTFT: 4736.39ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:36:18 - INFO - ✓ Test 19 completed successfully
+2026-05-13 10:36:18 - INFO -   TTFT P50: 4736.39ms
+2026-05-13 10:36:18 - INFO -   Output Tokens P50: 823
+2026-05-13 10:36:18 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:36:18 - INFO - 
+2026-05-13 10:36:18 - INFO - ====================================================================================================
+2026-05-13 10:36:18 - INFO - Test 20/30
+2026-05-13 10:36:18 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:36:18 - INFO -   Request File: benchmark/request_10k.json
+2026-05-13 10:36:18 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:36:18 - INFO - Running 5 iterations...
+2026-05-13 10:36:18 - INFO -   Iteration 1/5...
+2026-05-13 10:36:23 - INFO -     ✓ TTFT: 1389.51ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:36:23 - INFO -   Iteration 2/5...
+2026-05-13 10:36:26 - INFO -     ✓ TTFT: 799.29ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:36:26 - INFO -   Iteration 3/5...
+2026-05-13 10:36:30 - INFO -     ✓ TTFT: 727.81ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:36:30 - INFO -   Iteration 4/5...
+2026-05-13 10:36:34 - INFO -     ✓ TTFT: 1627.04ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:36:34 - INFO -   Iteration 5/5...
+2026-05-13 10:36:37 - INFO -     ✓ TTFT: 748.73ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:36:37 - INFO - ✓ Test 20 completed successfully
+2026-05-13 10:36:37 - INFO -   TTFT P50: 799.29ms
+2026-05-13 10:36:37 - INFO -   Output Tokens P50: 741
+2026-05-13 10:36:37 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:36:37 - INFO - 
+2026-05-13 10:36:37 - INFO - ====================================================================================================
+2026-05-13 10:36:37 - INFO - Test 21/30
+2026-05-13 10:36:37 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:36:37 - INFO -   Request File: benchmark/request_50k.json
+2026-05-13 10:36:37 - INFO -   Thinking Level: minimal
+2026-05-13 10:36:37 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:36:38 - INFO - Running 5 iterations...
+2026-05-13 10:36:38 - INFO -   Iteration 1/5...
+2026-05-13 10:36:42 - INFO -     ✓ TTFT: 1298.35ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:36:42 - INFO -   Iteration 2/5...
+2026-05-13 10:36:46 - INFO -     ✓ TTFT: 760.37ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:36:46 - INFO -   Iteration 3/5...
+2026-05-13 10:36:50 - INFO -     ✓ TTFT: 1187.33ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:36:50 - INFO -   Iteration 4/5...
+2026-05-13 10:36:54 - INFO -     ✓ TTFT: 961.91ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:36:54 - INFO -   Iteration 5/5...
+2026-05-13 10:36:58 - INFO -     ✓ TTFT: 870.64ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:36:58 - INFO - ✓ Test 21 completed successfully
+2026-05-13 10:36:58 - INFO -   TTFT P50: 961.91ms
+2026-05-13 10:36:58 - INFO -   Output Tokens P50: 795
+2026-05-13 10:36:58 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:36:58 - INFO - 
+2026-05-13 10:36:58 - INFO - ====================================================================================================
+2026-05-13 10:36:58 - INFO - Test 22/30
+2026-05-13 10:36:58 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:36:58 - INFO -   Request File: benchmark/request_50k.json
+2026-05-13 10:36:58 - INFO -   Thinking Level: low
+2026-05-13 10:36:58 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:36:58 - INFO - Running 5 iterations...
+2026-05-13 10:36:58 - INFO -   Iteration 1/5...
+2026-05-13 10:37:04 - INFO -     ✓ TTFT: 1793.32ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:37:04 - INFO -   Iteration 2/5...
+2026-05-13 10:37:10 - INFO -     ✓ TTFT: 1122.93ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:37:10 - INFO -   Iteration 3/5...
+2026-05-13 10:37:15 - INFO -     ✓ TTFT: 1038.87ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:37:15 - INFO -   Iteration 4/5...
+2026-05-13 10:37:20 - INFO -     ✓ TTFT: 1109.83ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:37:20 - INFO -   Iteration 5/5...
+2026-05-13 10:37:26 - INFO -     ✓ TTFT: 1156.75ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:37:26 - INFO - ✓ Test 22 completed successfully
+2026-05-13 10:37:26 - INFO -   TTFT P50: 1122.93ms
+2026-05-13 10:37:26 - INFO -   Output Tokens P50: 999
+2026-05-13 10:37:26 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:37:26 - INFO - 
+2026-05-13 10:37:26 - INFO - ====================================================================================================
+2026-05-13 10:37:26 - INFO - Test 23/30
+2026-05-13 10:37:26 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:37:26 - INFO -   Request File: benchmark/request_50k.json
+2026-05-13 10:37:26 - INFO -   Thinking Level: medium
+2026-05-13 10:37:26 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:37:26 - INFO - Running 5 iterations...
+2026-05-13 10:37:26 - INFO -   Iteration 1/5...
+2026-05-13 10:37:33 - INFO -     ✓ TTFT: 3510.58ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:37:33 - INFO -   Iteration 2/5...
+2026-05-13 10:37:39 - INFO -     ✓ TTFT: 2850.64ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:37:39 - INFO -   Iteration 3/5...
+2026-05-13 10:37:46 - INFO -     ✓ TTFT: 2976.56ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:37:46 - INFO -   Iteration 4/5...
+2026-05-13 10:37:54 - INFO -     ✓ TTFT: 2879.54ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:37:54 - INFO -   Iteration 5/5...
+2026-05-13 10:38:00 - INFO -     ✓ TTFT: 2850.73ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:38:00 - INFO - ✓ Test 23 completed successfully
+2026-05-13 10:38:00 - INFO -   TTFT P50: 2879.54ms
+2026-05-13 10:38:00 - INFO -   Output Tokens P50: 964
+2026-05-13 10:38:00 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:38:00 - INFO - 
+2026-05-13 10:38:00 - INFO - ====================================================================================================
+2026-05-13 10:38:00 - INFO - Test 24/30
+2026-05-13 10:38:00 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:38:00 - INFO -   Request File: benchmark/request_50k.json
+2026-05-13 10:38:00 - INFO -   Thinking Level: high
+2026-05-13 10:38:00 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:38:00 - INFO - Running 5 iterations...
+2026-05-13 10:38:00 - INFO -   Iteration 1/5...
+2026-05-13 10:38:09 - INFO -     ✓ TTFT: 5118.73ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:38:09 - INFO -   Iteration 2/5...
+2026-05-13 10:38:18 - INFO -     ✓ TTFT: 4664.36ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:38:18 - INFO -   Iteration 3/5...
+2026-05-13 10:38:26 - INFO -     ✓ TTFT: 4891.55ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:38:26 - INFO -   Iteration 4/5...
+2026-05-13 10:38:35 - INFO -     ✓ TTFT: 4874.13ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:38:35 - INFO -   Iteration 5/5...
+2026-05-13 10:38:43 - INFO -     ✓ TTFT: 4846.55ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:38:43 - INFO - ✓ Test 24 completed successfully
+2026-05-13 10:38:43 - INFO -   TTFT P50: 4874.13ms
+2026-05-13 10:38:43 - INFO -   Output Tokens P50: 977
+2026-05-13 10:38:43 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:38:43 - INFO - 
+2026-05-13 10:38:43 - INFO - ====================================================================================================
+2026-05-13 10:38:43 - INFO - Test 25/30
+2026-05-13 10:38:43 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:38:43 - INFO -   Request File: benchmark/request_50k.json
+2026-05-13 10:38:43 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:38:43 - INFO - Running 5 iterations...
+2026-05-13 10:38:43 - INFO -   Iteration 1/5...
+2026-05-13 10:38:48 - INFO -     ✓ TTFT: 1597.97ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:38:48 - INFO -   Iteration 2/5...
+2026-05-13 10:38:52 - INFO -     ✓ TTFT: 878.72ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:38:52 - INFO -   Iteration 3/5...
+2026-05-13 10:38:57 - INFO -     ✓ TTFT: 747.08ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:38:57 - INFO -   Iteration 4/5...
+2026-05-13 10:39:01 - INFO -     ✓ TTFT: 1350.79ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:39:01 - INFO -   Iteration 5/5...
+2026-05-13 10:39:05 - INFO -     ✓ TTFT: 908.30ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:39:05 - INFO - ✓ Test 25 completed successfully
+2026-05-13 10:39:05 - INFO -   TTFT P50: 908.30ms
+2026-05-13 10:39:05 - INFO -   Output Tokens P50: 768
+2026-05-13 10:39:05 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:39:05 - INFO - 
+2026-05-13 10:39:05 - INFO - ====================================================================================================
+2026-05-13 10:39:05 - INFO - Test 26/30
+2026-05-13 10:39:05 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:39:05 - INFO -   Request File: benchmark/request_100k.json
+2026-05-13 10:39:05 - INFO -   Thinking Level: minimal
+2026-05-13 10:39:05 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:39:06 - INFO - Running 5 iterations...
+2026-05-13 10:39:06 - INFO -   Iteration 1/5...
+2026-05-13 10:39:11 - INFO -     ✓ TTFT: 1536.89ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:39:11 - INFO -   Iteration 2/5...
+2026-05-13 10:39:14 - INFO -     ✓ TTFT: 703.29ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:39:14 - INFO -   Iteration 3/5...
+2026-05-13 10:39:19 - INFO -     ✓ TTFT: 650.81ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:39:19 - INFO -   Iteration 4/5...
+2026-05-13 10:39:23 - INFO -     ✓ TTFT: 807.63ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:39:23 - INFO -   Iteration 5/5...
+2026-05-13 10:39:28 - INFO -     ✓ TTFT: 2333.80ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:39:28 - INFO - ✓ Test 26 completed successfully
+2026-05-13 10:39:28 - INFO -   TTFT P50: 807.63ms
+2026-05-13 10:39:28 - INFO -   Output Tokens P50: 816
+2026-05-13 10:39:28 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:39:28 - INFO - 
+2026-05-13 10:39:28 - INFO - ====================================================================================================
+2026-05-13 10:39:28 - INFO - Test 27/30
+2026-05-13 10:39:28 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:39:28 - INFO -   Request File: benchmark/request_100k.json
+2026-05-13 10:39:28 - INFO -   Thinking Level: low
+2026-05-13 10:39:28 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:39:28 - INFO - Running 5 iterations...
+2026-05-13 10:39:28 - INFO -   Iteration 1/5...
+2026-05-13 10:39:35 - INFO -     ✓ TTFT: 2095.53ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:39:35 - INFO -   Iteration 2/5...
+2026-05-13 10:39:40 - INFO -     ✓ TTFT: 1552.15ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:39:40 - INFO -   Iteration 3/5...
+2026-05-13 10:39:45 - INFO -     ✓ TTFT: 1230.43ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:39:45 - INFO -   Iteration 4/5...
+2026-05-13 10:39:56 - INFO -     ✓ TTFT: 5134.58ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:39:56 - INFO -   Iteration 5/5...
+2026-05-13 10:40:05 - INFO -     ✓ TTFT: 4924.90ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:40:05 - INFO - ✓ Test 27 completed successfully
+2026-05-13 10:40:05 - INFO -   TTFT P50: 2095.53ms
+2026-05-13 10:40:05 - INFO -   Output Tokens P50: 916
+2026-05-13 10:40:05 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:40:05 - INFO - 
+2026-05-13 10:40:05 - INFO - ====================================================================================================
+2026-05-13 10:40:05 - INFO - Test 28/30
+2026-05-13 10:40:05 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:40:05 - INFO -   Request File: benchmark/request_100k.json
+2026-05-13 10:40:05 - INFO -   Thinking Level: medium
+2026-05-13 10:40:05 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:40:06 - INFO - Running 5 iterations...
+2026-05-13 10:40:06 - INFO -   Iteration 1/5...
+2026-05-13 10:40:14 - INFO -     ✓ TTFT: 4506.85ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:40:14 - INFO -   Iteration 2/5...
+2026-05-13 10:40:23 - INFO -     ✓ TTFT: 4723.62ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:40:23 - INFO -   Iteration 3/5...
+2026-05-13 10:40:34 - INFO -     ✓ TTFT: 5749.05ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:40:34 - INFO -   Iteration 4/5...
+2026-05-13 10:40:43 - INFO -     ✓ TTFT: 6399.83ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:40:43 - INFO -   Iteration 5/5...
+2026-05-13 10:40:53 - INFO -     ✓ TTFT: 5383.43ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:40:53 - INFO - ✓ Test 28 completed successfully
+2026-05-13 10:40:53 - INFO -   TTFT P50: 5383.43ms
+2026-05-13 10:40:53 - INFO -   Output Tokens P50: 1060
+2026-05-13 10:40:53 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:40:53 - INFO - 
+2026-05-13 10:40:53 - INFO - ====================================================================================================
+2026-05-13 10:40:53 - INFO - Test 29/30
+2026-05-13 10:40:53 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:40:53 - INFO -   Request File: benchmark/request_100k.json
+2026-05-13 10:40:53 - INFO -   Thinking Level: high
+2026-05-13 10:40:53 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:40:53 - INFO - Running 5 iterations...
+2026-05-13 10:40:53 - INFO -   Iteration 1/5...
+2026-05-13 10:41:04 - INFO -     ✓ TTFT: 6225.60ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:41:04 - INFO -   Iteration 2/5...
+2026-05-13 10:41:15 - INFO -     ✓ TTFT: 6242.50ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:41:15 - INFO -   Iteration 3/5...
+2026-05-13 10:41:24 - INFO -     ✓ TTFT: 4929.88ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:41:24 - INFO -   Iteration 4/5...
+2026-05-13 10:41:33 - INFO -     ✓ TTFT: 5261.18ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:41:33 - INFO -   Iteration 5/5...
+2026-05-13 10:41:43 - INFO -     ✓ TTFT: 4780.64ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:41:43 - INFO - ✓ Test 29 completed successfully
+2026-05-13 10:41:43 - INFO -   TTFT P50: 5261.18ms
+2026-05-13 10:41:43 - INFO -   Output Tokens P50: 1061
+2026-05-13 10:41:43 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:41:43 - INFO - 
+2026-05-13 10:41:43 - INFO - ====================================================================================================
+2026-05-13 10:41:43 - INFO - Test 30/30
+2026-05-13 10:41:43 - INFO -   Model: gemini-3.1-flash-lite
+2026-05-13 10:41:43 - INFO -   Request File: benchmark/request_100k.json
+2026-05-13 10:41:43 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-13 10:41:43 - INFO - Running 5 iterations...
+2026-05-13 10:41:43 - INFO -   Iteration 1/5...
+2026-05-13 10:41:48 - INFO -     ✓ TTFT: 1547.95ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:41:48 - INFO -   Iteration 2/5...
+2026-05-13 10:41:53 - INFO -     ✓ TTFT: 902.37ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:41:53 - INFO -   Iteration 3/5...
+2026-05-13 10:41:58 - INFO -     ✓ TTFT: 858.24ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:41:58 - INFO -   Iteration 4/5...
+2026-05-13 10:42:03 - INFO -     ✓ TTFT: 1595.25ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:42:03 - INFO -   Iteration 5/5...
+2026-05-13 10:42:08 - INFO -     ✓ TTFT: 1142.33ms, Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:42:08 - INFO - ✓ Test 30 completed successfully
+2026-05-13 10:42:08 - INFO -   TTFT P50: 1142.33ms
+2026-05-13 10:42:08 - INFO -   Output Tokens P50: 867
+2026-05-13 10:42:08 - INFO -   Traffic Type: TrafficType.PROVISIONED_THROUGHPUT
+2026-05-13 10:42:08 - INFO - 
+2026-05-13 10:42:08 - INFO - ====================================================================================================
+2026-05-13 10:42:08 - INFO - CSV results saved to: perf_results_20260513_102804.csv
+2026-05-13 10:42:08 - INFO - Total successful tests: 30/30
+2026-05-13 10:42:08 - INFO - ====================================================================================================
