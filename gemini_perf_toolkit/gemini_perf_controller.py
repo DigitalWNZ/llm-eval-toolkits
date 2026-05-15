@@ -163,16 +163,16 @@ async def run_performance_test(
     contents = request_data.get("contents", [])
     system_instruction = request_data.get("system_instruction")
 
-    # Determine if this is a Gemini 3.x model
-    is_gemini_3 = model_name.startswith("gemini-3")
+    # Determine if this model supports thinking levels
+    supports_thinking_level = model_name.startswith("gemini-3") or model_name.startswith("gemma-")
 
     # Build thinking config based on model version
     thinking_config = None
     if thinking_level or thinking_budget:
         thinking_config_params = {}
 
-        # thinking_level is only for Gemini 3.x models
-        if thinking_level and is_gemini_3:
+        # thinking_level is for Gemini 3.x and Gemma models
+        if thinking_level and supports_thinking_level:
             level_map = {
                 "minimal": types.ThinkingLevel.MINIMAL,
                 "low": types.ThinkingLevel.LOW,
@@ -344,12 +344,12 @@ def generate_test_combinations(
     combinations = []
 
     for model in models:
-        is_gemini_3 = model.startswith("gemini-3")
+        supports_thinking_level = model.startswith("gemini-3") or model.startswith("gemma-")
         is_gemini_2 = model.startswith("gemini-2")
 
         for request_file in request_files:
             # Determine which configs to use based on model version
-            if is_gemini_3 and thinking_levels:
+            if supports_thinking_level and thinking_levels:
                 # Gemini 3: use thinking levels
                 for level in thinking_levels:
                     combinations.append({

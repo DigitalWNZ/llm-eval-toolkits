@@ -1,0 +1,672 @@
+2026-05-15 03:19:02 - INFO - ====================================================================================================
+2026-05-15 03:19:02 - INFO - GEMINI PERFORMANCE TEST CONTROLLER
+2026-05-15 03:19:02 - INFO - ====================================================================================================
+2026-05-15 03:19:02 - INFO - Run ID: 20260515_031902
+2026-05-15 03:19:02 - INFO - Models: gemma-4-26b-a4b-it-maas
+2026-05-15 03:19:02 - INFO - Request Files: benchmark/request_1k.json, benchmark/request_2k.json, benchmark/request_5k.json, benchmark/request_10k.json, benchmark/request_50k.json, benchmark/request_100k.json
+2026-05-15 03:19:02 - INFO - Project: cloud-llm-preview1
+2026-05-15 03:19:02 - INFO - Location: global
+2026-05-15 03:19:02 - INFO - Iterations: 5
+2026-05-15 03:19:02 - INFO - Thinking Levels (Gemini 3.x): minimal, low, medium, high
+2026-05-15 03:19:02 - INFO - ====================================================================================================
+2026-05-15 03:19:02 - INFO - 
+Total test combinations: 30
+
+2026-05-15 03:19:02 - INFO - ====================================================================================================
+2026-05-15 03:19:02 - INFO - Test 1/30
+2026-05-15 03:19:02 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:19:02 - INFO -   Request File: benchmark/request_1k.json
+2026-05-15 03:19:02 - INFO -   Thinking Level: minimal
+2026-05-15 03:19:02 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:19:02 - INFO - Running 5 iterations...
+2026-05-15 03:19:02 - INFO -   Iteration 1/5...
+2026-05-15 03:19:17 - INFO -     ✓ TTFT: 972.73ms, Traffic Type: UNKNOWN
+2026-05-15 03:19:17 - INFO -   Iteration 2/5...
+2026-05-15 03:19:31 - INFO -     ✓ TTFT: 263.04ms, Traffic Type: UNKNOWN
+2026-05-15 03:19:31 - INFO -   Iteration 3/5...
+2026-05-15 03:19:45 - INFO -     ✓ TTFT: 272.59ms, Traffic Type: UNKNOWN
+2026-05-15 03:19:45 - INFO -   Iteration 4/5...
+2026-05-15 03:19:56 - INFO -     ✓ TTFT: 263.73ms, Traffic Type: UNKNOWN
+2026-05-15 03:19:56 - INFO -   Iteration 5/5...
+2026-05-15 03:20:07 - INFO -     ✓ TTFT: 282.47ms, Traffic Type: UNKNOWN
+2026-05-15 03:20:07 - INFO - ✓ Test 1 completed successfully
+2026-05-15 03:20:07 - INFO -   TTFT P50: 272.59ms
+2026-05-15 03:20:07 - INFO -   Output Tokens P50: 679
+2026-05-15 03:20:07 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:20:07 - INFO - 
+2026-05-15 03:20:07 - INFO - ====================================================================================================
+2026-05-15 03:20:07 - INFO - Test 2/30
+2026-05-15 03:20:07 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:20:07 - INFO -   Request File: benchmark/request_1k.json
+2026-05-15 03:20:07 - INFO -   Thinking Level: low
+2026-05-15 03:20:07 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:20:07 - INFO - Running 5 iterations...
+2026-05-15 03:20:07 - INFO -   Iteration 1/5...
+2026-05-15 03:20:22 - INFO -     ✓ TTFT: 985.63ms, Traffic Type: UNKNOWN
+2026-05-15 03:20:22 - INFO -   Iteration 2/5...
+2026-05-15 03:20:35 - INFO -     ✓ TTFT: 251.86ms, Traffic Type: UNKNOWN
+2026-05-15 03:20:35 - INFO -   Iteration 3/5...
+2026-05-15 03:20:48 - INFO -     ✓ TTFT: 260.85ms, Traffic Type: UNKNOWN
+2026-05-15 03:20:48 - INFO -   Iteration 4/5...
+2026-05-15 03:21:04 - INFO -     ✓ TTFT: 249.54ms, Traffic Type: UNKNOWN
+2026-05-15 03:21:04 - INFO -   Iteration 5/5...
+2026-05-15 03:21:15 - INFO -     ✓ TTFT: 309.23ms, Traffic Type: UNKNOWN
+2026-05-15 03:21:15 - INFO - ✓ Test 2 completed successfully
+2026-05-15 03:21:15 - INFO -   TTFT P50: 260.85ms
+2026-05-15 03:21:15 - INFO -   Output Tokens P50: 720
+2026-05-15 03:21:15 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:21:15 - INFO - 
+2026-05-15 03:21:15 - INFO - ====================================================================================================
+2026-05-15 03:21:15 - INFO - Test 3/30
+2026-05-15 03:21:15 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:21:15 - INFO -   Request File: benchmark/request_1k.json
+2026-05-15 03:21:15 - INFO -   Thinking Level: medium
+2026-05-15 03:21:15 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:21:15 - INFO - Running 5 iterations...
+2026-05-15 03:21:15 - INFO -   Iteration 1/5...
+2026-05-15 03:21:29 - INFO -     ✓ TTFT: 1004.17ms, Traffic Type: UNKNOWN
+2026-05-15 03:21:29 - INFO -   Iteration 2/5...
+2026-05-15 03:21:44 - INFO -     ✓ TTFT: 275.73ms, Traffic Type: UNKNOWN
+2026-05-15 03:21:44 - INFO -   Iteration 3/5...
+2026-05-15 03:21:57 - INFO -     ✓ TTFT: 251.32ms, Traffic Type: UNKNOWN
+2026-05-15 03:21:57 - INFO -   Iteration 4/5...
+2026-05-15 03:22:12 - INFO -     ✓ TTFT: 263.39ms, Traffic Type: UNKNOWN
+2026-05-15 03:22:12 - INFO -   Iteration 5/5...
+2026-05-15 03:22:29 - INFO -     ✓ TTFT: 265.48ms, Traffic Type: UNKNOWN
+2026-05-15 03:22:29 - INFO - ✓ Test 3 completed successfully
+2026-05-15 03:22:29 - INFO -   TTFT P50: 265.48ms
+2026-05-15 03:22:29 - INFO -   Output Tokens P50: 715
+2026-05-15 03:22:29 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:22:29 - INFO - 
+2026-05-15 03:22:29 - INFO - ====================================================================================================
+2026-05-15 03:22:29 - INFO - Test 4/30
+2026-05-15 03:22:29 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:22:29 - INFO -   Request File: benchmark/request_1k.json
+2026-05-15 03:22:29 - INFO -   Thinking Level: high
+2026-05-15 03:22:29 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:22:29 - INFO - Running 5 iterations...
+2026-05-15 03:22:29 - INFO -   Iteration 1/5...
+2026-05-15 03:22:47 - INFO -     ✓ TTFT: 1001.86ms, Traffic Type: UNKNOWN
+2026-05-15 03:22:47 - INFO -   Iteration 2/5...
+2026-05-15 03:23:01 - INFO -     ✓ TTFT: 274.00ms, Traffic Type: UNKNOWN
+2026-05-15 03:23:01 - INFO -   Iteration 3/5...
+2026-05-15 03:23:15 - INFO -     ✓ TTFT: 270.26ms, Traffic Type: UNKNOWN
+2026-05-15 03:23:15 - INFO -   Iteration 4/5...
+2026-05-15 03:23:30 - INFO -     ✓ TTFT: 275.98ms, Traffic Type: UNKNOWN
+2026-05-15 03:23:30 - INFO -   Iteration 5/5...
+2026-05-15 03:23:42 - INFO -     ✓ TTFT: 274.64ms, Traffic Type: UNKNOWN
+2026-05-15 03:23:42 - INFO - ✓ Test 4 completed successfully
+2026-05-15 03:23:42 - INFO -   TTFT P50: 274.64ms
+2026-05-15 03:23:42 - INFO -   Output Tokens P50: 707
+2026-05-15 03:23:42 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:23:42 - INFO - 
+2026-05-15 03:23:42 - INFO - ====================================================================================================
+2026-05-15 03:23:42 - INFO - Test 5/30
+2026-05-15 03:23:42 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:23:42 - INFO -   Request File: benchmark/request_1k.json
+2026-05-15 03:23:42 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:23:42 - INFO - Running 5 iterations...
+2026-05-15 03:23:42 - INFO -   Iteration 1/5...
+2026-05-15 03:23:59 - INFO -     ✓ TTFT: 988.04ms, Traffic Type: UNKNOWN
+2026-05-15 03:23:59 - INFO -   Iteration 2/5...
+2026-05-15 03:24:13 - INFO -     ✓ TTFT: 269.49ms, Traffic Type: UNKNOWN
+2026-05-15 03:24:13 - INFO -   Iteration 3/5...
+2026-05-15 03:24:32 - INFO -     ✓ TTFT: 274.82ms, Traffic Type: UNKNOWN
+2026-05-15 03:24:32 - INFO -   Iteration 4/5...
+2026-05-15 03:24:45 - INFO -     ✓ TTFT: 242.53ms, Traffic Type: UNKNOWN
+2026-05-15 03:24:45 - INFO -   Iteration 5/5...
+2026-05-15 03:25:00 - INFO -     ✓ TTFT: 281.49ms, Traffic Type: UNKNOWN
+2026-05-15 03:25:00 - INFO - ✓ Test 5 completed successfully
+2026-05-15 03:25:00 - INFO -   TTFT P50: 274.82ms
+2026-05-15 03:25:00 - INFO -   Output Tokens P50: 721
+2026-05-15 03:25:00 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:25:00 - INFO - 
+2026-05-15 03:25:00 - INFO - ====================================================================================================
+2026-05-15 03:25:00 - INFO - Test 6/30
+2026-05-15 03:25:00 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:25:00 - INFO -   Request File: benchmark/request_2k.json
+2026-05-15 03:25:00 - INFO -   Thinking Level: minimal
+2026-05-15 03:25:00 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:25:00 - INFO - Running 5 iterations...
+2026-05-15 03:25:00 - INFO -   Iteration 1/5...
+2026-05-15 03:25:06 - INFO -     ✓ TTFT: 949.39ms, Traffic Type: UNKNOWN
+2026-05-15 03:25:06 - INFO -   Iteration 2/5...
+2026-05-15 03:25:19 - INFO -     ✓ TTFT: 266.84ms, Traffic Type: UNKNOWN
+2026-05-15 03:25:19 - INFO -   Iteration 3/5...
+2026-05-15 03:25:26 - INFO -     ✓ TTFT: 1400.70ms, Traffic Type: UNKNOWN
+2026-05-15 03:25:26 - INFO -   Iteration 4/5...
+2026-05-15 03:25:32 - INFO -     ✓ TTFT: 251.86ms, Traffic Type: UNKNOWN
+2026-05-15 03:25:32 - INFO -   Iteration 5/5...
+2026-05-15 03:25:46 - INFO -     ✓ TTFT: 254.37ms, Traffic Type: UNKNOWN
+2026-05-15 03:25:46 - INFO - ✓ Test 6 completed successfully
+2026-05-15 03:25:46 - INFO -   TTFT P50: 266.84ms
+2026-05-15 03:25:46 - INFO -   Output Tokens P50: 703
+2026-05-15 03:25:46 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:25:46 - INFO - 
+2026-05-15 03:25:46 - INFO - ====================================================================================================
+2026-05-15 03:25:46 - INFO - Test 7/30
+2026-05-15 03:25:46 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:25:46 - INFO -   Request File: benchmark/request_2k.json
+2026-05-15 03:25:46 - INFO -   Thinking Level: low
+2026-05-15 03:25:46 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:25:46 - INFO - Running 5 iterations...
+2026-05-15 03:25:46 - INFO -   Iteration 1/5...
+2026-05-15 03:25:52 - INFO -     ✓ TTFT: 985.30ms, Traffic Type: UNKNOWN
+2026-05-15 03:25:52 - INFO -   Iteration 2/5...
+2026-05-15 03:25:56 - INFO -     ✓ TTFT: 236.73ms, Traffic Type: UNKNOWN
+2026-05-15 03:25:56 - INFO -   Iteration 3/5...
+2026-05-15 03:26:09 - INFO -     ✓ TTFT: 250.76ms, Traffic Type: UNKNOWN
+2026-05-15 03:26:09 - INFO -   Iteration 4/5...
+2026-05-15 03:26:13 - INFO -     ✓ TTFT: 254.03ms, Traffic Type: UNKNOWN
+2026-05-15 03:26:13 - INFO -   Iteration 5/5...
+2026-05-15 03:26:18 - INFO -     ✓ TTFT: 271.13ms, Traffic Type: UNKNOWN
+2026-05-15 03:26:18 - INFO - ✓ Test 7 completed successfully
+2026-05-15 03:26:18 - INFO -   TTFT P50: 254.03ms
+2026-05-15 03:26:18 - INFO -   Output Tokens P50: 722
+2026-05-15 03:26:18 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:26:18 - INFO - 
+2026-05-15 03:26:18 - INFO - ====================================================================================================
+2026-05-15 03:26:18 - INFO - Test 8/30
+2026-05-15 03:26:18 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:26:18 - INFO -   Request File: benchmark/request_2k.json
+2026-05-15 03:26:18 - INFO -   Thinking Level: medium
+2026-05-15 03:26:18 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:26:18 - INFO - Running 5 iterations...
+2026-05-15 03:26:18 - INFO -   Iteration 1/5...
+2026-05-15 03:26:33 - INFO -     ✓ TTFT: 979.12ms, Traffic Type: UNKNOWN
+2026-05-15 03:26:33 - INFO -   Iteration 2/5...
+2026-05-15 03:26:38 - INFO -     ✓ TTFT: 238.87ms, Traffic Type: UNKNOWN
+2026-05-15 03:26:38 - INFO -   Iteration 3/5...
+2026-05-15 03:26:43 - INFO -     ✓ TTFT: 234.75ms, Traffic Type: UNKNOWN
+2026-05-15 03:26:43 - INFO -   Iteration 4/5...
+2026-05-15 03:26:47 - INFO -     ✓ TTFT: 252.98ms, Traffic Type: UNKNOWN
+2026-05-15 03:26:47 - INFO -   Iteration 5/5...
+2026-05-15 03:26:54 - INFO -     ✓ TTFT: 229.85ms, Traffic Type: UNKNOWN
+2026-05-15 03:26:54 - INFO - ✓ Test 8 completed successfully
+2026-05-15 03:26:54 - INFO -   TTFT P50: 238.87ms
+2026-05-15 03:26:54 - INFO -   Output Tokens P50: 746
+2026-05-15 03:26:54 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:26:54 - INFO - 
+2026-05-15 03:26:54 - INFO - ====================================================================================================
+2026-05-15 03:26:54 - INFO - Test 9/30
+2026-05-15 03:26:54 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:26:54 - INFO -   Request File: benchmark/request_2k.json
+2026-05-15 03:26:54 - INFO -   Thinking Level: high
+2026-05-15 03:26:54 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:26:54 - INFO - Running 5 iterations...
+2026-05-15 03:26:54 - INFO -   Iteration 1/5...
+2026-05-15 03:27:09 - INFO -     ✓ TTFT: 979.95ms, Traffic Type: UNKNOWN
+2026-05-15 03:27:09 - INFO -   Iteration 2/5...
+2026-05-15 03:27:25 - INFO -     ✓ TTFT: 498.06ms, Traffic Type: UNKNOWN
+2026-05-15 03:27:25 - INFO -   Iteration 3/5...
+2026-05-15 03:27:33 - INFO -     ✓ TTFT: 244.93ms, Traffic Type: UNKNOWN
+2026-05-15 03:27:33 - INFO -   Iteration 4/5...
+2026-05-15 03:27:37 - INFO -     ✓ TTFT: 249.18ms, Traffic Type: UNKNOWN
+2026-05-15 03:27:37 - INFO -   Iteration 5/5...
+2026-05-15 03:27:53 - INFO -     ✓ TTFT: 234.50ms, Traffic Type: UNKNOWN
+2026-05-15 03:27:53 - INFO - ✓ Test 9 completed successfully
+2026-05-15 03:27:53 - INFO -   TTFT P50: 249.18ms
+2026-05-15 03:27:53 - INFO -   Output Tokens P50: 741
+2026-05-15 03:27:53 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:27:53 - INFO - 
+2026-05-15 03:27:53 - INFO - ====================================================================================================
+2026-05-15 03:27:53 - INFO - Test 10/30
+2026-05-15 03:27:53 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:27:53 - INFO -   Request File: benchmark/request_2k.json
+2026-05-15 03:27:53 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:27:53 - INFO - Running 5 iterations...
+2026-05-15 03:27:53 - INFO -   Iteration 1/5...
+2026-05-15 03:28:08 - INFO -     ✓ TTFT: 1001.20ms, Traffic Type: UNKNOWN
+2026-05-15 03:28:08 - INFO -   Iteration 2/5...
+2026-05-15 03:28:14 - INFO -     ✓ TTFT: 263.57ms, Traffic Type: UNKNOWN
+2026-05-15 03:28:14 - INFO -   Iteration 3/5...
+2026-05-15 03:28:29 - INFO -     ✓ TTFT: 236.07ms, Traffic Type: UNKNOWN
+2026-05-15 03:28:29 - INFO -   Iteration 4/5...
+2026-05-15 03:28:33 - INFO -     ✓ TTFT: 590.68ms, Traffic Type: UNKNOWN
+2026-05-15 03:28:33 - INFO -   Iteration 5/5...
+2026-05-15 03:28:48 - INFO -     ✓ TTFT: 270.02ms, Traffic Type: UNKNOWN
+2026-05-15 03:28:48 - INFO - ✓ Test 10 completed successfully
+2026-05-15 03:28:48 - INFO -   TTFT P50: 270.02ms
+2026-05-15 03:28:48 - INFO -   Output Tokens P50: 739
+2026-05-15 03:28:48 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:28:48 - INFO - 
+2026-05-15 03:28:48 - INFO - ====================================================================================================
+2026-05-15 03:28:48 - INFO - Test 11/30
+2026-05-15 03:28:48 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:28:48 - INFO -   Request File: benchmark/request_5k.json
+2026-05-15 03:28:48 - INFO -   Thinking Level: minimal
+2026-05-15 03:28:48 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:28:49 - INFO - Running 5 iterations...
+2026-05-15 03:28:49 - INFO -   Iteration 1/5...
+2026-05-15 03:28:59 - INFO -     ✓ TTFT: 991.57ms, Traffic Type: UNKNOWN
+2026-05-15 03:28:59 - INFO -   Iteration 2/5...
+2026-05-15 03:29:07 - INFO -     ✓ TTFT: 337.06ms, Traffic Type: UNKNOWN
+2026-05-15 03:29:07 - INFO -   Iteration 3/5...
+2026-05-15 03:29:23 - INFO -     ✓ TTFT: 321.72ms, Traffic Type: UNKNOWN
+2026-05-15 03:29:23 - INFO -   Iteration 4/5...
+2026-05-15 03:29:38 - INFO -     ✓ TTFT: 320.49ms, Traffic Type: UNKNOWN
+2026-05-15 03:29:38 - INFO -   Iteration 5/5...
+2026-05-15 03:29:56 - INFO -     ✓ TTFT: 359.06ms, Traffic Type: UNKNOWN
+2026-05-15 03:29:56 - INFO - ✓ Test 11 completed successfully
+2026-05-15 03:29:56 - INFO -   TTFT P50: 337.06ms
+2026-05-15 03:29:56 - INFO -   Output Tokens P50: 731
+2026-05-15 03:29:56 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:29:56 - INFO - 
+2026-05-15 03:29:56 - INFO - ====================================================================================================
+2026-05-15 03:29:56 - INFO - Test 12/30
+2026-05-15 03:29:56 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:29:56 - INFO -   Request File: benchmark/request_5k.json
+2026-05-15 03:29:56 - INFO -   Thinking Level: low
+2026-05-15 03:29:56 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:29:56 - INFO - Running 5 iterations...
+2026-05-15 03:29:56 - INFO -   Iteration 1/5...
+2026-05-15 03:30:10 - INFO -     ✓ TTFT: 1034.10ms, Traffic Type: UNKNOWN
+2026-05-15 03:30:10 - INFO -   Iteration 2/5...
+2026-05-15 03:30:23 - INFO -     ✓ TTFT: 299.13ms, Traffic Type: UNKNOWN
+2026-05-15 03:30:23 - INFO -   Iteration 3/5...
+2026-05-15 03:30:38 - INFO -     ✓ TTFT: 305.52ms, Traffic Type: UNKNOWN
+2026-05-15 03:30:38 - INFO -   Iteration 4/5...
+2026-05-15 03:30:54 - INFO -     ✓ TTFT: 332.24ms, Traffic Type: UNKNOWN
+2026-05-15 03:30:54 - INFO -   Iteration 5/5...
+2026-05-15 03:30:59 - INFO -     ✓ TTFT: 293.11ms, Traffic Type: UNKNOWN
+2026-05-15 03:30:59 - INFO - ✓ Test 12 completed successfully
+2026-05-15 03:30:59 - INFO -   TTFT P50: 305.52ms
+2026-05-15 03:30:59 - INFO -   Output Tokens P50: 768
+2026-05-15 03:30:59 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:30:59 - INFO - 
+2026-05-15 03:30:59 - INFO - ====================================================================================================
+2026-05-15 03:30:59 - INFO - Test 13/30
+2026-05-15 03:30:59 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:30:59 - INFO -   Request File: benchmark/request_5k.json
+2026-05-15 03:30:59 - INFO -   Thinking Level: medium
+2026-05-15 03:30:59 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:30:59 - INFO - Running 5 iterations...
+2026-05-15 03:30:59 - INFO -   Iteration 1/5...
+2026-05-15 03:31:15 - INFO -     ✓ TTFT: 1051.53ms, Traffic Type: UNKNOWN
+2026-05-15 03:31:15 - INFO -   Iteration 2/5...
+2026-05-15 03:31:33 - INFO -     ✓ TTFT: 322.70ms, Traffic Type: UNKNOWN
+2026-05-15 03:31:33 - INFO -   Iteration 3/5...
+2026-05-15 03:31:49 - INFO -     ✓ TTFT: 312.38ms, Traffic Type: UNKNOWN
+2026-05-15 03:31:49 - INFO -   Iteration 4/5...
+2026-05-15 03:32:02 - INFO -     ✓ TTFT: 269.46ms, Traffic Type: UNKNOWN
+2026-05-15 03:32:02 - INFO -   Iteration 5/5...
+2026-05-15 03:32:29 - INFO -     ✓ TTFT: 9671.78ms, Traffic Type: UNKNOWN
+2026-05-15 03:32:29 - INFO - ✓ Test 13 completed successfully
+2026-05-15 03:32:29 - INFO -   TTFT P50: 322.70ms
+2026-05-15 03:32:29 - INFO -   Output Tokens P50: 765
+2026-05-15 03:32:29 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:32:29 - INFO - 
+2026-05-15 03:32:29 - INFO - ====================================================================================================
+2026-05-15 03:32:29 - INFO - Test 14/30
+2026-05-15 03:32:29 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:32:29 - INFO -   Request File: benchmark/request_5k.json
+2026-05-15 03:32:29 - INFO -   Thinking Level: high
+2026-05-15 03:32:29 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:32:29 - INFO - Running 5 iterations...
+2026-05-15 03:32:29 - INFO -   Iteration 1/5...
+2026-05-15 03:32:40 - INFO -     ✓ TTFT: 1001.49ms, Traffic Type: UNKNOWN
+2026-05-15 03:32:40 - INFO -   Iteration 2/5...
+2026-05-15 03:32:45 - INFO -     ✓ TTFT: 298.16ms, Traffic Type: UNKNOWN
+2026-05-15 03:32:45 - INFO -   Iteration 3/5...
+2026-05-15 03:33:01 - INFO -     ✓ TTFT: 320.57ms, Traffic Type: UNKNOWN
+2026-05-15 03:33:01 - INFO -   Iteration 4/5...
+2026-05-15 03:33:11 - INFO -     ✓ TTFT: 285.89ms, Traffic Type: UNKNOWN
+2026-05-15 03:33:11 - INFO -   Iteration 5/5...
+2026-05-15 03:33:27 - INFO -     ✓ TTFT: 312.48ms, Traffic Type: UNKNOWN
+2026-05-15 03:33:27 - INFO - ✓ Test 14 completed successfully
+2026-05-15 03:33:27 - INFO -   TTFT P50: 312.48ms
+2026-05-15 03:33:27 - INFO -   Output Tokens P50: 764
+2026-05-15 03:33:27 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:33:27 - INFO - 
+2026-05-15 03:33:27 - INFO - ====================================================================================================
+2026-05-15 03:33:27 - INFO - Test 15/30
+2026-05-15 03:33:27 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:33:27 - INFO -   Request File: benchmark/request_5k.json
+2026-05-15 03:33:27 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:33:27 - INFO - Running 5 iterations...
+2026-05-15 03:33:27 - INFO -   Iteration 1/5...
+2026-05-15 03:33:35 - INFO -     ✓ TTFT: 972.37ms, Traffic Type: UNKNOWN
+2026-05-15 03:33:35 - INFO -   Iteration 2/5...
+2026-05-15 03:33:52 - INFO -     ✓ TTFT: 321.41ms, Traffic Type: UNKNOWN
+2026-05-15 03:33:52 - INFO -   Iteration 3/5...
+2026-05-15 03:34:05 - INFO -     ✓ TTFT: 284.08ms, Traffic Type: UNKNOWN
+2026-05-15 03:34:05 - INFO -   Iteration 4/5...
+2026-05-15 03:34:19 - INFO -     ✓ TTFT: 333.19ms, Traffic Type: UNKNOWN
+2026-05-15 03:34:19 - INFO -   Iteration 5/5...
+2026-05-15 03:34:37 - INFO -     ✓ TTFT: 336.87ms, Traffic Type: UNKNOWN
+2026-05-15 03:34:37 - INFO - ✓ Test 15 completed successfully
+2026-05-15 03:34:37 - INFO -   TTFT P50: 333.19ms
+2026-05-15 03:34:37 - INFO -   Output Tokens P50: 743
+2026-05-15 03:34:37 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:34:37 - INFO - 
+2026-05-15 03:34:37 - INFO - ====================================================================================================
+2026-05-15 03:34:37 - INFO - Test 16/30
+2026-05-15 03:34:37 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:34:37 - INFO -   Request File: benchmark/request_10k.json
+2026-05-15 03:34:37 - INFO -   Thinking Level: minimal
+2026-05-15 03:34:37 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:34:37 - INFO - Running 5 iterations...
+2026-05-15 03:34:37 - INFO -   Iteration 1/5...
+2026-05-15 03:34:43 - INFO -     ✓ TTFT: 1058.26ms, Traffic Type: UNKNOWN
+2026-05-15 03:34:43 - INFO -   Iteration 2/5...
+2026-05-15 03:34:55 - INFO -     ✓ TTFT: 327.40ms, Traffic Type: UNKNOWN
+2026-05-15 03:34:55 - INFO -   Iteration 3/5...
+2026-05-15 03:35:00 - INFO -     ✓ TTFT: 338.83ms, Traffic Type: UNKNOWN
+2026-05-15 03:35:00 - INFO -   Iteration 4/5...
+2026-05-15 03:35:11 - INFO -     ✓ TTFT: 343.35ms, Traffic Type: UNKNOWN
+2026-05-15 03:35:11 - INFO -   Iteration 5/5...
+2026-05-15 03:35:28 - INFO -     ✓ TTFT: 379.92ms, Traffic Type: UNKNOWN
+2026-05-15 03:35:28 - INFO - ✓ Test 16 completed successfully
+2026-05-15 03:35:28 - INFO -   TTFT P50: 343.35ms
+2026-05-15 03:35:28 - INFO -   Output Tokens P50: 786
+2026-05-15 03:35:28 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:35:28 - INFO - 
+2026-05-15 03:35:28 - INFO - ====================================================================================================
+2026-05-15 03:35:28 - INFO - Test 17/30
+2026-05-15 03:35:28 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:35:28 - INFO -   Request File: benchmark/request_10k.json
+2026-05-15 03:35:28 - INFO -   Thinking Level: low
+2026-05-15 03:35:28 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:35:28 - INFO - Running 5 iterations...
+2026-05-15 03:35:28 - INFO -   Iteration 1/5...
+2026-05-15 03:35:40 - INFO -     ✓ TTFT: 1081.82ms, Traffic Type: UNKNOWN
+2026-05-15 03:35:40 - INFO -   Iteration 2/5...
+2026-05-15 03:35:55 - INFO -     ✓ TTFT: 379.91ms, Traffic Type: UNKNOWN
+2026-05-15 03:35:55 - INFO -   Iteration 3/5...
+2026-05-15 03:36:03 - INFO -     ✓ TTFT: 371.98ms, Traffic Type: UNKNOWN
+2026-05-15 03:36:03 - INFO -   Iteration 4/5...
+2026-05-15 03:36:08 - INFO -     ✓ TTFT: 283.85ms, Traffic Type: UNKNOWN
+2026-05-15 03:36:08 - INFO -   Iteration 5/5...
+2026-05-15 03:36:16 - INFO -     ✓ TTFT: 1577.10ms, Traffic Type: UNKNOWN
+2026-05-15 03:36:16 - INFO - ✓ Test 17 completed successfully
+2026-05-15 03:36:16 - INFO -   TTFT P50: 379.91ms
+2026-05-15 03:36:16 - INFO -   Output Tokens P50: 774
+2026-05-15 03:36:16 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:36:16 - INFO - 
+2026-05-15 03:36:16 - INFO - ====================================================================================================
+2026-05-15 03:36:16 - INFO - Test 18/30
+2026-05-15 03:36:16 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:36:16 - INFO -   Request File: benchmark/request_10k.json
+2026-05-15 03:36:16 - INFO -   Thinking Level: medium
+2026-05-15 03:36:16 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:36:16 - INFO - Running 5 iterations...
+2026-05-15 03:36:16 - INFO -   Iteration 1/5...
+2026-05-15 03:36:24 - INFO -     ✓ TTFT: 1026.39ms, Traffic Type: UNKNOWN
+2026-05-15 03:36:24 - INFO -   Iteration 2/5...
+2026-05-15 03:36:36 - INFO -     ✓ TTFT: 320.03ms, Traffic Type: UNKNOWN
+2026-05-15 03:36:36 - INFO -   Iteration 3/5...
+2026-05-15 03:36:50 - INFO -     ✓ TTFT: 375.66ms, Traffic Type: UNKNOWN
+2026-05-15 03:36:50 - INFO -   Iteration 4/5...
+2026-05-15 03:37:06 - INFO -     ✓ TTFT: 337.91ms, Traffic Type: UNKNOWN
+2026-05-15 03:37:06 - INFO -   Iteration 5/5...
+2026-05-15 03:37:22 - INFO -     ✓ TTFT: 287.60ms, Traffic Type: UNKNOWN
+2026-05-15 03:37:22 - INFO - ✓ Test 18 completed successfully
+2026-05-15 03:37:22 - INFO -   TTFT P50: 337.91ms
+2026-05-15 03:37:22 - INFO -   Output Tokens P50: 773
+2026-05-15 03:37:22 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:37:22 - INFO - 
+2026-05-15 03:37:22 - INFO - ====================================================================================================
+2026-05-15 03:37:22 - INFO - Test 19/30
+2026-05-15 03:37:22 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:37:22 - INFO -   Request File: benchmark/request_10k.json
+2026-05-15 03:37:22 - INFO -   Thinking Level: high
+2026-05-15 03:37:22 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:37:22 - INFO - Running 5 iterations...
+2026-05-15 03:37:22 - INFO -   Iteration 1/5...
+2026-05-15 03:37:30 - INFO -     ✓ TTFT: 980.15ms, Traffic Type: UNKNOWN
+2026-05-15 03:37:30 - INFO -   Iteration 2/5...
+2026-05-15 03:37:44 - INFO -     ✓ TTFT: 375.74ms, Traffic Type: UNKNOWN
+2026-05-15 03:37:44 - INFO -   Iteration 3/5...
+2026-05-15 03:38:00 - INFO -     ✓ TTFT: 360.57ms, Traffic Type: UNKNOWN
+2026-05-15 03:38:00 - INFO -   Iteration 4/5...
+2026-05-15 03:38:15 - INFO -     ✓ TTFT: 297.89ms, Traffic Type: UNKNOWN
+2026-05-15 03:38:15 - INFO -   Iteration 5/5...
+2026-05-15 03:38:33 - INFO -     ✓ TTFT: 359.12ms, Traffic Type: UNKNOWN
+2026-05-15 03:38:33 - INFO - ✓ Test 19 completed successfully
+2026-05-15 03:38:33 - INFO -   TTFT P50: 360.57ms
+2026-05-15 03:38:33 - INFO -   Output Tokens P50: 805
+2026-05-15 03:38:33 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:38:33 - INFO - 
+2026-05-15 03:38:33 - INFO - ====================================================================================================
+2026-05-15 03:38:33 - INFO - Test 20/30
+2026-05-15 03:38:33 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:38:33 - INFO -   Request File: benchmark/request_10k.json
+2026-05-15 03:38:33 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:38:33 - INFO - Running 5 iterations...
+2026-05-15 03:38:33 - INFO -   Iteration 1/5...
+2026-05-15 03:38:49 - INFO -     ✓ TTFT: 1077.53ms, Traffic Type: UNKNOWN
+2026-05-15 03:38:49 - INFO -   Iteration 2/5...
+2026-05-15 03:39:05 - INFO -     ✓ TTFT: 341.46ms, Traffic Type: UNKNOWN
+2026-05-15 03:39:05 - INFO -   Iteration 3/5...
+2026-05-15 03:39:21 - INFO -     ✓ TTFT: 396.96ms, Traffic Type: UNKNOWN
+2026-05-15 03:39:21 - INFO -   Iteration 4/5...
+2026-05-15 03:39:35 - INFO -     ✓ TTFT: 355.35ms, Traffic Type: UNKNOWN
+2026-05-15 03:39:35 - INFO -   Iteration 5/5...
+2026-05-15 03:39:39 - INFO -     ✓ TTFT: 363.91ms, Traffic Type: UNKNOWN
+2026-05-15 03:39:39 - INFO - ✓ Test 20 completed successfully
+2026-05-15 03:39:39 - INFO -   TTFT P50: 363.91ms
+2026-05-15 03:39:39 - INFO -   Output Tokens P50: 752
+2026-05-15 03:39:39 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:39:39 - INFO - 
+2026-05-15 03:39:39 - INFO - ====================================================================================================
+2026-05-15 03:39:39 - INFO - Test 21/30
+2026-05-15 03:39:39 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:39:39 - INFO -   Request File: benchmark/request_50k.json
+2026-05-15 03:39:39 - INFO -   Thinking Level: minimal
+2026-05-15 03:39:39 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:39:39 - INFO - Running 5 iterations...
+2026-05-15 03:39:39 - INFO -   Iteration 1/5...
+2026-05-15 03:39:55 - INFO -     ✓ TTFT: 1157.16ms, Traffic Type: UNKNOWN
+2026-05-15 03:39:55 - INFO -   Iteration 2/5...
+2026-05-15 03:40:10 - INFO -     ✓ TTFT: 443.71ms, Traffic Type: UNKNOWN
+2026-05-15 03:40:10 - INFO -   Iteration 3/5...
+2026-05-15 03:40:25 - INFO -     ✓ TTFT: 486.66ms, Traffic Type: UNKNOWN
+2026-05-15 03:40:25 - INFO -   Iteration 4/5...
+2026-05-15 03:40:38 - INFO -     ✓ TTFT: 399.12ms, Traffic Type: UNKNOWN
+2026-05-15 03:40:38 - INFO -   Iteration 5/5...
+2026-05-15 03:40:52 - INFO -     ✓ TTFT: 261.46ms, Traffic Type: UNKNOWN
+2026-05-15 03:40:52 - INFO - ✓ Test 21 completed successfully
+2026-05-15 03:40:52 - INFO -   TTFT P50: 443.71ms
+2026-05-15 03:40:52 - INFO -   Output Tokens P50: 860
+2026-05-15 03:40:52 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:40:52 - INFO - 
+2026-05-15 03:40:52 - INFO - ====================================================================================================
+2026-05-15 03:40:52 - INFO - Test 22/30
+2026-05-15 03:40:52 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:40:52 - INFO -   Request File: benchmark/request_50k.json
+2026-05-15 03:40:52 - INFO -   Thinking Level: low
+2026-05-15 03:40:52 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:40:52 - INFO - Running 5 iterations...
+2026-05-15 03:40:52 - INFO -   Iteration 1/5...
+2026-05-15 03:41:03 - INFO -     ✓ TTFT: 1209.83ms, Traffic Type: UNKNOWN
+2026-05-15 03:41:03 - INFO -   Iteration 2/5...
+2026-05-15 03:41:21 - INFO -     ✓ TTFT: 478.55ms, Traffic Type: UNKNOWN
+2026-05-15 03:41:21 - INFO -   Iteration 3/5...
+2026-05-15 03:41:36 - INFO -     ✓ TTFT: 315.66ms, Traffic Type: UNKNOWN
+2026-05-15 03:41:36 - INFO -   Iteration 4/5...
+2026-05-15 03:41:56 - INFO -     ✓ TTFT: 469.51ms, Traffic Type: UNKNOWN
+2026-05-15 03:41:56 - INFO -   Iteration 5/5...
+2026-05-15 03:42:09 - INFO -     ✓ TTFT: 1041.72ms, Traffic Type: UNKNOWN
+2026-05-15 03:42:09 - INFO - ✓ Test 22 completed successfully
+2026-05-15 03:42:09 - INFO -   TTFT P50: 478.55ms
+2026-05-15 03:42:09 - INFO -   Output Tokens P50: 869
+2026-05-15 03:42:09 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:42:09 - INFO - 
+2026-05-15 03:42:09 - INFO - ====================================================================================================
+2026-05-15 03:42:09 - INFO - Test 23/30
+2026-05-15 03:42:09 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:42:09 - INFO -   Request File: benchmark/request_50k.json
+2026-05-15 03:42:09 - INFO -   Thinking Level: medium
+2026-05-15 03:42:09 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:42:09 - INFO - Running 5 iterations...
+2026-05-15 03:42:09 - INFO -   Iteration 1/5...
+2026-05-15 03:42:21 - INFO -     ✓ TTFT: 1024.28ms, Traffic Type: UNKNOWN
+2026-05-15 03:42:21 - INFO -   Iteration 2/5...
+2026-05-15 03:42:29 - INFO -     ✓ TTFT: 438.21ms, Traffic Type: UNKNOWN
+2026-05-15 03:42:29 - INFO -   Iteration 3/5...
+2026-05-15 03:42:46 - INFO -     ✓ TTFT: 579.81ms, Traffic Type: UNKNOWN
+2026-05-15 03:42:46 - INFO -   Iteration 4/5...
+2026-05-15 03:42:55 - INFO -     ✓ TTFT: 491.95ms, Traffic Type: UNKNOWN
+2026-05-15 03:42:55 - INFO -   Iteration 5/5...
+2026-05-15 03:43:07 - INFO -     ✓ TTFT: 473.45ms, Traffic Type: UNKNOWN
+2026-05-15 03:43:07 - INFO - ✓ Test 23 completed successfully
+2026-05-15 03:43:07 - INFO -   TTFT P50: 491.95ms
+2026-05-15 03:43:07 - INFO -   Output Tokens P50: 854
+2026-05-15 03:43:07 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:43:07 - INFO - 
+2026-05-15 03:43:07 - INFO - ====================================================================================================
+2026-05-15 03:43:07 - INFO - Test 24/30
+2026-05-15 03:43:07 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:43:07 - INFO -   Request File: benchmark/request_50k.json
+2026-05-15 03:43:07 - INFO -   Thinking Level: high
+2026-05-15 03:43:07 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:43:07 - INFO - Running 5 iterations...
+2026-05-15 03:43:07 - INFO -   Iteration 1/5...
+2026-05-15 03:43:24 - INFO -     ✓ TTFT: 1082.42ms, Traffic Type: UNKNOWN
+2026-05-15 03:43:24 - INFO -   Iteration 2/5...
+2026-05-15 03:43:31 - INFO -     ✓ TTFT: 323.69ms, Traffic Type: UNKNOWN
+2026-05-15 03:43:31 - INFO -   Iteration 3/5...
+2026-05-15 03:43:47 - INFO -     ✓ TTFT: 465.29ms, Traffic Type: UNKNOWN
+2026-05-15 03:43:47 - INFO -   Iteration 4/5...
+2026-05-15 03:44:13 - INFO -     ✓ TTFT: 449.83ms, Traffic Type: UNKNOWN
+2026-05-15 03:44:13 - INFO -   Iteration 5/5...
+2026-05-15 03:44:28 - INFO -     ✓ TTFT: 325.38ms, Traffic Type: UNKNOWN
+2026-05-15 03:44:28 - INFO - ✓ Test 24 completed successfully
+2026-05-15 03:44:28 - INFO -   TTFT P50: 449.83ms
+2026-05-15 03:44:28 - INFO -   Output Tokens P50: 900
+2026-05-15 03:44:28 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:44:28 - INFO - 
+2026-05-15 03:44:28 - INFO - ====================================================================================================
+2026-05-15 03:44:28 - INFO - Test 25/30
+2026-05-15 03:44:28 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:44:28 - INFO -   Request File: benchmark/request_50k.json
+2026-05-15 03:44:28 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:44:28 - INFO - Running 5 iterations...
+2026-05-15 03:44:28 - INFO -   Iteration 1/5...
+2026-05-15 03:44:34 - INFO -     ✓ TTFT: 1181.90ms, Traffic Type: UNKNOWN
+2026-05-15 03:44:34 - INFO -   Iteration 2/5...
+2026-05-15 03:44:47 - INFO -     ✓ TTFT: 332.51ms, Traffic Type: UNKNOWN
+2026-05-15 03:44:47 - INFO -   Iteration 3/5...
+2026-05-15 03:45:03 - INFO -     ✓ TTFT: 332.72ms, Traffic Type: UNKNOWN
+2026-05-15 03:45:03 - INFO -   Iteration 4/5...
+2026-05-15 03:45:20 - INFO -     ✓ TTFT: 314.72ms, Traffic Type: UNKNOWN
+2026-05-15 03:45:20 - INFO -   Iteration 5/5...
+2026-05-15 03:45:38 - INFO -     ✓ TTFT: 347.93ms, Traffic Type: UNKNOWN
+2026-05-15 03:45:38 - INFO - ✓ Test 25 completed successfully
+2026-05-15 03:45:38 - INFO -   TTFT P50: 332.72ms
+2026-05-15 03:45:38 - INFO -   Output Tokens P50: 855
+2026-05-15 03:45:38 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:45:38 - INFO - 
+2026-05-15 03:45:38 - INFO - ====================================================================================================
+2026-05-15 03:45:38 - INFO - Test 26/30
+2026-05-15 03:45:38 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:45:38 - INFO -   Request File: benchmark/request_100k.json
+2026-05-15 03:45:38 - INFO -   Thinking Level: minimal
+2026-05-15 03:45:38 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:45:38 - INFO - Running 5 iterations...
+2026-05-15 03:45:38 - INFO -   Iteration 1/5...
+2026-05-15 03:45:54 - INFO -     ✓ TTFT: 1597.85ms, Traffic Type: UNKNOWN
+2026-05-15 03:45:54 - INFO -   Iteration 2/5...
+2026-05-15 03:46:03 - INFO -     ✓ TTFT: 747.74ms, Traffic Type: UNKNOWN
+2026-05-15 03:46:03 - INFO -   Iteration 3/5...
+2026-05-15 03:46:19 - INFO -     ✓ TTFT: 1189.59ms, Traffic Type: UNKNOWN
+2026-05-15 03:46:19 - INFO -   Iteration 4/5...
+2026-05-15 03:46:39 - INFO -     ✓ TTFT: 748.78ms, Traffic Type: UNKNOWN
+2026-05-15 03:46:39 - INFO -   Iteration 5/5...
+2026-05-15 03:46:52 - INFO -     ✓ TTFT: 856.25ms, Traffic Type: UNKNOWN
+2026-05-15 03:46:52 - INFO - ✓ Test 26 completed successfully
+2026-05-15 03:46:52 - INFO -   TTFT P50: 856.25ms
+2026-05-15 03:46:52 - INFO -   Output Tokens P50: 1011
+2026-05-15 03:46:52 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:46:52 - INFO - 
+2026-05-15 03:46:52 - INFO - ====================================================================================================
+2026-05-15 03:46:52 - INFO - Test 27/30
+2026-05-15 03:46:52 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:46:52 - INFO -   Request File: benchmark/request_100k.json
+2026-05-15 03:46:52 - INFO -   Thinking Level: low
+2026-05-15 03:46:52 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:46:52 - INFO - Running 5 iterations...
+2026-05-15 03:46:52 - INFO -   Iteration 1/5...
+2026-05-15 03:47:10 - INFO -     ✓ TTFT: 1562.03ms, Traffic Type: UNKNOWN
+2026-05-15 03:47:10 - INFO -   Iteration 2/5...
+2026-05-15 03:47:28 - INFO -     ✓ TTFT: 793.81ms, Traffic Type: UNKNOWN
+2026-05-15 03:47:28 - INFO -   Iteration 3/5...
+2026-05-15 03:47:43 - INFO -     ✓ TTFT: 1002.50ms, Traffic Type: UNKNOWN
+2026-05-15 03:47:43 - INFO -   Iteration 4/5...
+2026-05-15 03:47:51 - INFO -     ✓ TTFT: 761.12ms, Traffic Type: UNKNOWN
+2026-05-15 03:47:51 - INFO -   Iteration 5/5...
+2026-05-15 03:48:12 - INFO -     ✓ TTFT: 743.81ms, Traffic Type: UNKNOWN
+2026-05-15 03:48:12 - INFO - ✓ Test 27 completed successfully
+2026-05-15 03:48:12 - INFO -   TTFT P50: 793.81ms
+2026-05-15 03:48:12 - INFO -   Output Tokens P50: 999
+2026-05-15 03:48:12 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:48:12 - INFO - 
+2026-05-15 03:48:12 - INFO - ====================================================================================================
+2026-05-15 03:48:12 - INFO - Test 28/30
+2026-05-15 03:48:12 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:48:12 - INFO -   Request File: benchmark/request_100k.json
+2026-05-15 03:48:12 - INFO -   Thinking Level: medium
+2026-05-15 03:48:12 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:48:12 - INFO - Running 5 iterations...
+2026-05-15 03:48:12 - INFO -   Iteration 1/5...
+2026-05-15 03:48:30 - INFO -     ✓ TTFT: 1527.10ms, Traffic Type: UNKNOWN
+2026-05-15 03:48:30 - INFO -   Iteration 2/5...
+2026-05-15 03:48:47 - INFO -     ✓ TTFT: 842.01ms, Traffic Type: UNKNOWN
+2026-05-15 03:48:47 - INFO -   Iteration 3/5...
+2026-05-15 03:49:08 - INFO -     ✓ TTFT: 483.14ms, Traffic Type: UNKNOWN
+2026-05-15 03:49:08 - INFO -   Iteration 4/5...
+2026-05-15 03:49:14 - INFO -     ✓ TTFT: 717.79ms, Traffic Type: UNKNOWN
+2026-05-15 03:49:14 - INFO -   Iteration 5/5...
+2026-05-15 03:49:32 - INFO -     ✓ TTFT: 776.99ms, Traffic Type: UNKNOWN
+2026-05-15 03:49:32 - INFO - ✓ Test 28 completed successfully
+2026-05-15 03:49:32 - INFO -   TTFT P50: 776.99ms
+2026-05-15 03:49:32 - INFO -   Output Tokens P50: 982
+2026-05-15 03:49:32 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:49:32 - INFO - 
+2026-05-15 03:49:32 - INFO - ====================================================================================================
+2026-05-15 03:49:32 - INFO - Test 29/30
+2026-05-15 03:49:32 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:49:32 - INFO -   Request File: benchmark/request_100k.json
+2026-05-15 03:49:32 - INFO -   Thinking Level: high
+2026-05-15 03:49:32 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:49:32 - INFO - Running 5 iterations...
+2026-05-15 03:49:32 - INFO -   Iteration 1/5...
+2026-05-15 03:49:53 - INFO -     ✓ TTFT: 1512.35ms, Traffic Type: UNKNOWN
+2026-05-15 03:49:53 - INFO -   Iteration 2/5...
+2026-05-15 03:50:02 - INFO -     ✓ TTFT: 770.32ms, Traffic Type: UNKNOWN
+2026-05-15 03:50:02 - INFO -   Iteration 3/5...
+2026-05-15 03:50:16 - INFO -     ✓ TTFT: 865.36ms, Traffic Type: UNKNOWN
+2026-05-15 03:50:16 - INFO -   Iteration 4/5...
+2026-05-15 03:50:30 - INFO -     ✓ TTFT: 788.20ms, Traffic Type: UNKNOWN
+2026-05-15 03:50:30 - INFO -   Iteration 5/5...
+2026-05-15 03:50:38 - INFO -     ✓ TTFT: 721.33ms, Traffic Type: UNKNOWN
+2026-05-15 03:50:38 - INFO - ✓ Test 29 completed successfully
+2026-05-15 03:50:38 - INFO -   TTFT P50: 788.20ms
+2026-05-15 03:50:38 - INFO -   Output Tokens P50: 996
+2026-05-15 03:50:38 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:50:38 - INFO - 
+2026-05-15 03:50:38 - INFO - ====================================================================================================
+2026-05-15 03:50:38 - INFO - Test 30/30
+2026-05-15 03:50:38 - INFO -   Model: gemma-4-26b-a4b-it-maas
+2026-05-15 03:50:38 - INFO -   Request File: benchmark/request_100k.json
+2026-05-15 03:50:38 - INFO - ----------------------------------------------------------------------------------------------------
+2026-05-15 03:50:38 - INFO - Running 5 iterations...
+2026-05-15 03:50:38 - INFO -   Iteration 1/5...
+2026-05-15 03:51:01 - INFO -     ✓ TTFT: 1530.58ms, Traffic Type: UNKNOWN
+2026-05-15 03:51:01 - INFO -   Iteration 2/5...
+2026-05-15 03:51:13 - INFO -     ✓ TTFT: 759.39ms, Traffic Type: UNKNOWN
+2026-05-15 03:51:13 - INFO -   Iteration 3/5...
+2026-05-15 03:51:30 - INFO -     ✓ TTFT: 744.98ms, Traffic Type: UNKNOWN
+2026-05-15 03:51:30 - INFO -   Iteration 4/5...
+2026-05-15 03:51:37 - INFO -     ✓ TTFT: 367.58ms, Traffic Type: UNKNOWN
+2026-05-15 03:51:37 - INFO -   Iteration 5/5...
+2026-05-15 03:51:53 - INFO -     ✓ TTFT: 395.75ms, Traffic Type: UNKNOWN
+2026-05-15 03:51:53 - INFO - ✓ Test 30 completed successfully
+2026-05-15 03:51:53 - INFO -   TTFT P50: 744.98ms
+2026-05-15 03:51:53 - INFO -   Output Tokens P50: 998
+2026-05-15 03:51:53 - INFO -   Traffic Type: UNKNOWN
+2026-05-15 03:51:53 - INFO - 
+2026-05-15 03:51:53 - INFO - ====================================================================================================
+2026-05-15 03:51:53 - INFO - CSV results saved to: perf_results_20260515_031902.csv
+2026-05-15 03:51:53 - INFO - Total successful tests: 30/30
+2026-05-15 03:51:53 - INFO - ====================================================================================================
