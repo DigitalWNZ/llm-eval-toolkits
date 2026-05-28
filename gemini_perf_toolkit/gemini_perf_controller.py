@@ -72,6 +72,7 @@ async def run_single_request(
         "input_tokens": getattr(usage_metadata, "prompt_token_count", 0) or 0,
         "output_tokens": getattr(usage_metadata, "candidates_token_count", 0) or 0,
         "cached_tokens": getattr(usage_metadata, "cached_content_token_count", 0) or 0,
+        "thinking_tokens": getattr(usage_metadata, "thoughts_token_count", 0) or 0,
         "traffic_type": str(traffic_type),
     }
 
@@ -108,6 +109,7 @@ def calculate_statistics(metrics_list: List[Dict[str, float]]) -> Dict[str, Any]
     input_token_values = [m["input_tokens"] for m in metrics_list]
     output_token_values = [m["output_tokens"] for m in metrics_list]
     cached_token_values = [m["cached_tokens"] for m in metrics_list]
+    thinking_token_values = [m.get("thinking_tokens", 0) for m in metrics_list]
 
     # Calculate statistics
     percentiles = [50, 90, 95, 99]
@@ -132,6 +134,11 @@ def calculate_statistics(metrics_list: List[Dict[str, float]]) -> Dict[str, Any]
             "min": min(cached_token_values),
             "max": max(cached_token_values),
             **calculate_percentiles(cached_token_values, percentiles)
+        },
+        "thinking_tokens": {
+            "min": min(thinking_token_values),
+            "max": max(thinking_token_values),
+            **calculate_percentiles(thinking_token_values, percentiles)
         }
     }
 
@@ -431,7 +438,14 @@ def write_csv_results(results: List[Dict[str, Any]], output_file: str):
         "cached_tokens_p90",
         "cached_tokens_p95",
         "cached_tokens_p99",
-        "cached_tokens_max"
+        "cached_tokens_max",
+        "thinking_tokens_min",
+        "thinking_tokens_p50",
+        "thinking_tokens_p90",
+        "thinking_tokens_p95",
+        "thinking_tokens_p99",
+        "thinking_tokens_max",
+        "source_json"
     ]
 
     with open(output_file, 'w', newline='') as f:
@@ -473,6 +487,13 @@ def write_csv_results(results: List[Dict[str, Any]], output_file: str):
                 "cached_tokens_p95": f"{stats['cached_tokens']['p95']:.0f}",
                 "cached_tokens_p99": f"{stats['cached_tokens']['p99']:.0f}",
                 "cached_tokens_max": f"{stats['cached_tokens']['max']:.0f}",
+                "thinking_tokens_min": f"{stats['thinking_tokens']['min']:.0f}",
+                "thinking_tokens_p50": f"{stats['thinking_tokens']['p50']:.0f}",
+                "thinking_tokens_p90": f"{stats['thinking_tokens']['p90']:.0f}",
+                "thinking_tokens_p95": f"{stats['thinking_tokens']['p95']:.0f}",
+                "thinking_tokens_p99": f"{stats['thinking_tokens']['p99']:.0f}",
+                "thinking_tokens_max": f"{stats['thinking_tokens']['max']:.0f}",
+                "source_json": result.get("source_json", ""),
             }
             writer.writerow(row)
 
@@ -552,8 +573,8 @@ async def main():
             logger.info(f"  Traffic Type: {result.get('traffic_type', 'UNKNOWN')}")
 
             # Save individual JSON result
-            output_dir = Path(args.output_dir) / "json_results"
-            output_dir.mkdir(parents=True, exist_ok=True)
+            json_dir = Path(args.output_dir) / f"json_results_{run_id}"
+            json_dir.mkdir(parents=True, exist_ok=True)
 
             model_safe = combo['model'].replace('/', '_').replace('.', '_')
             request_file_name = Path(combo['request_file']).stem
@@ -563,9 +584,11 @@ async def main():
             elif combo['thinking_budget']:
                 thinking_suffix = f"_budget_{combo['thinking_budget']}"
 
-            json_file = output_dir / f"{model_safe}_{request_file_name}{thinking_suffix}_{run_id}.json"
+            json_file = json_dir / f"{model_safe}_{request_file_name}{thinking_suffix}_{run_id}.json"
             with open(json_file, 'w') as f:
                 json.dump(result, f, indent=2)
+
+            result["source_json"] = str(json_file)
 
         except Exception as e:
             logger.error(f"✗ Test {idx} failed: {e}")

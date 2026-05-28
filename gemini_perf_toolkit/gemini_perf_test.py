@@ -112,6 +112,7 @@ async def run_single_request(
         "input_tokens": getattr(usage_metadata, "prompt_token_count", 0) or 0,
         "output_tokens": getattr(usage_metadata, "candidates_token_count", 0) or 0,
         "cached_tokens": getattr(usage_metadata, "cached_content_token_count", 0) or 0,
+        "thinking_tokens": getattr(usage_metadata, "thoughts_token_count", 0) or 0,
         "traffic_type": str(traffic_type),
     }
 
@@ -148,6 +149,7 @@ def calculate_statistics(metrics_list: List[Dict[str, float]]) -> Dict[str, Any]
     input_token_values = [m["input_tokens"] for m in metrics_list]
     output_token_values = [m["output_tokens"] for m in metrics_list]
     cached_token_values = [m["cached_tokens"] for m in metrics_list]
+    thinking_token_values = [m.get("thinking_tokens", 0) for m in metrics_list]
 
     # Calculate statistics
     percentiles = [50, 90, 95, 99]
@@ -172,6 +174,11 @@ def calculate_statistics(metrics_list: List[Dict[str, float]]) -> Dict[str, Any]
             "min": min(cached_token_values),
             "max": max(cached_token_values),
             **calculate_percentiles(cached_token_values, percentiles)
+        },
+        "thinking_tokens": {
+            "min": min(thinking_token_values),
+            "max": max(thinking_token_values),
+            **calculate_percentiles(thinking_token_values, percentiles)
         }
     }
 
@@ -346,6 +353,15 @@ def print_results(results: Dict[str, Any]):
           f"{stats['cached_tokens']['p95']:>12.0f} "
           f"{stats['cached_tokens']['p99']:>12.0f} "
           f"{stats['cached_tokens']['max']:>12.0f}")
+
+    # Thinking tokens row
+    print(f"{'Thinking Tokens':<20} "
+          f"{stats['thinking_tokens']['min']:>12.0f} "
+          f"{stats['thinking_tokens']['p50']:>12.0f} "
+          f"{stats['thinking_tokens']['p90']:>12.0f} "
+          f"{stats['thinking_tokens']['p95']:>12.0f} "
+          f"{stats['thinking_tokens']['p99']:>12.0f} "
+          f"{stats['thinking_tokens']['max']:>12.0f}")
 
     print("=" * 100)
 
