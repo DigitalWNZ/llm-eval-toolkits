@@ -161,8 +161,8 @@ def main():
     parser = argparse.ArgumentParser(description="Claude Performance Benchmark")
     parser.add_argument("--models", nargs="+", required=True)
     parser.add_argument("--request-files", nargs="+", required=True)
-    parser.add_argument("--mode", choices=["effort", "thinking"], required=True,
-                        help="effort: use output_config.effort; thinking: use extended thinking with budget_tokens")
+    parser.add_argument("--mode", choices=["effort", "thinking", "none"], required=True,
+                        help="effort: use output_config.effort; thinking: use extended thinking with budget_tokens; none: no effort/thinking config")
     parser.add_argument("--efforts", nargs="+", choices=["high", "medium", "low"],
                         help="Effort levels (used with --mode effort)")
     parser.add_argument("--thinking-budgets", nargs="+", type=int,
@@ -176,7 +176,12 @@ def main():
     if args.mode == "thinking" and not args.thinking_budgets:
         parser.error("--thinking-budgets is required when --mode is thinking")
 
-    config_values = args.efforts if args.mode == "effort" else [str(b) for b in args.thinking_budgets]
+    if args.mode == "none":
+        config_values = ["none"]
+    elif args.mode == "effort":
+        config_values = args.efforts
+    else:
+        config_values = [str(b) for b in args.thinking_budgets]
 
     run_id = datetime.now().strftime("%Y%m%d_%H%M%S")
     json_dir = os.path.join(args.output_dir, f"json_results_{run_id}")
