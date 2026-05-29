@@ -2,7 +2,10 @@
 """
 Claude Performance Benchmark on Vertex AI.
 
-Runs performance tests across models, request files, and reasoning effort levels.
+Supports two modes:
+  - effort:   uses output_config.effort (high/medium/low)
+  - thinking: uses extended thinking with budget_tokens (produces visible thinking tokens)
+
 Outputs CSV summary + per-test JSON files with percentile statistics.
 """
 
@@ -41,8 +44,8 @@ def calculate_percentiles(values: List[float], percentiles: List[int]) -> Dict[s
 def calculate_statistics(metrics_list: List[Dict[str, Any]]) -> Dict[str, Any]:
     percentiles = [50, 90, 95, 99]
     stats = {}
-    for key in ["response_time_ms", "input_tokens", "output_tokens"]:
-        values = [m[key] for m in metrics_list]
+    for key in ["ttft_ms", "response_time_ms", "input_tokens", "output_tokens", "thinking_tokens"]:
+        values = [m.get(key, 0) for m in metrics_list]
         stats[key] = {
             "min": min(values),
             "max": max(values),
@@ -97,54 +100,107 @@ def prepare_request(raw_request: dict, model: str) -> dict:
     return api_kwargs
 
 
-def run_single_test(client, api_kwargs: dict, effort: str) -> Dict[str, Any]:
+ADAPTIVE_ONLY_MODELS = ["claude-opus-4-7"]
+
+
+def run_single_test(client, api_kwargs: dict, mode: str, config_value: str) -> Dict[str, Any]:
     kwargs = dict(api_kwargs)
-    kwargs["output_config"] = {"effort": effort}
+    model = kwargs.get("model", "")
+
+    if mode == "effort":
+        kwargs["output_config"] = {"effort": config_value}
+    elif mode == "thinking":
+        budget = int(config_value)
+        if any(model.startswith(m) for m in ADAPTIVE_ONLY_MODELS):
+            kwargs["thinking"] = {"type": "adaptive"}
+            kwargs["max_tokens"] = budget + MAX_TOKENS
+        else:
+            kwargs["thinking"] = {"type": "enabled", "budget_tokens": budget}
+            kwargs["max_tokens"] = budget + MAX_TOKENS
 
     start_time = time.time()
-    response = client.messages.create(**kwargs)
-    elapsed_ms = (time.time() - start_time) * 1000
+    first_token_time = None
+
+    with client.messages.stream(**kwargs) as stream:
+        for event in stream:
+            if first_token_time is None:
+                event_type = getattr(event, 'type', '')
+                if event_type in ('content_block_start', 'content_block_delta', 'text'):
+                    first_token_time = time.time()
+        response = stream.get_final_message()
+
+    end_time = time.time()
+    ttft_ms = (first_token_time - start_time) * 1000 if first_token_time else 0
+    total_ms = (end_time - start_time) * 1000
 
     response_dict = json.loads(response.model_dump_json())
+    usage = response_dict.get("usage", {})
+
+    thinking_tokens = 0
+    output_tokens_details = usage.get("output_tokens_details")
+    if output_tokens_details:
+        thinking_tokens = output_tokens_details.get("thinking_tokens", 0) or 0
+
     return {
-        "response_time_ms": round(elapsed_ms, 2),
-        "input_tokens": response_dict.get("usage", {}).get("input_tokens", 0),
-        "output_tokens": response_dict.get("usage", {}).get("output_tokens", 0),
+        "ttft_ms": round(ttft_ms, 2),
+        "response_time_ms": round(total_ms, 2),
+        "input_tokens": usage.get("input_tokens", 0),
+        "output_tokens": usage.get("output_tokens", 0),
+        "thinking_tokens": thinking_tokens,
         "stop_reason": response_dict.get("stop_reason", "N/A"),
     }
+
+
+def make_config_label(mode: str, config_value: str) -> str:
+    if mode == "effort":
+        return f"effort:{config_value}"
+    return f"budget:{config_value}"
 
 
 def main():
     parser = argparse.ArgumentParser(description="Claude Performance Benchmark")
     parser.add_argument("--models", nargs="+", required=True)
     parser.add_argument("--request-files", nargs="+", required=True)
-    parser.add_argument("--efforts", nargs="+", required=True, choices=["high", "medium", "low"])
+    parser.add_argument("--mode", choices=["effort", "thinking"], required=True,
+                        help="effort: use output_config.effort; thinking: use extended thinking with budget_tokens")
+    parser.add_argument("--efforts", nargs="+", choices=["high", "medium", "low"],
+                        help="Effort levels (used with --mode effort)")
+    parser.add_argument("--thinking-budgets", nargs="+", type=int,
+                        help="Thinking budget values (used with --mode thinking)")
     parser.add_argument("--iterations", type=int, default=10)
     parser.add_argument("--output-dir", default=os.path.expanduser("~/claude_perf_results"))
     args = parser.parse_args()
 
+    if args.mode == "effort" and not args.efforts:
+        parser.error("--efforts is required when --mode is effort")
+    if args.mode == "thinking" and not args.thinking_budgets:
+        parser.error("--thinking-budgets is required when --mode is thinking")
+
+    config_values = args.efforts if args.mode == "effort" else [str(b) for b in args.thinking_budgets]
+
     run_id = datetime.now().strftime("%Y%m%d_%H%M%S")
-    json_dir = os.path.join(args.output_dir, "json_results")
+    json_dir = os.path.join(args.output_dir, f"json_results_{run_id}")
     os.makedirs(json_dir, exist_ok=True)
 
     client = AnthropicVertex(project_id=PROJECT_ID, region=REGION)
     print(f"Connected to Vertex AI (project={PROJECT_ID}, region={REGION})")
+    print(f"Mode: {args.mode}")
 
-    # Build test combinations
     tests = []
     for model in args.models:
         for request_file in args.request_files:
-            for effort in args.efforts:
-                tests.append((model, request_file, effort))
+            for cv in config_values:
+                tests.append((model, request_file, cv))
 
     print(f"\nTest matrix: {len(tests)} combinations x {args.iterations} iterations = {len(tests) * args.iterations} total calls\n")
 
     all_results = []
 
-    for test_idx, (model, request_file, effort) in enumerate(tests):
+    for test_idx, (model, request_file, config_value) in enumerate(tests):
+        config_label = make_config_label(args.mode, config_value)
         request_name = os.path.basename(request_file).replace("_claude.json", "")
         print(f"{'='*80}")
-        print(f"[{test_idx+1}/{len(tests)}] Model: {model} | Request: {request_name} | Effort: {effort}")
+        print(f"[{test_idx+1}/{len(tests)}] Model: {model} | Request: {request_name} | Config: {config_label}")
         print(f"{'='*80}")
 
         with open(request_file, "r", encoding="utf-8") as f:
@@ -158,13 +214,13 @@ def main():
         metrics_list = []
         for i in range(args.iterations):
             try:
-                metrics = run_single_test(client, api_kwargs, effort)
+                metrics = run_single_test(client, api_kwargs, args.mode, config_value)
                 metrics_list.append(metrics)
                 print(
                     f"  Iteration {i+1}/{args.iterations}: "
-                    f"{metrics['response_time_ms']:.0f}ms, "
+                    f"TTFT={metrics['ttft_ms']:.0f}ms, total={metrics['response_time_ms']:.0f}ms, "
                     f"in={metrics['input_tokens']}, out={metrics['output_tokens']}, "
-                    f"stop={metrics['stop_reason']}"
+                    f"think={metrics['thinking_tokens']}, stop={metrics['stop_reason']}"
                 )
             except Exception as e:
                 print(f"  Iteration {i+1}/{args.iterations}: FAILED - {e}")
@@ -175,19 +231,20 @@ def main():
             all_results.append({
                 "model": model,
                 "request_file": request_name,
-                "effort": effort,
+                "thinking_config": config_label,
                 "status": "failed",
             })
             continue
 
         stats = calculate_statistics(metrics_list)
 
-        # Save JSON
         model_safe = model.replace("@", "_").replace("/", "_")
-        json_file = os.path.join(json_dir, f"{model_safe}_{request_name}_{effort}_{run_id}.json")
+        config_safe = config_value.replace(":", "_")
+        json_file = os.path.join(json_dir, f"{model_safe}_{request_name}_{config_safe}_{run_id}.json")
         json_data = {
             "model": model,
-            "effort": effort,
+            "thinking_mode": args.mode,
+            "thinking_config": config_label,
             "request_file": request_file,
             "project": PROJECT_ID,
             "region": REGION,
@@ -197,28 +254,34 @@ def main():
         }
         with open(json_file, "w", encoding="utf-8") as f:
             json.dump(json_data, f, indent=2)
-        print(f"  Stats: response_time p50={stats['response_time_ms']['p50']:.0f}ms p90={stats['response_time_ms']['p90']:.0f}ms")
+        print(f"  Stats: TTFT p50={stats['ttft_ms']['p50']:.0f}ms p90={stats['ttft_ms']['p90']:.0f}ms | total p50={stats['response_time_ms']['p50']:.0f}ms p90={stats['response_time_ms']['p90']:.0f}ms | think p50={stats['thinking_tokens']['p50']:.0f}")
         print(f"  Saved: {json_file}")
 
         all_results.append({
             "model": model,
             "request_file": request_name,
-            "effort": effort,
+            "thinking_config": config_label,
             "status": "success",
             "iterations": len(metrics_list),
             "statistics": stats,
+            "source_json": json_file,
         })
 
     # Write CSV
     csv_file = os.path.join(args.output_dir, f"perf_results_{run_id}.csv")
     csv_columns = [
-        "model", "request_file", "effort", "iterations",
+        "model", "request_file", "thinking_config", "iterations",
+        "ttft_min_ms", "ttft_p50_ms", "ttft_p90_ms",
+        "ttft_p95_ms", "ttft_p99_ms", "ttft_max_ms",
         "response_time_min_ms", "response_time_p50_ms", "response_time_p90_ms",
         "response_time_p95_ms", "response_time_p99_ms", "response_time_max_ms",
         "input_tokens_min", "input_tokens_p50", "input_tokens_p90",
         "input_tokens_p95", "input_tokens_p99", "input_tokens_max",
         "output_tokens_min", "output_tokens_p50", "output_tokens_p90",
         "output_tokens_p95", "output_tokens_p99", "output_tokens_max",
+        "thinking_tokens_min", "thinking_tokens_p50", "thinking_tokens_p90",
+        "thinking_tokens_p95", "thinking_tokens_p99", "thinking_tokens_max",
+        "source_json",
     ]
 
     with open(csv_file, "w", newline="") as f:
@@ -231,8 +294,14 @@ def main():
             writer.writerow({
                 "model": r["model"],
                 "request_file": r["request_file"],
-                "effort": r["effort"],
+                "thinking_config": r["thinking_config"],
                 "iterations": r["iterations"],
+                "ttft_min_ms": f"{s['ttft_ms']['min']:.2f}",
+                "ttft_p50_ms": f"{s['ttft_ms']['p50']:.2f}",
+                "ttft_p90_ms": f"{s['ttft_ms']['p90']:.2f}",
+                "ttft_p95_ms": f"{s['ttft_ms']['p95']:.2f}",
+                "ttft_p99_ms": f"{s['ttft_ms']['p99']:.2f}",
+                "ttft_max_ms": f"{s['ttft_ms']['max']:.2f}",
                 "response_time_min_ms": f"{s['response_time_ms']['min']:.2f}",
                 "response_time_p50_ms": f"{s['response_time_ms']['p50']:.2f}",
                 "response_time_p90_ms": f"{s['response_time_ms']['p90']:.2f}",
@@ -251,6 +320,13 @@ def main():
                 "output_tokens_p95": f"{s['output_tokens']['p95']:.0f}",
                 "output_tokens_p99": f"{s['output_tokens']['p99']:.0f}",
                 "output_tokens_max": s["output_tokens"]["max"],
+                "thinking_tokens_min": s["thinking_tokens"]["min"],
+                "thinking_tokens_p50": f"{s['thinking_tokens']['p50']:.0f}",
+                "thinking_tokens_p90": f"{s['thinking_tokens']['p90']:.0f}",
+                "thinking_tokens_p95": f"{s['thinking_tokens']['p95']:.0f}",
+                "thinking_tokens_p99": f"{s['thinking_tokens']['p99']:.0f}",
+                "thinking_tokens_max": s["thinking_tokens"]["max"],
+                "source_json": r.get("source_json", ""),
             })
 
     # Summary
@@ -265,12 +341,13 @@ def main():
         if r["status"] == "success":
             s = r["statistics"]
             print(
-                f"  [OK]   {r['model']} + {r['request_file']} + {r['effort']} "
-                f"(p50={s['response_time_ms']['p50']:.0f}ms, p90={s['response_time_ms']['p90']:.0f}ms, "
-                f"in={s['input_tokens']['p50']:.0f}, out={s['output_tokens']['p50']:.0f})"
+                f"  [OK]   {r['model']} + {r['request_file']} + {r['thinking_config']} "
+                f"(TTFT p50={s['ttft_ms']['p50']:.0f}ms p90={s['ttft_ms']['p90']:.0f}ms, "
+                f"in={s['input_tokens']['p50']:.0f}, out={s['output_tokens']['p50']:.0f}, "
+                f"think={s['thinking_tokens']['p50']:.0f})"
             )
         else:
-            print(f"  [FAIL] {r['model']} + {r['request_file']} + {r['effort']}")
+            print(f"  [FAIL] {r['model']} + {r['request_file']} + {r['thinking_config']}")
 
     print(f"\nCSV: {csv_file}")
     print(f"JSON: {json_dir}/")

@@ -1,0 +1,132 @@
+{
+  "model": "claude-opus-4-6",
+  "effort": "high",
+  "request_file": "/home/wangez/gemini-perf-test/slow_request_40s_claude.json",
+  "project": "cloud-llm-preview1",
+  "region": "global",
+  "iterations": 10,
+  "all_metrics": [
+    {
+      "ttft_ms": 2133.89,
+      "response_time_ms": 3596.3,
+      "input_tokens": 28801,
+      "output_tokens": 145,
+      "thinking_tokens": 0,
+      "stop_reason": "tool_use"
+    },
+    {
+      "ttft_ms": 1101.12,
+      "response_time_ms": 2631.59,
+      "input_tokens": 28801,
+      "output_tokens": 142,
+      "thinking_tokens": 0,
+      "stop_reason": "tool_use"
+    },
+    {
+      "ttft_ms": 990.65,
+      "response_time_ms": 2579.76,
+      "input_tokens": 28801,
+      "output_tokens": 146,
+      "thinking_tokens": 0,
+      "stop_reason": "tool_use"
+    },
+    {
+      "ttft_ms": 1538.95,
+      "response_time_ms": 3192.32,
+      "input_tokens": 28801,
+      "output_tokens": 144,
+      "thinking_tokens": 0,
+      "stop_reason": "tool_use"
+    },
+    {
+      "ttft_ms": 1534.13,
+      "response_time_ms": 5972.96,
+      "input_tokens": 28801,
+      "output_tokens": 221,
+      "thinking_tokens": 0,
+      "stop_reason": "tool_use"
+    },
+    {
+      "ttft_ms": 1390.95,
+      "response_time_ms": 4055.22,
+      "input_tokens": 28801,
+      "output_tokens": 140,
+      "thinking_tokens": 0,
+      "stop_reason": "tool_use"
+    },
+    {
+      "ttft_ms": 1812.98,
+      "response_time_ms": 4737.45,
+      "input_tokens": 28801,
+      "output_tokens": 185,
+      "thinking_tokens": 0,
+      "stop_reason": "tool_use"
+    },
+    {
+      "ttft_ms": 1186.77,
+      "response_time_ms": 2691.66,
+      "input_tokens": 28801,
+      "output_tokens": 136,
+      "thinking_tokens": 0,
+      "stop_reason": "tool_use"
+    },
+    {
+      "ttft_ms": 1255.81,
+      "response_time_ms": 3828.67,
+      "input_tokens": 28801,
+      "output_tokens": 200,
+      "thinking_tokens": 0,
+      "stop_reason": "tool_use"
+    },
+    {
+      "ttft_ms": 2101.14,
+      "response_time_ms": 5125.88,
+      "input_tokens": 28801,
+      "output_tokens": 238,
+      "thinking_tokens": 0,
+      "stop_reason": "tool_use"
+    }
+  ],
+  "statistics": {
+    "ttft_ms": {
+      "min": 990.65,
+      "max": 2133.89,
+      "p50": 1462.54,
+      "p90": 2104.415,
+      "p95": 2119.1525,
+      "p99": 2130.9424999999997
+    },
+    "response_time_ms": {
+      "min": 2579.76,
+      "max": 5972.96,
+      "p50": 3712.485,
+      "p90": 5210.588,
+      "p95": 5591.773999999999,
+      "p99": 5896.7228000000005
+    },
+    "input_tokens": {
+      "min": 28801,
+      "max": 28801,
+      "p50": 28801.0,
+      "p90": 28801.0,
+      "p95": 28801.0,
+      "p99": 28801.0
+    },
+    "output_tokens": {
+      "min": 136,
+      "max": 238,
+      "p50": 145.5,
+      "p90": 222.70000000000002,
+      "p95": 230.34999999999997,
+      "p99": 236.47
+    },
+    "thinking_tokens": {
+      "min": 0,
+      "max": 0,
+      "p50": 0.0,
+      "p90": 0.0,
+      "p95": 0.0,
+      "p99": 0.0
+    }
+  }
+}
