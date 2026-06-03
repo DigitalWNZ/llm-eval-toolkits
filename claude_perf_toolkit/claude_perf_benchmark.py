@@ -100,7 +100,7 @@ def prepare_request(raw_request: dict, model: str) -> dict:
     return api_kwargs
 
 
-ADAPTIVE_ONLY_MODELS = ["claude-opus-4-7"]
+ADAPTIVE_ONLY_MODELS = ["claude-opus-4-7", "claude-opus-4-8"]
 
 
 def run_single_test(client, api_kwargs: dict, mode: str, config_value: str) -> Dict[str, Any]:

@@ -1,0 +1,278 @@
+{
+  "claude-opus-4-7": [
+    {
+      "iteration": 1,
+      "input_tokens": 95799,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 250,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 2,
+      "input_tokens": 95799,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 1921,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 3,
+      "input_tokens": 95799,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 467,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 4,
+      "input_tokens": 95799,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 496,
+      "stop_reason": "refusal",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 5,
+      "input_tokens": 95799,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 832,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 6,
+      "input_tokens": 95799,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 252,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 7,
+      "input_tokens": 95799,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 682,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 8,
+      "input_tokens": 95799,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 1576,
+      "stop_reason": "refusal",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 9,
+      "input_tokens": 95799,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 404,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 10,
+      "input_tokens": 95799,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 1007,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    }
+  ],
+  "claude-opus-4-6": [
+    {
+      "iteration": 1,
+      "input_tokens": 77722,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 665,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 2,
+      "input_tokens": 77722,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 717,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 3,
+      "input_tokens": 77722,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 847,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 4,
+      "input_tokens": 77722,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 754,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 5,
+      "input_tokens": 77722,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 594,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 6,
+      "input_tokens": 77722,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 503,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 7,
+      "input_tokens": 77722,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 735,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 8,
+      "input_tokens": 77722,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 1373,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 9,
+      "input_tokens": 77722,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 1335,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 10,
+      "input_tokens": 77722,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 1305,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    }
+  ],
+  "claude-opus-4-8": [
+    {
+      "iteration": 1,
+      "input_tokens": 94547,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 316,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 2,
+      "input_tokens": 94547,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 277,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 3,
+      "input_tokens": 94547,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 263,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 4,
+      "input_tokens": 94547,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 263,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 5,
+      "input_tokens": 94547,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 267,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 6,
+      "input_tokens": 94547,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 261,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 7,
+      "input_tokens": 94547,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 303,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 8,
+      "input_tokens": 94547,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 450,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 9,
+      "input_tokens": 94547,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 246,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 10,
+      "input_tokens": 94547,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 669,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    }
+  ]
+}
