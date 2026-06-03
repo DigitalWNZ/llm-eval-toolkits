@@ -1,0 +1,248 @@
+{
+  "claude-opus-4-6": [
+    {
+      "iteration": 1,
+      "id": "msg_vrtx_019P3Z7gmaCeScYVxN2PUFY6",
+      "input_tokens": 270548,
+      "output_tokens": 2148,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 2,
+      "id": "msg_vrtx_0197frJ58N4m4HL5rXa82V6K",
+      "input_tokens": 270548,
+      "output_tokens": 1566,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 3,
+      "id": "msg_vrtx_012g1qwbLnWQY646V4JgNNhu",
+      "input_tokens": 270548,
+      "output_tokens": 1562,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 4,
+      "id": "msg_vrtx_01UMTQvqmuwNy61MxoCEVabh",
+      "input_tokens": 270548,
+      "output_tokens": 1562,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 5,
+      "id": "msg_vrtx_011M4KMNdLQu95RbzNAexibY",
+      "input_tokens": 270548,
+      "output_tokens": 1874,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 6,
+      "id": "msg_vrtx_01WcxErdqVRWsnCc7YUJuzis",
+      "input_tokens": 270548,
+      "output_tokens": 1790,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 7,
+      "id": "msg_vrtx_0113qxCh8ixdnqUMRy8yXT2o",
+      "input_tokens": 270548,
+      "output_tokens": 1875,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 8,
+      "id": "msg_vrtx_01119QvASUikbJJKASfZDLAb",
+      "input_tokens": 270548,
+      "output_tokens": 1877,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 9,
+      "id": "msg_vrtx_01Gbox16ZZVhFgVLYRsSjw9D",
+      "input_tokens": 270548,
+      "output_tokens": 1548,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 10,
+      "id": "msg_vrtx_01XhtcGWxnrQ2MHqoJQNGRz2",
+      "input_tokens": 270548,
+      "output_tokens": 1562,
+      "stop_reason": "tool_use",
+      "stop_sequence": null
+    }
+  ],
+  "claude-opus-4-7": [
+    {
+      "iteration": 1,
+      "id": "msg_vrtx_01EpbqPZop1eFa45gr4du5xn",
+      "input_tokens": 302054,
+      "output_tokens": 353,
+      "stop_reason": "refusal",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 2,
+      "id": "msg_vrtx_01HWHnaZRiTmgpo2LXF5rcmj",
+      "input_tokens": 302054,
+      "output_tokens": 364,
+      "stop_reason": "refusal",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 3,
+      "id": "msg_vrtx_01Kno3KzonHL8GiKubteF3Pm",
+      "input_tokens": 302054,
+      "output_tokens": 365,
+      "stop_reason": "refusal",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 4,
+      "id": "msg_vrtx_013jtkCDKa7YKJfvpnyzdD6V",
+      "input_tokens": 302054,
+      "output_tokens": 375,
+      "stop_reason": "refusal",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 5,
+      "id": "msg_vrtx_01LhEdup8FerCvonYpgmErch",
+      "input_tokens": 302054,
+      "output_tokens": 311,
+      "stop_reason": "refusal",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 6,
+      "id": "msg_vrtx_019Kww2cQVrMyYyYAYRFYefC",
+      "input_tokens": 302054,
+      "output_tokens": 341,
+      "stop_reason": "refusal",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 7,
+      "id": "msg_vrtx_01QrV66dE6TW1FGsTHLnPM8K",
+      "input_tokens": 302054,
+      "output_tokens": 364,
+      "stop_reason": "refusal",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 8,
+      "id": "msg_vrtx_019eAJPrX17PGJiidphQbzns",
+      "input_tokens": 302054,
+      "output_tokens": 326,
+      "stop_reason": "refusal",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 9,
+      "id": "msg_vrtx_01KkxkXmgcda3MCCRwAfgGEJ",
+      "input_tokens": 302054,
+      "output_tokens": 336,
+      "stop_reason": "refusal",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 10,
+      "id": "msg_vrtx_01L34MarqrkGczcnuXH9Etci",
+      "input_tokens": 302054,
+      "output_tokens": 362,
+      "stop_reason": "refusal",
+      "stop_sequence": null
+    }
+  ],
+  "claude-opus-4-8": [
+    {
+      "iteration": 1,
+      "id": "msg_vrtx_01G4ZWtX6kfq2Kx6Bcx9fYwu",
+      "input_tokens": 298980,
+      "output_tokens": 319,
+      "stop_reason": "refusal",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 2,
+      "id": "msg_vrtx_01Ltzm8J6z5fFxCzboR21RCn",
+      "input_tokens": 298980,
+      "output_tokens": 294,
+      "stop_reason": "refusal",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 3,
+      "id": "msg_vrtx_01L6SJdXXcPbdnGbuZan82hP",
+      "input_tokens": 298980,
+      "output_tokens": 314,
+      "stop_reason": "refusal",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 4,
+      "id": "msg_vrtx_01ToSaWYLijag4ws9bHzmfCZ",
+      "input_tokens": 298980,
+      "output_tokens": 329,
+      "stop_reason": "refusal",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 5,
+      "id": "msg_vrtx_01N3kNdKeg9sZMoNF45mBrmC",
+      "input_tokens": 298980,
+      "output_tokens": 320,
+      "stop_reason": "refusal",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 6,
+      "id": "msg_vrtx_01WfsPquF1kUbTxkbrvHADkz",
+      "input_tokens": 298980,
+      "output_tokens": 332,
+      "stop_reason": "refusal",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 7,
+      "id": "msg_vrtx_01H6wpqHQTNtAUbPfYRMT1bV",
+      "input_tokens": 298980,
+      "output_tokens": 313,
+      "stop_reason": "refusal",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 8,
+      "id": "msg_vrtx_01LQbLRPEDarJVXgXnx4BZai",
+      "input_tokens": 298980,
+      "output_tokens": 319,
+      "stop_reason": "refusal",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 9,
+      "id": "msg_vrtx_0194JFtTDGjy5MFkohTqEKur",
+      "input_tokens": 298980,
+      "output_tokens": 342,
+      "stop_reason": "refusal",
+      "stop_sequence": null
+    },
+    {
+      "iteration": 10,
+      "id": "msg_vrtx_01LJBK2x5RKfc9NSr5vCdzyq",
+      "input_tokens": 298980,
+      "output_tokens": 317,
+      "stop_reason": "refusal",
+      "stop_sequence": null
+    }
+  ]
+}
