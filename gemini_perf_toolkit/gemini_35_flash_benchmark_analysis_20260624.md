@@ -103,9 +103,9 @@
 
 ### 3.4 Key Findings — Tool-Use Requests
 
-1. **Thinking level has NO monotonic effect on TTFT or thinking tokens.** Unlike traditional requests where minimal < low < medium < high is a clear staircase, tool-use requests show no such pattern. Minimal is often the worst performer.
+1. **Thinking level has NO monotonic effect on TTFT or thinking tokens.** Unlike traditional requests where minimal < low < medium < high is a clear staircase, tool-use requests show no such pattern. Minimal consistently has the **worst (highest) TTFT P50** for slow_request_40s across both the June 23 and June 24 benchmarks (e.g., 18,950ms at minimal vs 14,078ms at low in the June 23 data). No level is reliably better or worse for slow_request_60s due to extreme outlier noise.
 
-2. **Thinking tokens are NOT zero at minimal.** Traditional requests at minimal produce 0 thinking tokens and sub-1s TTFT. Tool-use requests at minimal produce 3,300–4,200 thinking tokens (slow_40s) and ~2,000 tokens (slow_60s). The model thinks heavily regardless of the thinking level setting.
+2. **Thinking tokens are NOT zero at minimal — and minimal often produces the MOST.** Traditional requests at minimal produce 0 thinking tokens and sub-1s TTFT. Tool-use requests at minimal produce 3,300–4,244 thinking tokens for slow_40s (the highest across all levels) and ~2,000 tokens for slow_60s. The model thinks heavily regardless of the thinking level setting, and paradoxically thinks the most at minimal.
 
 3. **Thinking tokens are roughly flat across all levels.**
    - slow_request_40s P50: 3,311–4,244 across all 4 levels — essentially the same band.
