@@ -212,6 +212,8 @@ The after-fix benchmark processes **larger requests** in all cases.
 
 5. **The fix appears to have improved slow_request_40s performance** (the more stable of the two). For slow_request_60s, the inherent variance makes it difficult to draw firm conclusions from 10-iteration samples.
 
+6. **The fix did not change the number of thinking tokens.** Comparing the June 23 (pre-fix, 50 iterations) and June 24 (after-fix, 10 iterations) data which both report thinking tokens: slow_request_40s P50 thinking tokens remained in the 3,100–4,300 range across all levels in both runs. The TTFT improvement comes from faster per-token processing, not from reducing how much the model thinks.
+
 ---
 
 ## 6. Summary of Conclusions
