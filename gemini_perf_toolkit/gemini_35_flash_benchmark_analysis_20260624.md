@@ -23,10 +23,12 @@
 - **Source:** `benchmark_summary_20260624_004938_after_fix.csv`
 - **Scope:** 2 tool-use request files × 4 thinking levels × 2 streaming FC modes × 10 iterations = 160 API calls (153 successful, 7 failed due to 429 rate limiting)
 
-### 1.3 Pre-Fix Benchmark (earlier)
+### 1.3 Pre-Fix Benchmark (May 20)
 
-- **Source:** `gemini_35_flash_minimal_thinking_results.csv`
-- **Scope:** 1 request file (input: 23,676 tokens) × 3 thinking levels (minimal/medium/high) × 10 iterations = 30 API calls
+- **Source:** `perf_results_gemini-3.5-flash_all_locations_10iter_warmed_20260520.csv`
+- **Scope:** 2 tool-use request files × 5 thinking levels (minimal/low/medium/high/default) × 3 locations (global/us/eu) × 10 iterations
+- **Request files:** slow_request_40s (input: 23,676 tokens), slow_request_60s (input: 94,852 tokens)
+- **Note:** Request files had different input token counts than the June 24 versions (slow_40s: 23,676 vs 37,112; slow_60s: 94,852 vs 110,419)
 
 ---
 
@@ -148,43 +150,67 @@
 
 ---
 
-## 5. Pre-Fix vs After-Fix TTFT Comparison
+## 5. Pre-Fix (May 20) vs After-Fix (June 24) TTFT Comparison
 
-Comparing the pre-fix benchmark (`gemini_35_flash_minimal_thinking_results.csv`, input: 23,676 tokens) against the after-fix benchmark (`benchmark_summary_20260624_004938_after_fix.csv`, slow_request_40s, input: 37,112 tokens).
+Comparing `perf_results_gemini-3.5-flash_all_locations_10iter_warmed_20260520.csv` (pre-fix, global location only) against `benchmark_summary_20260624_004938_after_fix.csv` (after-fix).
 
-### 5.1 TTFT P50 Comparison
+**Important:** The request files changed between benchmarks:
+- slow_request_40s: 23,676 input tokens (May 20) → 37,112 input tokens (June 24)
+- slow_request_60s: 94,852 input tokens (May 20) → 110,419 input tokens (June 24)
 
-| Thinking | Pre-fix | After-fix (slow_40s avg) | Delta |
-|----------|---------|--------------------------|-------|
-| minimal | 18,939 | 16,835 | -2,104 (-11%) |
-| medium | 16,792 | 14,874 | -1,918 (-11%) |
-| high | 22,434 | 16,079 | -6,355 (-28%) |
+The after-fix benchmark processes **larger requests** in all cases.
 
-### 5.2 TTFT P90 Comparison
+### 5.1 slow_request_40s — TTFT P50 (ms)
 
-| Thinking | Pre-fix | After-fix (slow_40s avg) | Delta |
-|----------|---------|--------------------------|-------|
-| minimal | 29,171 | 27,864 | -1,307 (-4%) |
-| medium | 25,680 | 26,742 | +1,062 (+4%) |
-| high | 35,056 | 22,658 | -12,398 (-35%) |
+| Thinking | Pre-fix (May 20) | After-fix (Jun 24, avg FC on/off) | Delta |
+|----------|------------------|-------------------------------------|-------|
+| minimal | 19,237 | 16,835 | -2,402 (-12%) |
+| low | 18,401 | 14,381 | -4,020 (-22%) |
+| medium | 15,579 | 14,874 | -705 (-5%) |
+| high | 18,993 | 16,079 | -2,914 (-15%) |
+| default | 19,209 | — | — |
 
-### 5.3 Thinking Tokens P50 Comparison
+### 5.2 slow_request_40s — TTFT P90 (ms)
 
-| Thinking | Pre-fix | After-fix (slow_40s avg) |
-|----------|---------|--------------------------|
-| minimal | 4,454 | 4,236 |
-| medium | 4,197 | 3,625 |
-| high | 4,598 | 3,827 |
+| Thinking | Pre-fix (May 20) | After-fix (Jun 24, avg FC on/off) | Delta |
+|----------|------------------|-------------------------------------|-------|
+| minimal | 40,500 | 27,864 | -12,636 (-31%) |
+| low | 23,659 | 21,471 | -2,188 (-9%) |
+| medium | 22,740 | 26,742 | +4,002 (+18%) |
+| high | 36,215 | 22,658 | -13,557 (-37%) |
+| default | 24,951 | — | — |
 
-### 5.4 Key Findings — Pre-Fix vs After-Fix
+### 5.3 slow_request_60s — TTFT P50 (ms)
 
-1. **TTFT is lower after the fix**, especially at high thinking: P50 down 28%, P90 down 35%.
+| Thinking | Pre-fix (May 20) | After-fix (Jun 24, avg FC on/off) | Delta |
+|----------|------------------|-------------------------------------|-------|
+| minimal | 13,410 | 13,697 | +287 (+2%) |
+| low | 8,433 | 14,456 | +6,023 (+71%) |
+| medium | 14,269 | 10,789 | -3,480 (-24%) |
+| high | 14,911 | 9,868 | -5,043 (-34%) |
+| default | 14,867 | — | — |
 
-2. **Thinking token counts are similar** (3,600–4,600 pre-fix vs 3,600–4,200 after-fix), so the TTFT reduction is from faster per-token processing, not fewer thinking tokens.
+### 5.4 slow_request_60s — TTFT P90 (ms)
 
-3. **The after-fix benchmark uses a larger request** (37,112 vs 23,676 input tokens) yet achieves lower TTFT, making the improvement more significant than raw numbers suggest.
+| Thinking | Pre-fix (May 20) | After-fix (Jun 24, avg FC on/off) | Delta |
+|----------|------------------|-------------------------------------|-------|
+| minimal | 17,864 | 43,742 | +25,878 (+145%) |
+| low | 16,469 | 19,425 | +2,956 (+18%) |
+| medium | 105,533 | 22,340 | -83,193 (-79%) |
+| high | 42,886 | 31,689 | -11,197 (-26%) |
+| default | 34,842 | — | — |
 
-4. **The fix improved inference speed but did not change the thinking level behavior.** The thinking level setting is still effectively ignored for tool-use requests.
+### 5.5 Key Findings — Pre-Fix vs After-Fix
+
+1. **slow_request_40s shows consistent TTFT improvement after the fix.** P50 improved 5–22% across all thinking levels despite processing a larger request (37,112 vs 23,676 input tokens). P90 improved significantly at minimal (-31%) and high (-37%).
+
+2. **slow_request_60s results are mixed and noisy.** Some levels improved (medium P90 dropped 79%, high P50 dropped 34%), while others got worse (minimal P90 increased 145%, low P50 increased 71%). With only 8–10 iterations and extreme outliers (~62K thinking tokens), these differences are likely driven by sampling variance rather than real changes.
+
+3. **Both benchmarks confirm thinking level has no control over tool-use TTFT.** Pre-fix slow_40s ranged 15,579–19,237 P50 across levels; after-fix ranged 14,381–16,835. No monotonic pattern in either dataset.
+
+4. **The "default" thinking level** (no thinkingConfig set, May 20 only) performed similarly to explicitly set levels — further evidence that the thinking level parameter is ignored for tool-use requests.
+
+5. **The fix appears to have improved slow_request_40s performance** (the more stable of the two). For slow_request_60s, the inherent variance makes it difficult to draw firm conclusions from 10-iteration samples.
 
 ---
 
@@ -201,5 +227,9 @@ Comparing the pre-fix benchmark (`gemini_35_flash_minimal_thinking_results.csv`,
 - Minimal thinking still generates 2,000–4,500 thinking tokens (never zero)
 - TTFT is 10–20s P50 regardless of thinking level setting
 - Extreme outliers (~62K thinking tokens, 180–200s TTFT) occur stochastically across all thinking levels
-- The after-fix data shows ~11–28% TTFT improvement at P50 with similar thinking token counts, indicating faster per-token processing
 - Streaming FC (on/off) has no consistent effect on TTFT or thinking behavior
+
+### Pre-Fix (May 20) vs After-Fix (June 24)
+- slow_request_40s shows consistent TTFT improvement: P50 down 5–22%, P90 down 9–37% — despite processing a larger request (37,112 vs 23,676 input tokens)
+- slow_request_60s results are too noisy to draw firm conclusions (extreme outliers dominate with only 10 iterations)
+- Neither benchmark shows thinking level controlling tool-use behavior — the fix improved speed but did not change the fundamental issue
