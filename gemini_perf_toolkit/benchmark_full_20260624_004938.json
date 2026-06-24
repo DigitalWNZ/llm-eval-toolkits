@@ -1,0 +1,2243 @@
+[
+  {
+    "model": "gemini-3.5-flash",
+    "request_file": "slow_request_40s",
+    "thinking_level": "minimal",
+    "streaming_fc": true,
+    "has_tools": true,
+    "iterations": 10,
+    "all_metrics": [
+      {
+        "ttft_ms": 31613.2,
+        "response_time_ms": 31998.83,
+        "input_tokens": 37112,
+        "output_tokens": 35,
+        "cached_tokens": 31526,
+        "thinking_tokens": 8086,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 24966.31,
+        "response_time_ms": 25215.92,
+        "input_tokens": 37112,
+        "output_tokens": 24,
+        "cached_tokens": 0,
+        "thinking_tokens": 6316,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 12601.23,
+        "response_time_ms": 12891.75,
+        "input_tokens": 37112,
+        "output_tokens": 28,
+        "cached_tokens": 31526,
+        "thinking_tokens": 2602,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 16347.38,
+        "response_time_ms": 16670.45,
+        "input_tokens": 37112,
+        "output_tokens": 28,
+        "cached_tokens": 31526,
+        "thinking_tokens": 3883,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 40615.47,
+        "response_time_ms": 46484.26,
+        "input_tokens": 37112,
+        "output_tokens": 2010,
+        "cached_tokens": 0,
+        "thinking_tokens": 9931,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 13277.31,
+        "response_time_ms": 13589.8,
+        "input_tokens": 37112,
+        "output_tokens": 35,
+        "cached_tokens": 31526,
+        "thinking_tokens": 3538,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 13594.78,
+        "response_time_ms": 13894.55,
+        "input_tokens": 37112,
+        "output_tokens": 31,
+        "cached_tokens": 31526,
+        "thinking_tokens": 3278,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 18096.7,
+        "response_time_ms": 18274.14,
+        "input_tokens": 37112,
+        "output_tokens": 27,
+        "cached_tokens": 31526,
+        "thinking_tokens": 4391,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 25754.25,
+        "response_time_ms": 25942.65,
+        "input_tokens": 37112,
+        "output_tokens": 22,
+        "cached_tokens": 31526,
+        "thinking_tokens": 6634,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 12241.93,
+        "response_time_ms": 12556.71,
+        "input_tokens": 37112,
+        "output_tokens": 26,
+        "cached_tokens": 31526,
+        "thinking_tokens": 3235,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      }
+    ],
+    "statistics": {
+      "ttft_ms": {
+        "min": 12241.93,
+        "max": 40615.47,
+        "p50": 17222.04,
+        "p90": 32513.426999999996,
+        "p95": 36564.44849999999
+      },
+      "response_time_ms": {
+        "min": 12556.71,
+        "max": 46484.26,
+        "p50": 17472.295,
+        "p90": 33447.373,
+        "p95": 39965.816499999986
+      },
+      "input_tokens": {
+        "min": 37112,
+        "max": 37112,
+        "p50": 37112.0,
+        "p90": 37112.0,
+        "p95": 37112.0
+      },
+      "output_tokens": {
+        "min": 22,
+        "max": 2010,
+        "p50": 28.0,
+        "p90": 232.49999999999932,
+        "p95": 1121.249999999998
+      },
+      "thinking_tokens": {
+        "min": 2602,
+        "max": 9931,
+        "p50": 4137.0,
+        "p90": 8270.5,
+        "p95": 9100.749999999998
+      },
+      "cached_tokens": {
+        "min": 0,
+        "max": 31526,
+        "p50": 31526.0,
+        "p90": 31526.0,
+        "p95": 31526.0
+      }
+    }
+  },
+  {
+    "model": "gemini-3.5-flash",
+    "request_file": "slow_request_40s",
+    "thinking_level": "minimal",
+    "streaming_fc": false,
+    "has_tools": true,
+    "iterations": 10,
+    "all_metrics": [
+      {
+        "ttft_ms": 15009.16,
+        "response_time_ms": 15136.75,
+        "input_tokens": 37112,
+        "output_tokens": 28,
+        "cached_tokens": 31526,
+        "thinking_tokens": 3226,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 17676.86,
+        "response_time_ms": 17822.99,
+        "input_tokens": 37112,
+        "output_tokens": 28,
+        "cached_tokens": 31526,
+        "thinking_tokens": 4477,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 22716.87,
+        "response_time_ms": 22849.21,
+        "input_tokens": 37112,
+        "output_tokens": 24,
+        "cached_tokens": 31526,
+        "thinking_tokens": 4199,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 3460.64,
+        "response_time_ms": 3542.46,
+        "input_tokens": 37112,
+        "output_tokens": 29,
+        "cached_tokens": 0,
+        "thinking_tokens": 531,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 22937.32,
+        "response_time_ms": 23077.53,
+        "input_tokens": 37112,
+        "output_tokens": 31,
+        "cached_tokens": 31526,
+        "thinking_tokens": 5892,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 13231.98,
+        "response_time_ms": 17586.35,
+        "input_tokens": 37112,
+        "output_tokens": 832,
+        "cached_tokens": 31526,
+        "thinking_tokens": 2947,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 25701.74,
+        "response_time_ms": 25793.71,
+        "input_tokens": 37112,
+        "output_tokens": 29,
+        "cached_tokens": 31526,
+        "thinking_tokens": 5976,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 15442.26,
+        "response_time_ms": 15562.88,
+        "input_tokens": 37112,
+        "output_tokens": 28,
+        "cached_tokens": 31526,
+        "thinking_tokens": 4559,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 14382.01,
+        "response_time_ms": 14529.73,
+        "input_tokens": 37112,
+        "output_tokens": 27,
+        "cached_tokens": 31526,
+        "thinking_tokens": 3430,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 17455.53,
+        "response_time_ms": 17610.62,
+        "input_tokens": 37112,
+        "output_tokens": 23,
+        "cached_tokens": 31526,
+        "thinking_tokens": 4469,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      }
+    ],
+    "statistics": {
+      "ttft_ms": {
+        "min": 3460.64,
+        "max": 25701.74,
+        "p50": 16448.895,
+        "p90": 23213.762,
+        "p95": 24457.750999999997
+      },
+      "response_time_ms": {
+        "min": 3542.46,
+        "max": 25793.71,
+        "p50": 17598.485,
+        "p90": 23349.147999999997,
+        "p95": 24571.428999999996
+      },
+      "input_tokens": {
+        "min": 37112,
+        "max": 37112,
+        "p50": 37112.0,
+        "p90": 37112.0,
+        "p95": 37112.0
+      },
+      "output_tokens": {
+        "min": 23,
+        "max": 832,
+        "p50": 28.0,
+        "p90": 111.09999999999971,
+        "p95": 471.54999999999916
+      },
+      "thinking_tokens": {
+        "min": 531,
+        "max": 5976,
+        "p50": 4334.0,
+        "p90": 5900.4,
+        "p95": 5938.200000000001
+      },
+      "cached_tokens": {
+        "min": 0,
+        "max": 31526,
+        "p50": 31526.0,
+        "p90": 31526.0,
+        "p95": 31526.0
+      }
+    }
+  },
+  {
+    "model": "gemini-3.5-flash",
+    "request_file": "slow_request_60s",
+    "thinking_level": "minimal",
+    "streaming_fc": true,
+    "has_tools": true,
+    "iterations": 8,
+    "all_metrics": [
+      {
+        "ttft_ms": 13511.76,
+        "response_time_ms": 15065.91,
+        "input_tokens": 110419,
+        "output_tokens": 408,
+        "cached_tokens": 0,
+        "thinking_tokens": 2197,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 13117.4,
+        "response_time_ms": 14698.77,
+        "input_tokens": 110419,
+        "output_tokens": 351,
+        "cached_tokens": 0,
+        "thinking_tokens": 1921,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 13764.57,
+        "response_time_ms": 19967.59,
+        "input_tokens": 110419,
+        "output_tokens": 1789,
+        "cached_tokens": 0,
+        "thinking_tokens": 2124,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 2029.67,
+        "response_time_ms": 2275.78,
+        "input_tokens": 110419,
+        "output_tokens": 32,
+        "cached_tokens": 104609,
+        "thinking_tokens": 92,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 177892.96,
+        "response_time_ms": 178850.82,
+        "input_tokens": 110419,
+        "output_tokens": 135,
+        "cached_tokens": 0,
+        "thinking_tokens": 62912,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 11623.72,
+        "response_time_ms": 14669.09,
+        "input_tokens": 110419,
+        "output_tokens": 920,
+        "cached_tokens": 104609,
+        "thinking_tokens": 1838,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 11915.84,
+        "response_time_ms": 13508.77,
+        "input_tokens": 110419,
+        "output_tokens": 540,
+        "cached_tokens": 0,
+        "thinking_tokens": 1980,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 10868.69,
+        "response_time_ms": 11504.02,
+        "input_tokens": 110419,
+        "output_tokens": 126,
+        "cached_tokens": 0,
+        "thinking_tokens": 1520,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      }
+    ],
+    "statistics": {
+      "ttft_ms": {
+        "min": 2029.67,
+        "max": 177892.96,
+        "p50": 12516.619999999999,
+        "p90": 63003.08699999996,
+        "p95": 120448.02349999991
+      },
+      "response_time_ms": {
+        "min": 2275.78,
+        "max": 178850.82,
+        "p50": 14683.93,
+        "p90": 67632.55899999998,
+        "p95": 123241.68949999992
+      },
+      "input_tokens": {
+        "min": 110419,
+        "max": 110419,
+        "p50": 110419.0,
+        "p90": 110419.0,
+        "p95": 110419.0
+      },
+      "output_tokens": {
+        "min": 32,
+        "max": 1789,
+        "p50": 379.5,
+        "p90": 1180.6999999999998,
+        "p95": 1484.8499999999995
+      },
+      "thinking_tokens": {
+        "min": 92,
+        "max": 62912,
+        "p50": 1950.5,
+        "p90": 20411.49999999999,
+        "p95": 41661.74999999997
+      },
+      "cached_tokens": {
+        "min": 0,
+        "max": 104609,
+        "p50": 0.0,
+        "p90": 104609.0,
+        "p95": 104609.0
+      }
+    }
+  },
+  {
+    "model": "gemini-3.5-flash",
+    "request_file": "slow_request_60s",
+    "thinking_level": "minimal",
+    "streaming_fc": false,
+    "has_tools": true,
+    "iterations": 10,
+    "all_metrics": [
+      {
+        "ttft_ms": 24100.04,
+        "response_time_ms": 24224.12,
+        "input_tokens": 110419,
+        "output_tokens": 2266,
+        "cached_tokens": 104609,
+        "thinking_tokens": 3291,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 19188.08,
+        "response_time_ms": 19352.55,
+        "input_tokens": 110419,
+        "output_tokens": 32,
+        "cached_tokens": 104609,
+        "thinking_tokens": 3539,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 21138.34,
+        "response_time_ms": 21299.62,
+        "input_tokens": 110419,
+        "output_tokens": 2329,
+        "cached_tokens": 104609,
+        "thinking_tokens": 2690,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 14846.09,
+        "response_time_ms": 15016.12,
+        "input_tokens": 110419,
+        "output_tokens": 999,
+        "cached_tokens": 104609,
+        "thinking_tokens": 1621,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 3966.82,
+        "response_time_ms": 4150.51,
+        "input_tokens": 110419,
+        "output_tokens": 32,
+        "cached_tokens": 0,
+        "thinking_tokens": 51,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 14906.54,
+        "response_time_ms": 15152.53,
+        "input_tokens": 110419,
+        "output_tokens": 375,
+        "cached_tokens": 0,
+        "thinking_tokens": 1187,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 27907.02,
+        "response_time_ms": 28043.7,
+        "input_tokens": 110419,
+        "output_tokens": 305,
+        "cached_tokens": 104609,
+        "thinking_tokens": 4476,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 2054.81,
+        "response_time_ms": 2219.7,
+        "input_tokens": 110419,
+        "output_tokens": 32,
+        "cached_tokens": 104609,
+        "thinking_tokens": 105,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 14168.34,
+        "response_time_ms": 14340.03,
+        "input_tokens": 110419,
+        "output_tokens": 309,
+        "cached_tokens": 104609,
+        "thinking_tokens": 2425,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 14103.84,
+        "response_time_ms": 14309.08,
+        "input_tokens": 110419,
+        "output_tokens": 2007,
+        "cached_tokens": 104609,
+        "thinking_tokens": 1324,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      }
+    ],
+    "statistics": {
+      "ttft_ms": {
+        "min": 2054.81,
+        "max": 27907.02,
+        "p50": 14876.315,
+        "p90": 24480.738,
+        "p95": 26193.878999999994
+      },
+      "response_time_ms": {
+        "min": 2219.7,
+        "max": 28043.7,
+        "p50": 15084.325,
+        "p90": 24606.077999999994,
+        "p95": 26324.888999999996
+      },
+      "input_tokens": {
+        "min": 110419,
+        "max": 110419,
+        "p50": 110419.0,
+        "p90": 110419.0,
+        "p95": 110419.0
+      },
+      "output_tokens": {
+        "min": 32,
+        "max": 2329,
+        "p50": 342.0,
+        "p90": 2272.3,
+        "p95": 2300.65
+      },
+      "thinking_tokens": {
+        "min": 51,
+        "max": 4476,
+        "p50": 2023.0,
+        "p90": 3632.7,
+        "p95": 4054.349999999999
+      },
+      "cached_tokens": {
+        "min": 0,
+        "max": 104609,
+        "p50": 104609.0,
+        "p90": 104609.0,
+        "p95": 104609.0
+      }
+    }
+  },
+  {
+    "model": "gemini-3.5-flash",
+    "request_file": "slow_request_40s",
+    "thinking_level": "low",
+    "streaming_fc": true,
+    "has_tools": true,
+    "iterations": 10,
+    "all_metrics": [
+      {
+        "ttft_ms": 13213.18,
+        "response_time_ms": 13518.84,
+        "input_tokens": 37112,
+        "output_tokens": 27,
+        "cached_tokens": 0,
+        "thinking_tokens": 3097,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 8041.94,
+        "response_time_ms": 8364.34,
+        "input_tokens": 37112,
+        "output_tokens": 35,
+        "cached_tokens": 0,
+        "thinking_tokens": 1964,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 15861.7,
+        "response_time_ms": 16118.44,
+        "input_tokens": 37112,
+        "output_tokens": 27,
+        "cached_tokens": 31526,
+        "thinking_tokens": 3611,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 16431.95,
+        "response_time_ms": 18957.13,
+        "input_tokens": 37112,
+        "output_tokens": 27,
+        "cached_tokens": 0,
+        "thinking_tokens": 4175,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 27065.59,
+        "response_time_ms": 27349.06,
+        "input_tokens": 37112,
+        "output_tokens": 26,
+        "cached_tokens": 31526,
+        "thinking_tokens": 5312,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 10441.39,
+        "response_time_ms": 10744.59,
+        "input_tokens": 37112,
+        "output_tokens": 28,
+        "cached_tokens": 31526,
+        "thinking_tokens": 2299,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 7665.04,
+        "response_time_ms": 7869.17,
+        "input_tokens": 37112,
+        "output_tokens": 28,
+        "cached_tokens": 0,
+        "thinking_tokens": 2031,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 13956.0,
+        "response_time_ms": 14324.35,
+        "input_tokens": 37112,
+        "output_tokens": 26,
+        "cached_tokens": 31526,
+        "thinking_tokens": 3139,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 19608.35,
+        "response_time_ms": 19995.42,
+        "input_tokens": 37112,
+        "output_tokens": 26,
+        "cached_tokens": 31526,
+        "thinking_tokens": 4930,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 10784.68,
+        "response_time_ms": 11113.13,
+        "input_tokens": 37112,
+        "output_tokens": 26,
+        "cached_tokens": 31526,
+        "thinking_tokens": 2326,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      }
+    ],
+    "statistics": {
+      "ttft_ms": {
+        "min": 7665.04,
+        "max": 27065.59,
+        "p50": 13584.59,
+        "p90": 20354.073999999997,
+        "p95": 23709.83199999999
+      },
+      "response_time_ms": {
+        "min": 7869.17,
+        "max": 27349.06,
+        "p50": 13921.595000000001,
+        "p90": 20730.783999999996,
+        "p95": 24039.92199999999
+      },
+      "input_tokens": {
+        "min": 37112,
+        "max": 37112,
+        "p50": 37112.0,
+        "p90": 37112.0,
+        "p95": 37112.0
+      },
+      "output_tokens": {
+        "min": 26,
+        "max": 35,
+        "p50": 27.0,
+        "p90": 28.699999999999996,
+        "p95": 31.849999999999994
+      },
+      "thinking_tokens": {
+        "min": 1964,
+        "max": 5312,
+        "p50": 3118.0,
+        "p90": 4968.2,
+        "p95": 5140.1
+      },
+      "cached_tokens": {
+        "min": 0,
+        "max": 31526,
+        "p50": 31526.0,
+        "p90": 31526.0,
+        "p95": 31526.0
+      }
+    }
+  },
+  {
+    "model": "gemini-3.5-flash",
+    "request_file": "slow_request_40s",
+    "thinking_level": "low",
+    "streaming_fc": false,
+    "has_tools": true,
+    "iterations": 10,
+    "all_metrics": [
+      {
+        "ttft_ms": 27225.24,
+        "response_time_ms": 27367.61,
+        "input_tokens": 37112,
+        "output_tokens": 26,
+        "cached_tokens": 31526,
+        "thinking_tokens": 6350,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 10710.52,
+        "response_time_ms": 10862.2,
+        "input_tokens": 37112,
+        "output_tokens": 29,
+        "cached_tokens": 31526,
+        "thinking_tokens": 2302,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 5353.19,
+        "response_time_ms": 5473.19,
+        "input_tokens": 37112,
+        "output_tokens": 26,
+        "cached_tokens": 31526,
+        "thinking_tokens": 1041,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 14899.83,
+        "response_time_ms": 15048.1,
+        "input_tokens": 37112,
+        "output_tokens": 27,
+        "cached_tokens": 31526,
+        "thinking_tokens": 3426,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 15455.19,
+        "response_time_ms": 15596.87,
+        "input_tokens": 37112,
+        "output_tokens": 24,
+        "cached_tokens": 0,
+        "thinking_tokens": 3886,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 22072.8,
+        "response_time_ms": 22216.78,
+        "input_tokens": 37112,
+        "output_tokens": 26,
+        "cached_tokens": 31526,
+        "thinking_tokens": 5137,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 18581.58,
+        "response_time_ms": 18811.61,
+        "input_tokens": 37112,
+        "output_tokens": 24,
+        "cached_tokens": 0,
+        "thinking_tokens": 5217,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 10846.39,
+        "response_time_ms": 10987.77,
+        "input_tokens": 37112,
+        "output_tokens": 26,
+        "cached_tokens": 31526,
+        "thinking_tokens": 2363,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 20969.15,
+        "response_time_ms": 21094.19,
+        "input_tokens": 37112,
+        "output_tokens": 27,
+        "cached_tokens": 31526,
+        "thinking_tokens": 6049,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 14474.71,
+        "response_time_ms": 14601.34,
+        "input_tokens": 37112,
+        "output_tokens": 28,
+        "cached_tokens": 31526,
+        "thinking_tokens": 2951,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      }
+    ],
+    "statistics": {
+      "ttft_ms": {
+        "min": 5353.19,
+        "max": 27225.24,
+        "p50": 15177.51,
+        "p90": 22588.043999999998,
+        "p95": 24906.641999999996
+      },
+      "response_time_ms": {
+        "min": 5473.19,
+        "max": 27367.61,
+        "p50": 15322.485,
+        "p90": 22731.862999999998,
+        "p95": 25049.73649999999
+      },
+      "input_tokens": {
+        "min": 37112,
+        "max": 37112,
+        "p50": 37112.0,
+        "p90": 37112.0,
+        "p95": 37112.0
+      },
+      "output_tokens": {
+        "min": 24,
+        "max": 29,
+        "p50": 26.0,
+        "p90": 28.1,
+        "p95": 28.549999999999997
+      },
+      "thinking_tokens": {
+        "min": 1041,
+        "max": 6350,
+        "p50": 3656.0,
+        "p90": 6079.1,
+        "p95": 6214.549999999999
+      },
+      "cached_tokens": {
+        "min": 0,
+        "max": 31526,
+        "p50": 31526.0,
+        "p90": 31526.0,
+        "p95": 31526.0
+      }
+    }
+  },
+  {
+    "model": "gemini-3.5-flash",
+    "request_file": "slow_request_60s",
+    "thinking_level": "low",
+    "streaming_fc": true,
+    "has_tools": true,
+    "iterations": 10,
+    "all_metrics": [
+      {
+        "ttft_ms": 1909.01,
+        "response_time_ms": 2358.32,
+        "input_tokens": 110419,
+        "output_tokens": 32,
+        "cached_tokens": 0,
+        "thinking_tokens": 66,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 10905.2,
+        "response_time_ms": 17963.66,
+        "input_tokens": 110419,
+        "output_tokens": 1884,
+        "cached_tokens": 104609,
+        "thinking_tokens": 1476,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 11367.55,
+        "response_time_ms": 17680.6,
+        "input_tokens": 110419,
+        "output_tokens": 1864,
+        "cached_tokens": 0,
+        "thinking_tokens": 1797,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 20859.64,
+        "response_time_ms": 28395.03,
+        "input_tokens": 110419,
+        "output_tokens": 2197,
+        "cached_tokens": 104609,
+        "thinking_tokens": 3101,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 17743.95,
+        "response_time_ms": 25727.2,
+        "input_tokens": 110419,
+        "output_tokens": 2257,
+        "cached_tokens": 104609,
+        "thinking_tokens": 2672,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 2238.14,
+        "response_time_ms": 2450.4,
+        "input_tokens": 110419,
+        "output_tokens": 32,
+        "cached_tokens": 0,
+        "thinking_tokens": 48,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 9903.9,
+        "response_time_ms": 10123.35,
+        "input_tokens": 110419,
+        "output_tokens": 30,
+        "cached_tokens": 0,
+        "thinking_tokens": 1484,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 18177.2,
+        "response_time_ms": 21064.82,
+        "input_tokens": 110419,
+        "output_tokens": 1000,
+        "cached_tokens": 104609,
+        "thinking_tokens": 2434,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 14337.01,
+        "response_time_ms": 22154.71,
+        "input_tokens": 110419,
+        "output_tokens": 2202,
+        "cached_tokens": 104609,
+        "thinking_tokens": 2101,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 7418.61,
+        "response_time_ms": 13268.53,
+        "input_tokens": 110419,
+        "output_tokens": 1485,
+        "cached_tokens": 104609,
+        "thinking_tokens": 650,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      }
+    ],
+    "statistics": {
+      "ttft_ms": {
+        "min": 1909.01,
+        "max": 20859.64,
+        "p50": 11136.375,
+        "p90": 18445.444,
+        "p95": 19652.541999999998
+      },
+      "response_time_ms": {
+        "min": 2358.32,
+        "max": 28395.03,
+        "p50": 17822.129999999997,
+        "p90": 25993.983,
+        "p95": 27194.506499999996
+      },
+      "input_tokens": {
+        "min": 110419,
+        "max": 110419,
+        "p50": 110419.0,
+        "p90": 110419.0,
+        "p95": 110419.0
+      },
+      "output_tokens": {
+        "min": 30,
+        "max": 2257,
+        "p50": 1674.5,
+        "p90": 2207.5,
+        "p95": 2232.25
+      },
+      "thinking_tokens": {
+        "min": 48,
+        "max": 3101,
+        "p50": 1640.5,
+        "p90": 2714.9,
+        "p95": 2907.95
+      },
+      "cached_tokens": {
+        "min": 0,
+        "max": 104609,
+        "p50": 104609.0,
+        "p90": 104609.0,
+        "p95": 104609.0
+      }
+    }
+  },
+  {
+    "model": "gemini-3.5-flash",
+    "request_file": "slow_request_60s",
+    "thinking_level": "low",
+    "streaming_fc": false,
+    "has_tools": true,
+    "iterations": 9,
+    "all_metrics": [
+      {
+        "ttft_ms": 4245.29,
+        "response_time_ms": 4413.82,
+        "input_tokens": 110419,
+        "output_tokens": 32,
+        "cached_tokens": 0,
+        "thinking_tokens": 214,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 7858.9,
+        "response_time_ms": 8088.34,
+        "input_tokens": 110419,
+        "output_tokens": 244,
+        "cached_tokens": 104609,
+        "thinking_tokens": 1190,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 17775.09,
+        "response_time_ms": 17961.74,
+        "input_tokens": 110419,
+        "output_tokens": 1975,
+        "cached_tokens": 104609,
+        "thinking_tokens": 1874,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 20035.61,
+        "response_time_ms": 20196.93,
+        "input_tokens": 110419,
+        "output_tokens": 30,
+        "cached_tokens": 104609,
+        "thinking_tokens": 3429,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 18324.28,
+        "response_time_ms": 18524.46,
+        "input_tokens": 110419,
+        "output_tokens": 2163,
+        "cached_tokens": 104609,
+        "thinking_tokens": 1944,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 21880.43,
+        "response_time_ms": 22006.79,
+        "input_tokens": 110419,
+        "output_tokens": 2291,
+        "cached_tokens": 104609,
+        "thinking_tokens": 2447,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 11911.54,
+        "response_time_ms": 12141.59,
+        "input_tokens": 110419,
+        "output_tokens": 30,
+        "cached_tokens": 104609,
+        "thinking_tokens": 2149,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 15543.79,
+        "response_time_ms": 15728.0,
+        "input_tokens": 110419,
+        "output_tokens": 38,
+        "cached_tokens": 0,
+        "thinking_tokens": 2529,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 19728.72,
+        "response_time_ms": 19915.52,
+        "input_tokens": 110419,
+        "output_tokens": 2719,
+        "cached_tokens": 104609,
+        "thinking_tokens": 1368,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      }
+    ],
+    "statistics": {
+      "ttft_ms": {
+        "min": 4245.29,
+        "max": 21880.43,
+        "p50": 17775.09,
+        "p90": 20404.574,
+        "p95": 21142.502
+      },
+      "response_time_ms": {
+        "min": 4413.82,
+        "max": 22006.79,
+        "p50": 17961.74,
+        "p90": 20558.902000000002,
+        "p95": 21282.846
+      },
+      "input_tokens": {
+        "min": 110419,
+        "max": 110419,
+        "p50": 110419.0,
+        "p90": 110419.0,
+        "p95": 110419.0
+      },
+      "output_tokens": {
+        "min": 30,
+        "max": 2719,
+        "p50": 244.0,
+        "p90": 2376.6,
+        "p95": 2547.7999999999997
+      },
+      "thinking_tokens": {
+        "min": 214,
+        "max": 3429,
+        "p50": 1944.0,
+        "p90": 2709.0,
+        "p95": 3068.9999999999995
+      },
+      "cached_tokens": {
+        "min": 0,
+        "max": 104609,
+        "p50": 104609.0,
+        "p90": 104609.0,
+        "p95": 104609.0
+      }
+    }
+  },
+  {
+    "model": "gemini-3.5-flash",
+    "request_file": "slow_request_40s",
+    "thinking_level": "medium",
+    "streaming_fc": true,
+    "has_tools": true,
+    "iterations": 10,
+    "all_metrics": [
+      {
+        "ttft_ms": 16063.28,
+        "response_time_ms": 16345.83,
+        "input_tokens": 37112,
+        "output_tokens": 24,
+        "cached_tokens": 0,
+        "thinking_tokens": 4119,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 14604.43,
+        "response_time_ms": 14875.05,
+        "input_tokens": 37112,
+        "output_tokens": 24,
+        "cached_tokens": 31526,
+        "thinking_tokens": 3604,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 15435.22,
+        "response_time_ms": 15722.54,
+        "input_tokens": 37112,
+        "output_tokens": 26,
+        "cached_tokens": 0,
+        "thinking_tokens": 3708,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 6468.85,
+        "response_time_ms": 6755.81,
+        "input_tokens": 37112,
+        "output_tokens": 28,
+        "cached_tokens": 31526,
+        "thinking_tokens": 1383,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 7698.56,
+        "response_time_ms": 7921.33,
+        "input_tokens": 37112,
+        "output_tokens": 27,
+        "cached_tokens": 31526,
+        "thinking_tokens": 1914,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 12913.59,
+        "response_time_ms": 13775.5,
+        "input_tokens": 37112,
+        "output_tokens": 128,
+        "cached_tokens": 31526,
+        "thinking_tokens": 3160,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 34265.25,
+        "response_time_ms": 34539.62,
+        "input_tokens": 37112,
+        "output_tokens": 26,
+        "cached_tokens": 31526,
+        "thinking_tokens": 8604,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 13439.25,
+        "response_time_ms": 13677.89,
+        "input_tokens": 37112,
+        "output_tokens": 31,
+        "cached_tokens": 31526,
+        "thinking_tokens": 3281,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 7913.44,
+        "response_time_ms": 8152.46,
+        "input_tokens": 37112,
+        "output_tokens": 24,
+        "cached_tokens": 31526,
+        "thinking_tokens": 1990,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 32024.66,
+        "response_time_ms": 32257.66,
+        "input_tokens": 37112,
+        "output_tokens": 31,
+        "cached_tokens": 31526,
+        "thinking_tokens": 8429,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      }
+    ],
+    "statistics": {
+      "ttft_ms": {
+        "min": 6468.85,
+        "max": 34265.25,
+        "p50": 14021.84,
+        "p90": 32248.718999999997,
+        "p95": 33256.9845
+      },
+      "response_time_ms": {
+        "min": 6755.81,
+        "max": 34539.62,
+        "p50": 14325.275,
+        "p90": 32485.856,
+        "p95": 33512.738
+      },
+      "input_tokens": {
+        "min": 37112,
+        "max": 37112,
+        "p50": 37112.0,
+        "p90": 37112.0,
+        "p95": 37112.0
+      },
+      "output_tokens": {
+        "min": 24,
+        "max": 128,
+        "p50": 26.5,
+        "p90": 40.69999999999997,
+        "p95": 84.3499999999999
+      },
+      "thinking_tokens": {
+        "min": 1383,
+        "max": 8604,
+        "p50": 3442.5,
+        "p90": 8446.5,
+        "p95": 8525.25
+      },
+      "cached_tokens": {
+        "min": 0,
+        "max": 31526,
+        "p50": 31526.0,
+        "p90": 31526.0,
+        "p95": 31526.0
+      }
+    }
+  },
+  {
+    "model": "gemini-3.5-flash",
+    "request_file": "slow_request_40s",
+    "thinking_level": "medium",
+    "streaming_fc": false,
+    "has_tools": true,
+    "iterations": 10,
+    "all_metrics": [
+      {
+        "ttft_ms": 15019.02,
+        "response_time_ms": 15104.25,
+        "input_tokens": 37112,
+        "output_tokens": 22,
+        "cached_tokens": 0,
+        "thinking_tokens": 3472,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 14854.05,
+        "response_time_ms": 15004.19,
+        "input_tokens": 37112,
+        "output_tokens": 26,
+        "cached_tokens": 31526,
+        "thinking_tokens": 3712,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 8850.46,
+        "response_time_ms": 8971.68,
+        "input_tokens": 37112,
+        "output_tokens": 26,
+        "cached_tokens": 31526,
+        "thinking_tokens": 2098,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 27826.65,
+        "response_time_ms": 27974.67,
+        "input_tokens": 37112,
+        "output_tokens": 24,
+        "cached_tokens": 31526,
+        "thinking_tokens": 7578,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 14339.49,
+        "response_time_ms": 14480.1,
+        "input_tokens": 37112,
+        "output_tokens": 24,
+        "cached_tokens": 31526,
+        "thinking_tokens": 3366,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 10682.48,
+        "response_time_ms": 10842.27,
+        "input_tokens": 37112,
+        "output_tokens": 41,
+        "cached_tokens": 31526,
+        "thinking_tokens": 2528,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 20503.73,
+        "response_time_ms": 20663.41,
+        "input_tokens": 37112,
+        "output_tokens": 28,
+        "cached_tokens": 31526,
+        "thinking_tokens": 4948,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 17905.85,
+        "response_time_ms": 18028.47,
+        "input_tokens": 37112,
+        "output_tokens": 24,
+        "cached_tokens": 31526,
+        "thinking_tokens": 4135,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 16432.68,
+        "response_time_ms": 16573.79,
+        "input_tokens": 37112,
+        "output_tokens": 29,
+        "cached_tokens": 31526,
+        "thinking_tokens": 3905,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 20290.35,
+        "response_time_ms": 20432.52,
+        "input_tokens": 37112,
+        "output_tokens": 24,
+        "cached_tokens": 31526,
+        "thinking_tokens": 5140,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      }
+    ],
+    "statistics": {
+      "ttft_ms": {
+        "min": 8850.46,
+        "max": 27826.65,
+        "p50": 15725.85,
+        "p90": 21236.021999999997,
+        "p95": 24531.335999999992
+      },
+      "response_time_ms": {
+        "min": 8971.68,
+        "max": 27974.67,
+        "p50": 15839.02,
+        "p90": 21394.535999999996,
+        "p95": 24684.60299999999
+      },
+      "input_tokens": {
+        "min": 37112,
+        "max": 37112,
+        "p50": 37112.0,
+        "p90": 37112.0,
+        "p95": 37112.0
+      },
+      "output_tokens": {
+        "min": 22,
+        "max": 41,
+        "p50": 25.0,
+        "p90": 30.199999999999996,
+        "p95": 35.59999999999999
+      },
+      "thinking_tokens": {
+        "min": 2098,
+        "max": 7578,
+        "p50": 3808.5,
+        "p90": 5383.799999999999,
+        "p95": 6480.899999999998
+      },
+      "cached_tokens": {
+        "min": 0,
+        "max": 31526,
+        "p50": 31526.0,
+        "p90": 31526.0,
+        "p95": 31526.0
+      }
+    }
+  },
+  {
+    "model": "gemini-3.5-flash",
+    "request_file": "slow_request_60s",
+    "thinking_level": "medium",
+    "streaming_fc": true,
+    "has_tools": true,
+    "iterations": 9,
+    "all_metrics": [
+      {
+        "ttft_ms": 18130.13,
+        "response_time_ms": 21266.5,
+        "input_tokens": 110419,
+        "output_tokens": 955,
+        "cached_tokens": 0,
+        "thinking_tokens": 3113,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 7672.8,
+        "response_time_ms": 8150.12,
+        "input_tokens": 110419,
+        "output_tokens": 32,
+        "cached_tokens": 0,
+        "thinking_tokens": 29,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 13145.37,
+        "response_time_ms": 13635.6,
+        "input_tokens": 110419,
+        "output_tokens": 32,
+        "cached_tokens": 104609,
+        "thinking_tokens": 2214,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 2263.07,
+        "response_time_ms": 2527.69,
+        "input_tokens": 110419,
+        "output_tokens": 32,
+        "cached_tokens": 0,
+        "thinking_tokens": 72,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 9168.3,
+        "response_time_ms": 9526.8,
+        "input_tokens": 110419,
+        "output_tokens": 32,
+        "cached_tokens": 104609,
+        "thinking_tokens": 1374,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 2283.19,
+        "response_time_ms": 5507.66,
+        "input_tokens": 110419,
+        "output_tokens": 32,
+        "cached_tokens": 104609,
+        "thinking_tokens": 64,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 2913.01,
+        "response_time_ms": 3435.98,
+        "input_tokens": 110419,
+        "output_tokens": 32,
+        "cached_tokens": 0,
+        "thinking_tokens": 205,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 2015.68,
+        "response_time_ms": 2400.98,
+        "input_tokens": 110419,
+        "output_tokens": 32,
+        "cached_tokens": 104609,
+        "thinking_tokens": 81,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 21832.87,
+        "response_time_ms": 41358.16,
+        "input_tokens": 110419,
+        "output_tokens": 935,
+        "cached_tokens": 104609,
+        "thinking_tokens": 4430,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      }
+    ],
+    "statistics": {
+      "ttft_ms": {
+        "min": 2015.68,
+        "max": 21832.87,
+        "p50": 7672.8,
+        "p90": 18870.678,
+        "p95": 20351.773999999998
+      },
+      "response_time_ms": {
+        "min": 2400.98,
+        "max": 41358.16,
+        "p50": 8150.12,
+        "p90": 25284.832000000006,
+        "p95": 33321.49599999999
+      },
+      "input_tokens": {
+        "min": 110419,
+        "max": 110419,
+        "p50": 110419.0,
+        "p90": 110419.0,
+        "p95": 110419.0
+      },
+      "output_tokens": {
+        "min": 32,
+        "max": 955,
+        "p50": 32.0,
+        "p90": 939.0,
+        "p95": 947.0
+      },
+      "thinking_tokens": {
+        "min": 29,
+        "max": 4430,
+        "p50": 205.0,
+        "p90": 3376.4000000000005,
+        "p95": 3903.2
+      },
+      "cached_tokens": {
+        "min": 0,
+        "max": 104609,
+        "p50": 104609.0,
+        "p90": 104609.0,
+        "p95": 104609.0
+      }
+    }
+  },
+  {
+    "model": "gemini-3.5-flash",
+    "request_file": "slow_request_60s",
+    "thinking_level": "medium",
+    "streaming_fc": false,
+    "has_tools": true,
+    "iterations": 9,
+    "all_metrics": [
+      {
+        "ttft_ms": 27638.83,
+        "response_time_ms": 27830.72,
+        "input_tokens": 110419,
+        "output_tokens": 963,
+        "cached_tokens": 104609,
+        "thinking_tokens": 4951,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 25352.21,
+        "response_time_ms": 25522.05,
+        "input_tokens": 110419,
+        "output_tokens": 338,
+        "cached_tokens": 104609,
+        "thinking_tokens": 3717,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 2770.48,
+        "response_time_ms": 2894.89,
+        "input_tokens": 110419,
+        "output_tokens": 32,
+        "cached_tokens": 104609,
+        "thinking_tokens": 94,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 1659.38,
+        "response_time_ms": 1910.03,
+        "input_tokens": 110419,
+        "output_tokens": 32,
+        "cached_tokens": 104609,
+        "thinking_tokens": 34,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 12154.87,
+        "response_time_ms": 12311.13,
+        "input_tokens": 110419,
+        "output_tokens": 994,
+        "cached_tokens": 104609,
+        "thinking_tokens": 1299,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 13905.6,
+        "response_time_ms": 14075.19,
+        "input_tokens": 110419,
+        "output_tokens": 875,
+        "cached_tokens": 0,
+        "thinking_tokens": 1888,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 15470.08,
+        "response_time_ms": 15887.84,
+        "input_tokens": 110419,
+        "output_tokens": 730,
+        "cached_tokens": 104609,
+        "thinking_tokens": 3083,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 5956.16,
+        "response_time_ms": 6124.41,
+        "input_tokens": 110419,
+        "output_tokens": 32,
+        "cached_tokens": 104609,
+        "thinking_tokens": 855,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 24493.56,
+        "response_time_ms": 24688.6,
+        "input_tokens": 110419,
+        "output_tokens": 910,
+        "cached_tokens": 104609,
+        "thinking_tokens": 3781,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      }
+    ],
+    "statistics": {
+      "ttft_ms": {
+        "min": 1659.38,
+        "max": 27638.83,
+        "p50": 13905.6,
+        "p90": 25809.534,
+        "p95": 26724.182
+      },
+      "response_time_ms": {
+        "min": 1910.03,
+        "max": 27830.72,
+        "p50": 14075.19,
+        "p90": 25983.784,
+        "p95": 26907.252
+      },
+      "input_tokens": {
+        "min": 110419,
+        "max": 110419,
+        "p50": 110419.0,
+        "p90": 110419.0,
+        "p95": 110419.0
+      },
+      "output_tokens": {
+        "min": 32,
+        "max": 994,
+        "p50": 730.0,
+        "p90": 969.2,
+        "p95": 981.5999999999999
+      },
+      "thinking_tokens": {
+        "min": 34,
+        "max": 4951,
+        "p50": 1888.0,
+        "p90": 4015.0,
+        "p95": 4483.0
+      },
+      "cached_tokens": {
+        "min": 0,
+        "max": 104609,
+        "p50": 104609.0,
+        "p90": 104609.0,
+        "p95": 104609.0
+      }
+    }
+  },
+  {
+    "model": "gemini-3.5-flash",
+    "request_file": "slow_request_40s",
+    "thinking_level": "high",
+    "streaming_fc": true,
+    "has_tools": true,
+    "iterations": 10,
+    "all_metrics": [
+      {
+        "ttft_ms": 13080.32,
+        "response_time_ms": 13322.41,
+        "input_tokens": 37112,
+        "output_tokens": 27,
+        "cached_tokens": 0,
+        "thinking_tokens": 2929,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 14204.13,
+        "response_time_ms": 14433.85,
+        "input_tokens": 37112,
+        "output_tokens": 27,
+        "cached_tokens": 0,
+        "thinking_tokens": 3461,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 18785.51,
+        "response_time_ms": 19100.08,
+        "input_tokens": 37112,
+        "output_tokens": 24,
+        "cached_tokens": 31526,
+        "thinking_tokens": 4454,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 5984.59,
+        "response_time_ms": 6192.16,
+        "input_tokens": 37112,
+        "output_tokens": 26,
+        "cached_tokens": 31526,
+        "thinking_tokens": 1348,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 19065.22,
+        "response_time_ms": 19377.36,
+        "input_tokens": 37112,
+        "output_tokens": 28,
+        "cached_tokens": 0,
+        "thinking_tokens": 4790,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 16410.53,
+        "response_time_ms": 16594.61,
+        "input_tokens": 37112,
+        "output_tokens": 24,
+        "cached_tokens": 0,
+        "thinking_tokens": 4226,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 12390.05,
+        "response_time_ms": 12729.32,
+        "input_tokens": 37112,
+        "output_tokens": 38,
+        "cached_tokens": 31526,
+        "thinking_tokens": 2927,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 3594.37,
+        "response_time_ms": 3884.42,
+        "input_tokens": 37112,
+        "output_tokens": 26,
+        "cached_tokens": 31526,
+        "thinking_tokens": 636,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 15235.32,
+        "response_time_ms": 15558.79,
+        "input_tokens": 37112,
+        "output_tokens": 27,
+        "cached_tokens": 31526,
+        "thinking_tokens": 3360,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 14965.25,
+        "response_time_ms": 15233.06,
+        "input_tokens": 37112,
+        "output_tokens": 31,
+        "cached_tokens": 31526,
+        "thinking_tokens": 3611,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      }
+    ],
+    "statistics": {
+      "ttft_ms": {
+        "min": 3594.37,
+        "max": 19065.22,
+        "p50": 14584.689999999999,
+        "p90": 18813.481,
+        "p95": 18939.3505
+      },
+      "response_time_ms": {
+        "min": 3884.42,
+        "max": 19377.36,
+        "p50": 14833.455,
+        "p90": 19127.808,
+        "p95": 19252.584000000003
+      },
+      "input_tokens": {
+        "min": 37112,
+        "max": 37112,
+        "p50": 37112.0,
+        "p90": 37112.0,
+        "p95": 37112.0
+      },
+      "output_tokens": {
+        "min": 24,
+        "max": 38,
+        "p50": 27.0,
+        "p90": 31.7,
+        "p95": 34.849999999999994
+      },
+      "thinking_tokens": {
+        "min": 636,
+        "max": 4790,
+        "p50": 3410.5,
+        "p90": 4487.6,
+        "p95": 4638.799999999999
+      },
+      "cached_tokens": {
+        "min": 0,
+        "max": 31526,
+        "p50": 31526.0,
+        "p90": 31526.0,
+        "p95": 31526.0
+      }
+    }
+  },
+  {
+    "model": "gemini-3.5-flash",
+    "request_file": "slow_request_40s",
+    "thinking_level": "high",
+    "streaming_fc": false,
+    "has_tools": true,
+    "iterations": 10,
+    "all_metrics": [
+      {
+        "ttft_ms": 4951.61,
+        "response_time_ms": 5076.27,
+        "input_tokens": 37112,
+        "output_tokens": 26,
+        "cached_tokens": 31526,
+        "thinking_tokens": 689,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 26216.79,
+        "response_time_ms": 26372.34,
+        "input_tokens": 37112,
+        "output_tokens": 27,
+        "cached_tokens": 31526,
+        "thinking_tokens": 6457,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 11430.92,
+        "response_time_ms": 11559.08,
+        "input_tokens": 37112,
+        "output_tokens": 28,
+        "cached_tokens": 0,
+        "thinking_tokens": 3375,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 26680.7,
+        "response_time_ms": 26843.91,
+        "input_tokens": 37112,
+        "output_tokens": 28,
+        "cached_tokens": 31526,
+        "thinking_tokens": 6817,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 10856.57,
+        "response_time_ms": 10976.26,
+        "input_tokens": 37112,
+        "output_tokens": 28,
+        "cached_tokens": 31526,
+        "thinking_tokens": 2409,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 17418.8,
+        "response_time_ms": 17539.93,
+        "input_tokens": 37112,
+        "output_tokens": 26,
+        "cached_tokens": 31526,
+        "thinking_tokens": 2494,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 19823.5,
+        "response_time_ms": 19909.11,
+        "input_tokens": 37112,
+        "output_tokens": 26,
+        "cached_tokens": 0,
+        "thinking_tokens": 4554,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 26483.17,
+        "response_time_ms": 26569.99,
+        "input_tokens": 37112,
+        "output_tokens": 28,
+        "cached_tokens": 31526,
+        "thinking_tokens": 6317,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 17728.79,
+        "response_time_ms": 17874.43,
+        "input_tokens": 37112,
+        "output_tokens": 31,
+        "cached_tokens": 31526,
+        "thinking_tokens": 4462,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 15432.58,
+        "response_time_ms": 15521.32,
+        "input_tokens": 37112,
+        "output_tokens": 28,
+        "cached_tokens": 31526,
+        "thinking_tokens": 4026,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      }
+    ],
+    "statistics": {
+      "ttft_ms": {
+        "min": 4951.61,
+        "max": 26680.7,
+        "p50": 17573.795,
+        "p90": 26502.922999999995,
+        "p95": 26591.811499999996
+      },
+      "response_time_ms": {
+        "min": 5076.27,
+        "max": 26843.91,
+        "p50": 17707.18,
+        "p90": 26597.381999999998,
+        "p95": 26720.646
+      },
+      "input_tokens": {
+        "min": 37112,
+        "max": 37112,
+        "p50": 37112.0,
+        "p90": 37112.0,
+        "p95": 37112.0
+      },
+      "output_tokens": {
+        "min": 26,
+        "max": 31,
+        "p50": 28.0,
+        "p90": 28.299999999999997,
+        "p95": 29.65
+      },
+      "thinking_tokens": {
+        "min": 689,
+        "max": 6817,
+        "p50": 4244.0,
+        "p90": 6493.0,
+        "p95": 6655.0
+      },
+      "cached_tokens": {
+        "min": 0,
+        "max": 31526,
+        "p50": 31526.0,
+        "p90": 31526.0,
+        "p95": 31526.0
+      }
+    }
+  },
+  {
+    "model": "gemini-3.5-flash",
+    "request_file": "slow_request_60s",
+    "thinking_level": "high",
+    "streaming_fc": true,
+    "has_tools": true,
+    "iterations": 8,
+    "all_metrics": [
+      {
+        "ttft_ms": 1747.03,
+        "response_time_ms": 2159.71,
+        "input_tokens": 110419,
+        "output_tokens": 32,
+        "cached_tokens": 0,
+        "thinking_tokens": 32,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 17362.21,
+        "response_time_ms": 17595.93,
+        "input_tokens": 110419,
+        "output_tokens": 30,
+        "cached_tokens": 0,
+        "thinking_tokens": 2734,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 9491.06,
+        "response_time_ms": 9904.34,
+        "input_tokens": 110419,
+        "output_tokens": 34,
+        "cached_tokens": 104609,
+        "thinking_tokens": 1399,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 1863.13,
+        "response_time_ms": 2264.32,
+        "input_tokens": 110419,
+        "output_tokens": 32,
+        "cached_tokens": 104609,
+        "thinking_tokens": 93,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 18290.6,
+        "response_time_ms": 18655.12,
+        "input_tokens": 110419,
+        "output_tokens": 42,
+        "cached_tokens": 0,
+        "thinking_tokens": 3402,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 8658.26,
+        "response_time_ms": 9100.21,
+        "input_tokens": 110419,
+        "output_tokens": 32,
+        "cached_tokens": 104609,
+        "thinking_tokens": 25,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 2407.02,
+        "response_time_ms": 2852.81,
+        "input_tokens": 110419,
+        "output_tokens": 32,
+        "cached_tokens": 104609,
+        "thinking_tokens": 175,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 1779.98,
+        "response_time_ms": 2174.58,
+        "input_tokens": 110419,
+        "output_tokens": 32,
+        "cached_tokens": 104609,
+        "thinking_tokens": 57,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      }
+    ],
+    "statistics": {
+      "ttft_ms": {
+        "min": 1747.03,
+        "max": 18290.6,
+        "p50": 5532.64,
+        "p90": 17640.727,
+        "p95": 17965.6635
+      },
+      "response_time_ms": {
+        "min": 2159.71,
+        "max": 18655.12,
+        "p50": 5976.509999999999,
+        "p90": 17913.686999999998,
+        "p95": 18284.4035
+      },
+      "input_tokens": {
+        "min": 110419,
+        "max": 110419,
+        "p50": 110419.0,
+        "p90": 110419.0,
+        "p95": 110419.0
+      },
+      "output_tokens": {
+        "min": 30,
+        "max": 42,
+        "p50": 32.0,
+        "p90": 36.4,
+        "p95": 39.199999999999996
+      },
+      "thinking_tokens": {
+        "min": 25,
+        "max": 3402,
+        "p50": 134.0,
+        "p90": 2934.3999999999996,
+        "p95": 3168.2
+      },
+      "cached_tokens": {
+        "min": 0,
+        "max": 104609,
+        "p50": 104609.0,
+        "p90": 104609.0,
+        "p95": 104609.0
+      }
+    }
+  },
+  {
+    "model": "gemini-3.5-flash",
+    "request_file": "slow_request_60s",
+    "thinking_level": "high",
+    "streaming_fc": false,
+    "has_tools": true,
+    "iterations": 10,
+    "all_metrics": [
+      {
+        "ttft_ms": 5376.0,
+        "response_time_ms": 5540.22,
+        "input_tokens": 110419,
+        "output_tokens": 37,
+        "cached_tokens": 104609,
+        "thinking_tokens": 763,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 14380.5,
+        "response_time_ms": 14564.64,
+        "input_tokens": 110419,
+        "output_tokens": 585,
+        "cached_tokens": 104609,
+        "thinking_tokens": 2376,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 22181.54,
+        "response_time_ms": 22374.7,
+        "input_tokens": 110419,
+        "output_tokens": 1750,
+        "cached_tokens": 104609,
+        "thinking_tokens": 2897,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 29458.6,
+        "response_time_ms": 29641.18,
+        "input_tokens": 110419,
+        "output_tokens": 2076,
+        "cached_tokens": 104609,
+        "thinking_tokens": 3628,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 1693.24,
+        "response_time_ms": 1879.38,
+        "input_tokens": 110419,
+        "output_tokens": 32,
+        "cached_tokens": 104609,
+        "thinking_tokens": 30,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 7071.93,
+        "response_time_ms": 7256.72,
+        "input_tokens": 110419,
+        "output_tokens": 32,
+        "cached_tokens": 104609,
+        "thinking_tokens": 998,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 192253.84,
+        "response_time_ms": 199899.88,
+        "input_tokens": 110419,
+        "output_tokens": 2238,
+        "cached_tokens": 104609,
+        "thinking_tokens": 62912,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      },
+      {
+        "ttft_ms": 21541.88,
+        "response_time_ms": 21714.59,
+        "input_tokens": 110419,
+        "output_tokens": 902,
+        "cached_tokens": 104609,
+        "thinking_tokens": 3535,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 10805.33,
+        "response_time_ms": 11036.26,
+        "input_tokens": 110419,
+        "output_tokens": 43,
+        "cached_tokens": 104609,
+        "thinking_tokens": 1304,
+        "traffic_type": "TrafficType.PROVISIONED_THROUGHPUT"
+      },
+      {
+        "ttft_ms": 14024.18,
+        "response_time_ms": 14175.95,
+        "input_tokens": 110419,
+        "output_tokens": 45,
+        "cached_tokens": 0,
+        "thinking_tokens": 3430,
+        "traffic_type": "TrafficType.ON_DEMAND"
+      }
+    ],
+    "statistics": {
+      "ttft_ms": {
+        "min": 1693.24,
+        "max": 192253.84,
+        "p50": 14202.34,
+        "p90": 45738.12399999994,
+        "p95": 118995.98199999981
+      },
+      "response_time_ms": {
+        "min": 1879.38,
+        "max": 199899.88,
+        "p50": 14370.295,
+        "p90": 46667.04999999994,
+        "p95": 123283.46499999982
+      },
+      "input_tokens": {
+        "min": 110419,
+        "max": 110419,
+        "p50": 110419.0,
+        "p90": 110419.0,
+        "p95": 110419.0
+      },
+      "output_tokens": {
+        "min": 32,
+        "max": 2238,
+        "p50": 315.0,
+        "p90": 2092.2,
+        "p95": 2165.1
+      },
+      "thinking_tokens": {
+        "min": 30,
+        "max": 62912,
+        "p50": 2636.5,
+        "p90": 9556.39999999998,
+        "p95": 36234.19999999994
+      },
+      "cached_tokens": {
+        "min": 0,
+        "max": 104609,
+        "p50": 104609.0,
+        "p90": 104609.0,
+        "p95": 104609.0
+      }
+    }
+  }
+]
